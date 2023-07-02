@@ -7,7 +7,7 @@ import ReactImg from '../assets/react.png';
 import GitHub from '../assets/github.png';
 import Tailwind from '../assets/tailwind.png';
 import Linux from '../assets/linux.png';
-import Redux from '../assets/redux.png';
+import Redux from '../assets/Redux.png';
 const Skills = () => {
   return (
     <div name="skills" className="w-full h-screen bg-gray-1000 text-gray-300">
