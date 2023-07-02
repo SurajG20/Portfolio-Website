@@ -2,7 +2,7 @@ import { FaLinkedin, FaGithub, FaFilePdf, FaEnvelope } from 'react-icons/fa';
 
 const Footer = () => {
   return (
-    <footer className=" w-full pt-[6em] pb-[4em] bg-gray-1000 text-zinc-300 flex flex-col justify-center items-center gap-8  ">
+    <footer className=" w-full  bg-gray-1000 text-zinc-300 flex flex-col justify-center items-center gap-4">
       <ul className=" text-xl flex ">
         <li>
           <a href="https://www.linkedin.com/in/suraj-goswami01" target="_blank">

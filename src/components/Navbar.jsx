@@ -2,69 +2,94 @@ import React, { useState } from 'react';
 import { FaBars, FaTimes, FaGithub, FaLinkedin } from 'react-icons/fa';
 import { HiOutlineMail } from 'react-icons/hi';
 import { BsFillPersonLinesFill } from 'react-icons/bs';
-// import { Link } from 'react-scroll';
+// import { NavLink } from 'react-scroll';
 // import Logo from '../assets/Logo.png';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const handleClick = () => setNav(!nav);
 
   return (
-    <div className=" h-[80px] flex justify-between items-center px-4 bg-gray-1000 text-gray-300">
+    <div className="flex pt-4 justify-between items-center bg-gray-1000 text-gray-300">
       {/* <div>
         <img src={Logo} alt="Logo Image" style={{ width: '60px' }} />
       </div> */}
       {/* menu */}
       <ul className="hidden md:flex">
         <li>
-          <Link
+          <NavLink
+            style={({ isActive }) => {
+              return {
+                backgroundColor: isActive ? '#4B5563' : '',
+              };
+            }}
             to="/"
             smooth={true}
             duration={500}
             className="cursor-pointer rounded-md px-4 py-[0.10rem] text-xl text-gray-200 duration-100 hover:bg-zinc-800"
           >
             Home
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link
+          <NavLink
+            style={({ isActive }) => {
+              return {
+                backgroundColor: isActive ? '#4B5563' : '',
+              };
+            }}
             to="about"
             smooth={true}
             duration={500}
             className="cursor-pointer rounded-md px-4 py-[0.10rem] text-xl text-gray-200 duration-100 hover:bg-zinc-800"
           >
             About
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link
+          <NavLink
+            style={({ isActive }) => {
+              return {
+                backgroundColor: isActive ? '#4B5563' : '',
+              };
+            }}
             to="skills"
             smooth={true}
             duration={500}
             className="cursor-pointer rounded-md px-4 py-[0.10rem] text-xl text-gray-200 duration-100 hover:bg-zinc-800"
           >
             Skills
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link
+          <NavLink
+            style={({ isActive }) => {
+              return {
+                backgroundColor: isActive ? '#4B5563' : '',
+              };
+            }}
             to="work"
             smooth={true}
             duration={500}
             className="cursor-pointer rounded-md px-4 py-[0.10rem] text-xl text-gray-200 duration-100 hover:bg-zinc-800"
           >
             Work
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link
+          <NavLink
+            style={({ isActive }) => {
+              return {
+                backgroundColor: isActive ? '#4B5563' : '',
+              };
+            }}
             to="contact"
             smooth={true}
             duration={500}
             className="cursor-pointer rounded-md px-4 py-[0.10rem] text-xl text-gray-200 duration-100 hover:bg-zinc-800"
           >
             Contact
-          </Link>
+          </NavLink>
         </li>
       </ul>
 
@@ -89,7 +114,7 @@ const Navbar = () => {
         }
       >
         <li className=" py-6 text-4xl">
-          <Link
+          <NavLink
             onClick={handleClick}
             to="/"
             smooth={true}
@@ -97,11 +122,11 @@ const Navbar = () => {
             className="mono-type text-2xl font-bold tracking-widest text-gray-100"
           >
             Home
-          </Link>
+          </NavLink>
         </li>
         <li className="py-6 text-4xl">
           {' '}
-          <Link
+          <NavLink
             onClick={handleClick}
             to="about"
             smooth={true}
@@ -109,11 +134,11 @@ const Navbar = () => {
             className="mono-type text-2xl font-bold tracking-widest text-gray-100"
           >
             About
-          </Link>
+          </NavLink>
         </li>
         <li className="py-6 text-4xl">
           {' '}
-          <Link
+          <NavLink
             onClick={handleClick}
             to="skills"
             smooth={true}
@@ -121,11 +146,11 @@ const Navbar = () => {
             className="mono-type text-2xl font-bold tracking-widest text-gray-100"
           >
             Skills
-          </Link>
+          </NavLink>
         </li>
         <li className="py-6 text-4xl">
           {' '}
-          <Link
+          <NavLink
             onClick={handleClick}
             to="work"
             smooth={true}
@@ -133,11 +158,11 @@ const Navbar = () => {
             className="mono-type text-2xl font-bold tracking-widest text-gray-100"
           >
             Work
-          </Link>
+          </NavLink>
         </li>
         <li className="py-6 text-4xl">
           {' '}
-          <Link
+          <NavLink
             onClick={handleClick}
             to="contact"
             smooth={true}
@@ -145,7 +170,7 @@ const Navbar = () => {
             className="mono-type text-2xl font-bold tracking-widest text-gray-100"
           >
             Contact
-          </Link>
+          </NavLink>
         </li>
       </ul>
 
@@ -155,7 +180,7 @@ const Navbar = () => {
           <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-blue-600">
             <a
               className="flex justify-between items-center w-full text-gray-300"
-              href="https://www.linkedin.com/in/suraj-goswami01"
+              href="https://www.NavLinkedin.com/in/suraj-goswami01"
               target="blank"
             >
               Linkedin <FaLinkedin size={30} />
