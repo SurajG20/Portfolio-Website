@@ -14,13 +14,13 @@ const Home = () => {
           Frontend Developer, Engineering student.
         </p>
         <div className="mt-6 flex gap-6">
-          <a href="https://github.com/SurajG20">
+          <a href="https://github.com/SurajG20" target="blank">
             <IoLogoGithub className="h-6 w-6 cursor-pointer fill-gray-500 transition hover:fill-gray-200" />
           </a>
-          <a href="https://www.linkedin.com/in/suraj-goswami01">
+          <a href="https://www.linkedin.com/in/suraj-goswami01" target="blank">
             <IoLogoLinkedin className="h-6 w-6 cursor-pointer fill-gray-500 transition hover:fill-gray-200" />
           </a>
-          <a href="mailto:Surajgosami3000@gmail.com">
+          <a href="mailto:Surajgosami3000@gmail.com" target="blank">
             <IoMail className="h-6 w-6 cursor-pointer fill-gray-500 transition hover:fill-gray-200" />
           </a>
         </div>
