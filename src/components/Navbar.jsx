@@ -3,13 +3,16 @@ import { FaBars, FaTimes, FaGithub, FaLinkedin } from 'react-icons/fa';
 import { HiOutlineMail } from 'react-icons/hi';
 import { BsFillPersonLinesFill } from 'react-icons/bs';
 import { Link } from 'react-scroll';
-
+// import Logo from '../assets/Logo.png';
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const handleClick = () => setNav(!nav);
 
   return (
     <div className=" h-[80px] flex justify-between items-center px-4 bg-gray-1000 text-gray-300">
+      {/* <div>
+        <img src={Logo} alt="Logo Image" style={{ width: '60px' }} />
+      </div> */}
       {/* menu */}
       <ul className="hidden md:flex">
         <li>
