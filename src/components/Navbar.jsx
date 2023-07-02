@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { FaBars, FaTimes, FaGithub, FaLinkedin } from 'react-icons/fa';
 import { HiOutlineMail } from 'react-icons/hi';
 import { BsFillPersonLinesFill } from 'react-icons/bs';
-import { Link } from 'react-scroll';
+// import { Link } from 'react-scroll';
 // import Logo from '../assets/Logo.png';
+import { Link } from 'react-router-dom';
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const handleClick = () => setNav(!nav);
@@ -17,7 +18,7 @@ const Navbar = () => {
       <ul className="hidden md:flex">
         <li>
           <Link
-            to="home"
+            to="/"
             smooth={true}
             duration={500}
             className="cursor-pointer rounded-md px-4 py-[0.10rem] text-xl text-gray-200 duration-100 hover:bg-zinc-800"
@@ -90,7 +91,7 @@ const Navbar = () => {
         <li className=" py-6 text-4xl">
           <Link
             onClick={handleClick}
-            to="home"
+            to="/"
             smooth={true}
             duration={500}
             className="mono-type text-2xl font-bold tracking-widest text-gray-100"
