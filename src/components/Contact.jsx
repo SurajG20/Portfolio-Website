@@ -1,11 +1,10 @@
 import React from 'react';
-import Footer from './Footer';
 
 const Contact = () => {
   return (
     <div
       name="contact"
-      className="w-full h-screen bg-gray-1000 flex justify-center items-center flex-col"
+      className="w-full bg-gray-1000 flex justify-center items-center flex-col h-screen"
     >
       <form
         method="POST"
@@ -37,7 +36,6 @@ const Contact = () => {
           Let's Collaborate
         </button>
       </form>
-      <Footer />
     </div>
   );
 };

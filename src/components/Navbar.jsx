@@ -2,31 +2,27 @@ import React, { useState } from 'react';
 import { FaBars, FaTimes, FaGithub, FaLinkedin } from 'react-icons/fa';
 import { HiOutlineMail } from 'react-icons/hi';
 import { BsFillPersonLinesFill } from 'react-icons/bs';
-// import { NavLink } from 'react-scroll';
-// import Logo from '../assets/Logo.png';
 import { NavLink } from 'react-router-dom';
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const handleClick = () => setNav(!nav);
 
   return (
-    <div className="flex pt-4 justify-between items-center bg-gray-1000 text-gray-300">
-      {/* <div>
-        <img src={Logo} alt="Logo Image" style={{ width: '60px' }} />
-      </div> */}
-      {/* menu */}
+    <div className="fixed w-full h-[80px] flex justify-center items-center px-12 bg-gray-700 text-gray-300 ">
       <ul className="hidden md:flex">
         <li>
           <NavLink
             style={({ isActive }) => {
               return {
-                backgroundColor: isActive ? '#4B5563' : '',
+                color: isActive ? 'white' : '',
+                fontWeight: isActive ? 'bolder' : '',
+                fontSize: isActive ? '24px' : '',
               };
             }}
             to="/"
             smooth={true}
             duration={500}
-            className="cursor-pointer rounded-md px-4 py-[0.10rem] text-xl text-gray-200 duration-100 hover:bg-zinc-800"
+            className="cursor-pointer rounded-md px-4 py-[0.10rem] text-xl text-gray-200 duration-100 "
           >
             Home
           </NavLink>
@@ -35,13 +31,15 @@ const Navbar = () => {
           <NavLink
             style={({ isActive }) => {
               return {
-                backgroundColor: isActive ? '#4B5563' : '',
+                color: isActive ? 'white' : '',
+                fontWeight: isActive ? 'bolder' : '',
+                fontSize: isActive ? '24px' : '',
               };
             }}
             to="about"
             smooth={true}
             duration={500}
-            className="cursor-pointer rounded-md px-4 py-[0.10rem] text-xl text-gray-200 duration-100 hover:bg-zinc-800"
+            className="cursor-pointer rounded-md px-4 py-[0.10rem] text-xl text-gray-200 duration-100 "
           >
             About
           </NavLink>
@@ -50,13 +48,15 @@ const Navbar = () => {
           <NavLink
             style={({ isActive }) => {
               return {
-                backgroundColor: isActive ? '#4B5563' : '',
+                color: isActive ? 'white' : '',
+                fontWeight: isActive ? 'bolder' : '',
+                fontSize: isActive ? '24px' : '',
               };
             }}
             to="skills"
             smooth={true}
             duration={500}
-            className="cursor-pointer rounded-md px-4 py-[0.10rem] text-xl text-gray-200 duration-100 hover:bg-zinc-800"
+            className="cursor-pointer rounded-md px-4 py-[0.10rem] text-xl text-gray-200 duration-100 "
           >
             Skills
           </NavLink>
@@ -65,13 +65,15 @@ const Navbar = () => {
           <NavLink
             style={({ isActive }) => {
               return {
-                backgroundColor: isActive ? '#4B5563' : '',
+                color: isActive ? 'white' : '',
+                fontWeight: isActive ? 'bolder' : '',
+                fontSize: isActive ? '24px' : '',
               };
             }}
             to="work"
             smooth={true}
             duration={500}
-            className="cursor-pointer rounded-md px-4 py-[0.10rem] text-xl text-gray-200 duration-100 hover:bg-zinc-800"
+            className="cursor-pointer rounded-md px-4 py-[0.10rem] text-xl text-gray-200 duration-100 "
           >
             Work
           </NavLink>
@@ -80,13 +82,15 @@ const Navbar = () => {
           <NavLink
             style={({ isActive }) => {
               return {
-                backgroundColor: isActive ? '#4B5563' : '',
+                color: isActive ? 'white' : '',
+                fontWeight: isActive ? 'bolder' : '',
+                fontSize: isActive ? '24px' : '',
               };
             }}
             to="contact"
             smooth={true}
             duration={500}
-            className="cursor-pointer rounded-md px-4 py-[0.10rem] text-xl text-gray-200 duration-100 hover:bg-zinc-800"
+            className="cursor-pointer rounded-md px-4 py-[0.10rem] text-xl text-gray-200 duration-100 "
           >
             Contact
           </NavLink>
@@ -96,7 +100,7 @@ const Navbar = () => {
       {/* Hamburger */}
       <div
         onClick={handleClick}
-        className="md:hidden z-10 ml-1 mr-1 h-8 w-8 rounded py-1"
+        className="md:hidden z-10 ml-1 mr-1 h-8 w-8 rounded py-1 right-0 fixed"
       >
         {!nav ? (
           <FaBars className="h-6 w-6 transform cursor-pointer select-none rounded-md duration-300 active:scale-50" />
@@ -105,15 +109,15 @@ const Navbar = () => {
         )}
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile Nav */}
       <ul
         className={
           !nav
             ? 'hidden'
-            : 'absolute top-0 left-0 w-full h-screen bg-gray-1000 flex flex-col justify-center items-center'
+            : 'absolute top-0 right-0 w-[70%] h-screen bg-gray-1000 flex flex-col justify-center items-center z-0 duration-500'
         }
       >
-        <li className=" py-6 text-4xl">
+        <li className=" py-4 text-3xl">
           <NavLink
             onClick={handleClick}
             to="/"
@@ -124,7 +128,7 @@ const Navbar = () => {
             Home
           </NavLink>
         </li>
-        <li className="py-6 text-4xl">
+        <li className="py-4 text-3xl">
           {' '}
           <NavLink
             onClick={handleClick}
@@ -136,7 +140,7 @@ const Navbar = () => {
             About
           </NavLink>
         </li>
-        <li className="py-6 text-4xl">
+        <li className="py-4 text-3xl">
           {' '}
           <NavLink
             onClick={handleClick}
@@ -148,7 +152,7 @@ const Navbar = () => {
             Skills
           </NavLink>
         </li>
-        <li className="py-6 text-4xl">
+        <li className="py-4 text-3xl">
           {' '}
           <NavLink
             onClick={handleClick}
@@ -160,7 +164,7 @@ const Navbar = () => {
             Work
           </NavLink>
         </li>
-        <li className="py-6 text-4xl">
+        <li className="py-4 text-3xl">
           {' '}
           <NavLink
             onClick={handleClick}
