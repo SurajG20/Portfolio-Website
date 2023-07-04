@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import { FaBars, FaTimes, FaGithub, FaLinkedin } from 'react-icons/fa';
 import { HiOutlineMail } from 'react-icons/hi';
 import { BsFillPersonLinesFill } from 'react-icons/bs';
-import { NavLink } from 'react-router-dom';
+import { Link as NavLink } from 'react-scroll';
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const handleClick = () => setNav(!nav);
 
   return (
-    <div className="fixed w-full h-[80px] flex justify-center items-center px-12 bg-gray-700 text-gray-300 ">
+    <div className=" w-full h-[80px] flex justify-end md:justify-center items-center px-12 bg-gray-700 text-gray-300 ">
       <ul className="hidden md:flex">
         <li>
           <NavLink
@@ -98,10 +98,7 @@ const Navbar = () => {
       </ul>
 
       {/* Hamburger */}
-      <div
-        onClick={handleClick}
-        className="md:hidden z-10 ml-1 mr-1 h-8 w-8 rounded py-1 right-0 fixed"
-      >
+      <div onClick={handleClick} className="md:hidden z-10  ">
         {!nav ? (
           <FaBars className="h-6 w-6 transform cursor-pointer select-none rounded-md duration-300 active:scale-50" />
         ) : (
@@ -114,10 +111,10 @@ const Navbar = () => {
         className={
           !nav
             ? 'hidden'
-            : 'absolute top-0 right-0 w-[70%] h-screen bg-gray-1000 flex flex-col justify-center items-center z-0 duration-500'
+            : 'absolute top-0 right-0 w-[60%] h-[60%] bg-zinc-700 flex flex-col rounded-md  justify-center items-center z-5 duration-500 '
         }
       >
-        <li className=" py-4 text-3xl">
+        <li className=" py-4 text-xl ">
           <NavLink
             onClick={handleClick}
             to="/"
