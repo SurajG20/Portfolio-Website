@@ -9,11 +9,15 @@ function App() {
   return (
     <div>
       <Navbar />
-      <Home />
-      <About />
-      <Skills />
-      <Work />
-      <Contact />
+      <main className="flex flex-col px-8 xl:pl-24">
+        <Home />
+        <div className="flex flex-col gap-16   xl:gap-24 md:mr-16 xl:mr-32">
+          <About />
+          <Skills />
+          <Work />
+          <Contact />
+        </div>
+      </main>
     </div>
   );
 }
