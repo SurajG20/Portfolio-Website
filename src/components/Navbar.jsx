@@ -8,7 +8,7 @@ const Navbar = () => {
   const handleClick = () => setNav(!nav);
 
   return (
-    <div className=" w-full h-[80px] flex justify-end md:justify-center items-center px-12 bg-gray-700 text-gray-300 ">
+    <div className=" w-full h-[80px] flex justify-end md:justify-center items-center px-12 bg-[#131516]  text-gray-300 ">
       <ul className="hidden md:flex">
         <li>
           <NavLink
@@ -111,7 +111,7 @@ const Navbar = () => {
         className={
           !nav
             ? 'hidden'
-            : 'absolute top-0 right-0 w-[60%] h-[60%] bg-zinc-700 flex flex-col rounded-md  justify-center items-center z-5 duration-500 '
+            : 'absolute top-0 right-0 w-[60%] h-[60%] bg-[#2a303c] flex flex-col rounded-md  justify-center items-center z-5 duration-500 '
         }
       >
         <li className=" py-4 text-xl ">
