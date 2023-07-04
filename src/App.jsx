@@ -11,7 +11,7 @@ function App() {
       <Navbar />
       <main className="flex flex-col px-8 xl:pl-24">
         <Home />
-        <div className="flex flex-col gap-16   xl:gap-24 md:mr-16 xl:mr-32">
+        <div className="flex flex-col gap-16 xl:gap-24 md:mr-16 xl:mr-32">
           <About />
           <Skills />
           <Work />

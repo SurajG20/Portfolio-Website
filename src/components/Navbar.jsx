@@ -8,7 +8,7 @@ const Navbar = () => {
   const handleClick = () => setNav(!nav);
 
   return (
-    <div className=" w-full h-[80px] flex justify-end md:justify-center items-center px-12 bg-[#131516]  text-gray-300 ">
+    <div className=" w-full h-[80px] flex justify-end md:justify-center items-center px-12 bg-[#131516]  text-[#A6ADBB] ">
       <ul className="hidden md:flex">
         <li>
           <NavLink
@@ -22,7 +22,7 @@ const Navbar = () => {
             to="/"
             smooth={true}
             duration={500}
-            className="cursor-pointer rounded-md px-4 py-[0.10rem] text-xl text-gray-200 duration-100 "
+            className="cursor-pointer rounded-md px-4 py-[0.10rem] text-xl text-[#A6ADBB] duration-100 "
           >
             Home
           </NavLink>
@@ -39,7 +39,7 @@ const Navbar = () => {
             to="about"
             smooth={true}
             duration={500}
-            className="cursor-pointer rounded-md px-4 py-[0.10rem] text-xl text-gray-200 duration-100 "
+            className="cursor-pointer rounded-md px-4 py-[0.10rem] text-xl text-[#A6ADBB] duration-100 "
           >
             About
           </NavLink>
@@ -56,7 +56,7 @@ const Navbar = () => {
             to="skills"
             smooth={true}
             duration={500}
-            className="cursor-pointer rounded-md px-4 py-[0.10rem] text-xl text-gray-200 duration-100 "
+            className="cursor-pointer rounded-md px-4 py-[0.10rem] text-xl text-[#A6ADBB] duration-100 "
           >
             Skills
           </NavLink>
@@ -73,7 +73,7 @@ const Navbar = () => {
             to="work"
             smooth={true}
             duration={500}
-            className="cursor-pointer rounded-md px-4 py-[0.10rem] text-xl text-gray-200 duration-100 "
+            className="cursor-pointer rounded-md px-4 py-[0.10rem] text-xl text-[#A6ADBB] duration-100 "
           >
             Work
           </NavLink>
@@ -90,7 +90,7 @@ const Navbar = () => {
             to="contact"
             smooth={true}
             duration={500}
-            className="cursor-pointer rounded-md px-4 py-[0.10rem] text-xl text-gray-200 duration-100 "
+            className="cursor-pointer rounded-md px-4 py-[0.10rem] text-xl text-[#A6ADBB] duration-100 "
           >
             Contact
           </NavLink>
@@ -100,9 +100,9 @@ const Navbar = () => {
       {/* Hamburger */}
       <div onClick={handleClick} className="md:hidden z-10  ">
         {!nav ? (
-          <FaBars className="h-6 w-6 transform cursor-pointer select-none rounded-md duration-300 active:scale-50" />
+          <FaBars className="h-6 w-6 transform cursor-pointer select-none rounded-md duration-300 active:scale-50 fill-[#007bff]" />
         ) : (
-          <FaTimes className="h-6 w-6 transform cursor-pointer select-none rounded-md duration-300 active:scale-50" />
+          <FaTimes className="h-6 w-6 transform cursor-pointer select-none rounded-md duration-300 active:scale-50 fill-[#007bff]" />
         )}
       </div>
 
@@ -111,16 +111,16 @@ const Navbar = () => {
         className={
           !nav
             ? 'hidden'
-            : 'absolute top-0 right-0 w-[60%] h-[60%] bg-[#2a303c] flex flex-col rounded-md  justify-center items-center z-5 duration-500 '
+            : 'absolute top-0 right-0 w-[60%] h-[100%] bg-[#2a303c] flex flex-col rounded-md  justify-center items-center z-5 duration-500 '
         }
       >
-        <li className=" py-4 text-xl ">
+        <li className=" py-4 text-3xl ">
           <NavLink
             onClick={handleClick}
             to="/"
             smooth={true}
             duration={500}
-            className="mono-type text-2xl font-bold tracking-widest text-gray-100"
+            className="mono-type text-xl font-bold tracking-widest text-[#A6ADBB]"
           >
             Home
           </NavLink>
@@ -132,7 +132,7 @@ const Navbar = () => {
             to="about"
             smooth={true}
             duration={500}
-            className="mono-type text-2xl font-bold tracking-widest text-gray-100"
+            className="mono-type text-xl font-bold tracking-widest text-[#A6ADBB]"
           >
             About
           </NavLink>
@@ -144,7 +144,7 @@ const Navbar = () => {
             to="skills"
             smooth={true}
             duration={500}
-            className="mono-type text-2xl font-bold tracking-widest text-gray-100"
+            className="mono-type text-xl font-bold tracking-widest text-[#A6ADBB]"
           >
             Skills
           </NavLink>
@@ -156,7 +156,7 @@ const Navbar = () => {
             to="work"
             smooth={true}
             duration={500}
-            className="mono-type text-2xl font-bold tracking-widest text-gray-100"
+            className="mono-type text-xl font-bold tracking-widest text-[#A6ADBB]"
           >
             Work
           </NavLink>
@@ -168,7 +168,7 @@ const Navbar = () => {
             to="contact"
             smooth={true}
             duration={500}
-            className="mono-type text-2xl font-bold tracking-widest text-gray-100"
+            className="mono-type text-xl font-bold tracking-widest text-[#A6ADBB]"
           >
             Contact
           </NavLink>
