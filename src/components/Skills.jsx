@@ -1,12 +1,12 @@
 import React from 'react';
 
-import { data } from './skills/data';
+import { data } from '../data/dataSkills';
 
 const Skills = () => {
   const SkillData = data; // data is an array of objects
   return (
     <div
-      name="skills"
+      id="skills"
       className=" bg-[#131516] text-gray-300 flex flex-col items-start md:flex-row gap-4 md:gap-16"
     >
       {/* Container */}

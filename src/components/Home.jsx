@@ -2,20 +2,22 @@ import React from 'react';
 
 const Home = () => {
   return (
-    // <div class="xl:min-h-[80vh] flex flex-col gap-12  xl:mb-0 xl:mt-24 xl:pr-96 z-10 px-12 ">
-    <div className="xl:min-h-[80vh] flex flex-col gap-12 mt-8 mb-16 xl:mb-0 xl:mt-24 xl:pr-96  bg-[#131516] text-[#A6ADBB]">
-      <h2 class="mt-2 mb-0 font-bold lg:text-5xl text-3xl">Hello!</h2>
-      <h2 class="mt-2 mb-0 font-bold lg:text-5xl text-3xl">
-        I'm <span class="font-bold">Suraj Goswami</span>
+    <div
+      name="home"
+      className="xl:min-h-[80vh] flex flex-col gap-12 mt-8 mb-16 xl:mb-0 xl:mt-24 xl:pr-96  bg-[#131516] text-[#A6ADBB]"
+    >
+      <h2 className="mt-2 mb-0 font-bold lg:text-5xl text-3xl">Hello!</h2>
+      <h2 className="mt-2 mb-0 font-bold lg:text-5xl text-3xl">
+        I'm <span className="font-bold">Suraj Goswami</span>
       </h2>
-      <h2 class="mt-2 mb-0 font-bold lg:text-5xl text-3xl">
+      <h2 className="mt-2 mb-0 font-bold lg:text-5xl text-3xl">
         A front-end developer, passionate about web development and eager to
         learn, focused on creating engaging and user-friendly interfaces, while
         striving for scalability.
       </h2>
-      <div class="flex gap-2 items-center">
-        <h4 class="my-0 lg:text-lg text-base font-normal">Get in touch</h4>
-        <div class="flex gap-2  ">
+      <div className="flex gap-2 items-center">
+        <h4 className="my-0 lg:text-lg text-base font-normal">Get in touch</h4>
+        <div className="flex gap-2  ">
           <a
             href="mailto:surajgoswami3000@gmail.com"
             aria-label="Email Suraj Goswami"
@@ -64,35 +66,6 @@ const Home = () => {
         </div>
       </div>
     </div>
-
-    // <div name="home" className="w-full h-screen bg-gray-1000 ">
-    //   <div className="max-w-[1000px] mx-auto px-12 flex flex-col justify-center h-full">
-    //     <p className="text-zinc-100 text-2xl ">Hi, My name is</p>
-    //     <p className="text-5xl sm:text-7xl font-bold text-zinc-100 mt-2">
-    //       Suraj Goswami
-    //     </p>
-    //     <p className="text-2xl sm:text-4xl mt-2  font-medium text-gray-300">
-    //       Frontend Developer, Engineering student.
-    //     </p>
-    //     <div className="mt-6 flex gap-6">
-    //       <a href="https://github.com/SurajG20" target="blank">
-    //         <IoLogoGithub className="h-6 w-6 cursor-pointer fill-gray-500 transition hover:fill-gray-200" />
-    //       </a>
-    //       <a href="https://www.linkedin.com/in/suraj-goswami01" target="blank">
-    //         <IoLogoLinkedin className="h-6 w-6 cursor-pointer fill-gray-500 transition hover:fill-gray-200" />
-    //       </a>
-    //       <a href="mailto:Surajgosami3000@gmail.com" target="blank">
-    //         <IoMail className="h-6 w-6 cursor-pointer fill-gray-500 transition hover:fill-gray-200" />
-    //       </a>
-    //     </div>
-    //     <div>
-    //       <button className="text-gray-500 group border-2 border-b-gray-500 px-4 py-2 my-10 flex items-center hover:bg-zinc-800 hover:text-white hover:border-white">
-    //         View Work
-    //       </button>
-    //       <Link to="work" />
-    //     </div>
-    //   </div>
-    // </div>
   );
 };
 
