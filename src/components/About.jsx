@@ -11,8 +11,8 @@ const About = () => {
       <div class="md:basis-3/4">
         <div class="flex flex-col gap-4">
           <h4 class="my-0 lg:text-lg text-base font-light">
-            Hello, I'm Suraj Goswami, a junior front-end developer based in
-            Bhopal. I specialize in React and have a strong passion for creating
+            Hello, I'm Suraj Goswami, a front-end developer based in Bhopal,
+            INDIA. I specialize in React and have a strong passion for creating
             visually appealing web interfaces. I'm dedicated to continuous
             learning and contributing to impactful digital experiences.
           </h4>
