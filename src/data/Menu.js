@@ -12,8 +12,8 @@ export const Menu = [
     url: 'skills',
   },
   {
-    title: 'Work',
-    url: 'work',
+    title: 'Projects',
+    url: 'projects',
   },
   {
     title: 'Contact',

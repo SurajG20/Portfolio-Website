@@ -1,3 +1,5 @@
+import React from 'react';
+
 const Footer = () => {
   return (
     <div className="flex flex-col items-center justify-center w-full  bg-[#2a303c] py-6 gap-3 ">
@@ -48,7 +50,7 @@ const Footer = () => {
           </svg>
         </a>
       </div>
-      <div class="">
+      <div className="">
         <div className="text-[#8f9aa7] text-xl opacity-[0.6]">
           Suraj Goswami{'   '}
           <span className="text-[#007bff] font-bold ">
@@ -60,3 +62,30 @@ const Footer = () => {
   );
 };
 export default Footer;
+
+// import { animateScroll as scroll } from 'react-scroll';
+{
+  /* <a onClick={scrollToTop}>
+  <button type="button" class="">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      stroke-width="2.5"
+      stroke="currentColor"
+      class="h-4 w-4"
+    >
+      <path
+        fill-rule="evenodd"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M12 19.5v-15m0 0l-6.75 6.75M12 4.5l6.75 6.75"
+        clip-rule="evenodd"
+      />
+    </svg>
+  </button>
+</a>; */
+}
+// const scrollToTop = () => {
+//   scroll.scrollToTop();
+// };
