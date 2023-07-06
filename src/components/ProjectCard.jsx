@@ -3,10 +3,10 @@ import { data as ProjectData } from '../data/data';
 
 const ProjectCard = () => {
   return (
-    <div className="max-w-[1080px] mx-auto p-4 flex flex-col justify-center w-full h-full">
+    <div className="max-w-[1080px] mx-auto p-4 flex flex-col justify-center w-full h-full gap-16">
       {ProjectData.map((list, index) => (
         <div
-          className="grid gap-8 mb-16 grid-cols-1 border-b-2 pb-8 lg:grid-cols-2 lg:border-b-0 lg:pb-0  "
+          className="grid gap-8  grid-cols-1 border-b-2 pb-8 lg:grid-cols-2 lg:border-b-0 lg:pb-0  "
           key={index}
         >
           <div className="bg-gray-700 rounded-lg p-2 justify-self-center">

@@ -61,6 +61,6 @@ export const data = [
       'A simple shopping cart app built using HTML, CSS and JavaScript.',
     image: Shopiq,
     github: 'https://github.com/SurajG20/SHOPI-Q',
-    live: 'https://surajg20.github.io/Calculator/',
+    live: 'https://surajg20.github.io/SHOPI-Q/',
   },
 ];

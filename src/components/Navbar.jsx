@@ -18,7 +18,11 @@ const Navbar = () => {
                 to={item.url}
                 smooth={true}
                 duration={500}
-                className="cursor-pointer rounded-md px-4 py-[0.10rem] text-xl text-[#A6ADBB] duration-100 "
+                //               color: #333;
+                // text-decoration: none;
+                // display: inline-block;
+                // position: relative;
+                className="cursor-pointer px-4 py-[0.10rem] text-xl text-[#A6ADBB] duration-100  font-bold transition border-b-2 border-transparent hover:border-[#007bff]"
               >
                 {item.title}
               </Link>
@@ -52,7 +56,7 @@ const Navbar = () => {
                 to={item.url}
                 smooth={true}
                 duration={500}
-                className="mono-type text-xl font-bold tracking-widest text-[#A6ADBB]"
+                className="mono-type text-xl font-bold tracking-widest text-[#A6ADBB] transition border-b-2 border-transparent hover:border-[#007bff]"
               >
                 {item.title}
               </Link>
