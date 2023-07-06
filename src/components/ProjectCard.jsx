@@ -17,12 +17,12 @@ const ProjectCard = () => {
             />
           </div>
           <div className="flex flex-col justify-center items-center md:max-w-md md:text-left gap-3">
-            <h4 className="text-2xl font-bold">{list.name}</h4>
+            <h4 className="text-3xl font-bold">{list.name}</h4>
             <p className="font-normal max-w-xs text-center md:text-left ">
               {list.description}
             </p>
             <div className="flex items-center justify-center gap-4 ">
-              <span className="font-medium text-lg ">TechStack:</span>
+              <span className="font-medium text-lg  ">TechStack:</span>
               <span className="text-sm font-normal">{list.tech_stack}</span>
             </div>
             <div className=" h-[70px] gap-4 flex items-center ">

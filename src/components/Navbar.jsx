@@ -8,7 +8,7 @@ const Navbar = () => {
   const handleClick = () => setNav(!nav);
 
   return (
-    <div className=" w-full h-[80px] flex justify-end md:justify-center items-center px-12 bg-[#131516]  text-[#A6ADBB] ">
+    <div className=" w-full h-[80px] flex justify-end md:justify-center items-center px-12 bg-[#1E2749]  ">
       <ul className="hidden md:flex">
         {Menu.map((item, index) => {
           console.log(item);
@@ -22,7 +22,7 @@ const Navbar = () => {
                 // text-decoration: none;
                 // display: inline-block;
                 // position: relative;
-                className="cursor-pointer px-4 py-[0.10rem] text-xl text-[#A6ADBB] duration-100  font-bold transition border-b-2 border-transparent hover:border-[#007bff]"
+                className="cursor-pointer px-4 py-[0.10rem] text-xl text-[#fff] duration-100  font-bold transition border-b-2 border-transparent hover:border-[#CAAE5F]"
               >
                 {item.title}
               </Link>
@@ -34,9 +34,9 @@ const Navbar = () => {
       {/* Hamburger */}
       <div onClick={handleClick} className="md:hidden z-10  ">
         {!nav ? (
-          <FaBars className="h-6 w-6 transform cursor-pointer select-none rounded-md duration-300 active:scale-50 fill-[#007bff]" />
+          <FaBars className="h-6 w-6 transform cursor-pointer select-none rounded-md duration-300 active:scale-50 fill-[#CAAE5F]" />
         ) : (
-          <FaTimes className="h-6 w-6 transform cursor-pointer select-none rounded-md duration-300 active:scale-50 fill-[#007bff]" />
+          <FaTimes className="h-6 w-6 transform cursor-pointer select-none rounded-md duration-300 active:scale-50 fill-[#CAAE5F]" />
         )}
       </div>
 
@@ -56,7 +56,7 @@ const Navbar = () => {
                 to={item.url}
                 smooth={true}
                 duration={500}
-                className="mono-type text-xl font-bold tracking-widest text-[#A6ADBB] transition border-b-2 border-transparent hover:border-[#007bff]"
+                className="mono-type text-xl font-bold tracking-widest text-[#fff] transition border-b-2 border-transparent hover:border-[#CAAE5F]"
               >
                 {item.title}
               </Link>

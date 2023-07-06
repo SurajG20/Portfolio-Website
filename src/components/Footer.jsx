@@ -57,7 +57,7 @@ const Footer = () => {
         <div className="">
           <div className="text-[#8f9aa7] text-xl opacity-[0.6]">
             Suraj Goswami{'   '}
-            <span className="text-[#007bff] font-bold ">
+            <span className="text-[#CAAE5F] font-bold ">
               @{new Date().getFullYear()}
             </span>
           </div>
@@ -68,7 +68,7 @@ const Footer = () => {
           <button
             type="button"
             onclick={scrollToTop}
-            class=" absolute z-90 bottom-12 right-8 border-0 w-10 h-10 rounded-full bg-[#007bff] text-white text-xl "
+            class=" absolute z-90 bottom-12 right-8 border-0 w-10 h-10 rounded-full bg-[#CAAE5F] text-white text-xl "
           >
             &uarr;
           </button>

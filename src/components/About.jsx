@@ -4,12 +4,10 @@ const About = () => {
   return (
     <div
       name="about"
-      className="flex flex-col items-start md:flex-row gap-4 md:gap-16"
+      className="flex flex-col items-start md:flex-row gap-4 md:gap-16 bg-[#1E2749]"
     >
       <div className="md:basis-1/4 md:text-right">
-        <p className="my-0 lg:text-base text-sm font-bold uppercase  text-[#007bff]">
-          About Me
-        </p>
+        <p className="text-3xl font-bold text-[#CAAE5F]">About Me</p>
       </div>
       <div className="md:basis-3/4">
         <div className="flex flex-col gap-4">
@@ -28,7 +26,10 @@ const About = () => {
             I'll be a valuable asset to any team I'm in.
           </h4>
 
-          <h4 className="my-0 font-bold lg:text-lg text-base w-fit px-2 lg:mx-2 transition-all shadow-[inset_0px_-3px_0px_0px_#007bff] hover:shadow-[inset_0px_-30px_0px_0px_#007bff] hover:prose-invert cursor-pointer duration-300">
+          <h4
+            className="my-0 font-bold lg:text-lg text-base w-fit px-2 lg:mx-2 transition-all shadow-[inset_0px_-3px_0px_0px_#CAAE5F] hover:shadow-[inset_0px_-30px_0px_0px_#CAAE5F] 
+          hover:text-gray-800 hover:prose-invert cursor-pointer duration-300"
+          >
             <a href="/" aria-label="Suraj's Resume">
               View My Resume (PDF)
             </a>

@@ -7,13 +7,13 @@ const Skills = () => {
   return (
     <div
       name="skills"
-      className=" bg-[#131516] text-gray-300 flex flex-col items-start md:flex-row gap-4 md:gap-16"
+      className=" bg-[#1E2749] text-gray-300 flex flex-col items-start md:flex-row gap-4 md:gap-16"
     >
       {/* Container */}
       <div className="max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full h-full">
         {/* Title */}
         <div>
-          <p className=" text-3xl font-bold">My Top Skills</p>
+          <p className=" text-3xl font-bold text-[#CAAE5F]">My Top Skills</p>
         </div>
         {/* Skills */}
         <div className="my-10 grid grid-cols-3 gap-4">

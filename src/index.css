@@ -8,7 +8,7 @@
   body {
     @apply font-[inter];
     @apply text-[#A6ADBB];
-    @apply bg-[#131516];
+    @apply bg-[#1E2749];
   }
   li {
     @apply px-4;

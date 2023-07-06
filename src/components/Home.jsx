@@ -4,11 +4,11 @@ const Home = () => {
   return (
     <div
       name="home"
-      className="xl:min-h-[80vh] flex flex-col gap-12 mt-8 mb-16 xl:mb-0 xl:mt-24 xl:pr-96  bg-[#131516] text-[#A6ADBB]"
+      className="xl:min-h-[80vh] flex flex-col gap-12 mt-8 mb-16 xl:mb-0 xl:mt-24 xl:pr-96  bg-[#1E2749] text-[#FAFAFF]"
     >
       <h2 className="mt-2 mb-0 font-bold lg:text-5xl text-3xl">Hello!</h2>
       <h2 className="mt-2 mb-0 font-bold lg:text-5xl text-3xl">
-        I'm <span className="font-bold">Suraj Goswami</span>
+        I'm <span className="font-bold ">Suraj Goswami</span>
       </h2>
       <h2 className="mt-2 mb-0 font-bold lg:text-5xl text-3xl">
         A front-end developer, passionate about web development and eager to
@@ -16,7 +16,9 @@ const Home = () => {
         striving for scalability.
       </h2>
       <div className="flex gap-2 items-center">
-        <h4 className="my-0 lg:text-lg text-base font-normal">Get in touch</h4>
+        <h4 className="my-0 lg:text-lg text-base font-normal text-[#CAAE5F]">
+          Get in touch
+        </h4>
         <div className="flex gap-2  ">
           <a
             href="mailto:surajgoswami3000@gmail.com"
