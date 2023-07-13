@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import { socialLinks } from '../data/constants';
 import { ThemeContext } from '../themeProvider';
 
 const Contact = () => {
@@ -10,13 +9,13 @@ const Contact = () => {
       id="contact"
       className={
         darkMode
-          ? 'bg-gray-100 pt-16 md:h-screen'
-          : 'bg-black pt-16 text-white md:h-screen'
+          ? 'bg-gray-100 py-16 h-fit '
+          : 'bg-black py-16 text-white h-fit'
       }
     >
       <div className="max-w-7xl mx-auto sm:px-6 lg:px-8 px-4 ">
         <h2 className="title">Contact</h2>
-        <div className="flex justify-center items-center  flex-col md:flex-row pb-24">
+        <div className="flex justify-center items-center  flex-col md:flex-row">
           <div className="w-full md:pr-8 flex justify-center items-center flex-col px-12 ">
             <form
               method="POST"
@@ -92,8 +91,8 @@ const Contact = () => {
       <div
         className={
           darkMode
-            ? 'w-full bg-white text-black text-lg py-3 flex justify-center md:mt-20'
-            : 'w-full bg-gray-900 text-white text-lg py-3 flex justify-center md:mt-20'
+            ? 'w-full bg-white text-black text-lg flex justify-center '
+            : 'w-full bg-gray-900 text-white text-lg flex justify-center '
         }
       ></div>
     </div>

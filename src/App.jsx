@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import About from './views/About';
 import Home from './views/Home';
 import Projects from './views/Projects';
+import Footer from './views/Footer';
 import { ThemeProvider } from './themeProvider';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
           <About />
           <Projects />
           <Contact />
+          <Footer />
         </div>
       </>
     </ThemeProvider>
