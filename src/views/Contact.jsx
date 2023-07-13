@@ -10,27 +10,19 @@ const Contact = () => {
       id="contact"
       className={
         darkMode
-          ? 'bg-gray-100 pt-24 md:h-screen'
-          : 'bg-black pt-24 text-white md:h-screen'
+          ? 'bg-gray-100 pt-16 md:h-screen'
+          : 'bg-black pt-16 text-white md:h-screen'
       }
     >
-      <div className="max-w-7xl mx-auto x-4 sm:px-6 lg:px-8 px-4 ">
-        <h2 className="text-5xl font-bold px-4 md:px-0 text-center z-0">
-          Contact
-        </h2>
-        <div>
-          <h4 className="mt-12 text-3xl font-semibold text-blue-500">
-            Let's work together
-          </h4>
-          <p className="text-gray-500 text-xl">
-            If you want to know more about me or my work, or if you would just
-            <br />
-            like to say hello, send me a message. I'd love to hear from you.
-          </p>
-        </div>
-        <div className="flex justify-between items-center md:items-stretch  flex-col md:flex-row pb-24">
-          <div className="w-full md:pr-8">
-            <form>
+      <div className="max-w-7xl mx-auto sm:px-6 lg:px-8 px-4 ">
+        <h2 className="title">Contact</h2>
+        <div className="flex justify-center items-center  flex-col md:flex-row pb-24">
+          <div className="w-full md:pr-8 flex justify-center items-center flex-col px-12 ">
+            <form
+              method="POST"
+              action="https://getform.io/f/93105a61-a122-4241-8e0a-fca9c75fa23e"
+              className="flex flex-col max-w-[600px] w-full"
+            >
               <div class="my-6">
                 <label
                   for="name"
@@ -43,7 +35,7 @@ const Contact = () => {
                   Name
                 </label>
                 <input
-                  type="email"
+                  type="text"
                   id="name"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="Enter your name"
@@ -82,14 +74,17 @@ const Contact = () => {
                 </label>
                 <textarea
                   id="message"
+                  rows="8"
                   class="bg-gray-50 border border-gray-300 text-gray-900 h-28 w-full text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="Enter your message"
+                  placeholder="Say something..."
                   required
                 />
               </div>
-              <button className="bg-indigo-500 text-white px-4 py-2 w-40 rounded-md hover:bg-indigo-400">
-                <a href="mailto:surajgoswami3000@gmail.com">Submit</a>
-              </button>
+              <div className="flex justify-center">
+                <button className="bg-indigo-500 text-white px-4 py-2 w-40 rounded-md hover:bg-indigo-400">
+                  Let's Connect
+                </button>
+              </div>
             </form>
           </div>
         </div>

@@ -8,7 +8,7 @@ const About = () => {
   const darkMode = theme.state.darkMode;
   return (
     <div id="about" className={darkMode === true ? 'bg-white' : 'bg-gray-900'}>
-      <div className="max-w-7xl mx-auto sm:px-6 lg:px-8 px-4 md:mt-0 pt-24 pb-12">
+      <div className="max-w-7xl mx-auto sm:px-6 lg:px-8 px-4 md:mt-0 pt-16 pb-12">
         <h2
           className={
             darkMode
@@ -20,9 +20,8 @@ const About = () => {
         </h2>
         <div>
           <motion.div>
-            <h4 className="mt-12 text-3xl font-semibold text-blue-500">
-              About Me
-            </h4>
+            <h4 className="title">About Me</h4>
+
             <p
               className={
                 darkMode
