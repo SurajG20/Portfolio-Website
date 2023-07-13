@@ -1,70 +1,166 @@
-import React, { useState } from 'react';
-import { FaBars, FaTimes } from 'react-icons/fa';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-scroll';
-import { Menu } from '../data/Menu';
+import { ThemeContext } from '../themeProvider';
+import { motion, AnimatePresence } from 'framer-motion';
+import Hamburger from 'hamburger-react';
 
 const Navbar = () => {
-  const [nav, setNav] = useState(false);
-  const handleClick = () => setNav(!nav);
+  const theme = useContext(ThemeContext);
+  const [toggle, setToggle] = useState(false);
+  const darkMode = theme.state.darkMode;
+  const links = [
+    {
+      name: 'Home',
+      route: '/',
+    },
+    {
+      name: 'About',
+      route: 'about',
+    },
+    {
+      name: 'Projects',
+      route: 'projects',
+    },
+    {
+      name: 'Contact',
+      route: 'contact',
+    },
+  ];
+
+  function toggleTheme() {
+    if (darkMode === true) {
+      theme.dispatch({ type: 'LIGHTMODE' });
+    } else {
+      theme.dispatch({ type: 'DARKMODE' });
+    }
+  }
 
   return (
-    <div className=" w-full h-[80px] flex justify-end md:justify-center items-center px-12 bg-[#1E2749]  ">
-      <ul className="hidden md:flex">
-        {Menu.map((item, index) => {
-          console.log(item);
-          return (
-            <li key={index}>
-              <Link
-                to={item.url}
-                smooth={true}
-                duration={500}
-                //               color: #333;
-                // text-decoration: none;
-                // display: inline-block;
-                // position: relative;
-                className="cursor-pointer px-4 py-[0.10rem] text-xl text-[#fff] duration-100  font-bold transition border-b-2 border-transparent hover:border-[#CAAE5F]"
-              >
-                {item.title}
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
-
-      {/* Hamburger */}
-      <div onClick={handleClick} className="md:hidden z-10  ">
-        {!nav ? (
-          <FaBars className="h-6 w-6 transform cursor-pointer select-none rounded-md duration-300 active:scale-50 fill-[#CAAE5F]" />
-        ) : (
-          <FaTimes className="h-6 w-6 transform cursor-pointer select-none rounded-md duration-300 active:scale-50 fill-[#CAAE5F]" />
-        )}
-      </div>
-
-      {/* Mobile Nav */}
-      <ul
+    <>
+      <nav
         className={
-          !nav
-            ? 'hidden'
-            : 'absolute top-0 right-0 w-[50%] h-[100%] bg-[#2a303c] flex flex-col rounded-md  justify-center items-center z-5 duration-500 '
+          darkMode
+            ? 'bg-white border-gray-200 z-50 shadow-lg md:px-8 px-1 fixed w-full top-0'
+            : 'bg-gray-700 border-gray-200 z-50 shadow-lg md:px-8 px-1 fixed w-full top-0'
         }
       >
-        {Menu.map((item, index) => {
-          return (
-            <li key={index} className=" py-4 text-3xl ">
-              <Link
-                onClick={handleClick}
-                to={item.url}
-                smooth={true}
-                duration={500}
-                className="mono-type text-xl font-bold tracking-widest text-[#fff] transition border-b-2 border-transparent hover:border-[#CAAE5F]"
-              >
-                {item.title}
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
-    </div>
+        <div className="flex justify-between items-center py-2 md:py-4 md:px-2 pl-2 mx-auto">
+          <div className="flex items-center cursor-pointer">
+            <a
+              href="/"
+              className={
+                darkMode
+                  ? 'text-xl font-medium text-decoration-none whitespace-nowrap text-black'
+                  : 'text-xl font-medium text-decoration-none whitespace-nowrap text-white'
+              }
+            >
+              <p className="text-2xl text-blue-500 font-bold">𝒮𝓊𝓇𝒶𝒿 𝒢𝑜𝓈𝓌𝒶𝓂𝒾</p>
+            </a>
+          </div>
+          <div class="hidden justify-between items-center w-full md:flex md:w-auto ">
+            <ul
+              class={
+                'flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-md md:font-medium'
+              }
+            >
+              {links.map((el) => (
+                <li className="cursor-pointer">
+                  <Link
+                    to={el.route}
+                    activeClass={'text-white bg-blue-500'}
+                    spy={true}
+                    smooth={true}
+                    className={
+                      darkMode
+                        ? 'block py-2 px-3 text-black hover:bg-blue-500 hover:text-white rounded-md'
+                        : 'block py-2 px-3 text-white hover:bg-blue-500 hover:text-black rounded-md'
+                    }
+                  >
+                    {el.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <div onClick={() => toggleTheme()}>
+              {darkMode ? (
+                <img
+                  src="https://img.icons8.com/external-flaticons-flat-flat-icons/64/000000/external-sun-lighting-flaticons-flat-flat-icons.png"
+                  className="w-6 ml-6 cursor-pointer hover:scale-1.50 block"
+                  alt=""
+                />
+              ) : (
+                <img
+                  src="https://img.icons8.com/external-prettycons-lineal-color-prettycons/49/000000/external-moon-astrology-and-symbology-prettycons-lineal-color-prettycons.png"
+                  className="w-6 ml-6 cursor-pointer hover:scale-1.50 block"
+                  alt=""
+                />
+              )}
+            </div>
+          </div>
+
+          <div className="flex md:hidden items-center">
+            <div onClick={() => toggleTheme()}>
+              {darkMode ? (
+                <img
+                  src="https://img.icons8.com/external-flaticons-flat-flat-icons/64/000000/external-sun-lighting-flaticons-flat-flat-icons.png"
+                  className="w-6 mr-4 cursor-pointer hover:scale-1.50 block"
+                  alt=""
+                />
+              ) : (
+                <img
+                  src="https://img.icons8.com/external-prettycons-lineal-color-prettycons/49/000000/external-moon-astrology-and-symbology-prettycons-lineal-color-prettycons.png"
+                  alt=""
+                  className="w-6 mr-4 cursor-pointer hover:scale-1.50 block"
+                />
+              )}
+            </div>
+
+            <Hamburger
+              toggled={toggle}
+              size={22}
+              duration={0.8}
+              distance={'lg'}
+              toggle={setToggle}
+              color={darkMode ? '#000000' : '#ffffff'}
+            />
+          </div>
+        </div>
+        {/* Mobile view nav bar */}
+      </nav>
+      <AnimatePresence>
+        {toggle && (
+          <motion.div
+            initial={{ x: 100 }}
+            animate={{ x: 0, transition: { type: 'spring' } }}
+            exit={{ x: 200, transition: { type: 'spring' } }}
+            className={
+              darkMode
+                ? 'bg-white py-2 px-2 md:p-0 z-50 fixed top-16 mt-2 rounded-lg shadow-lg right-2 block w-40'
+                : 'bg-black py-2 px-2 md:p-0 z-50 fixed top-16 mt-2 rounded-lg shadow-lg right-2 block w-40'
+            }
+          >
+            <ul class="md:hidden md:flex-row md:space-y-8 md:mt-0 md:text-md md:font-medium">
+              {links.map((el) => (
+                <Link
+                  to={el.route}
+                  activeClass={'text-white bg-blue-500'}
+                  className={
+                    darkMode
+                      ? 'hover:bg-blue-500 text-black block px-3 py-2 rounded-md text-base font-medium mt-1 hover:text-white'
+                      : 'hover:bg-blue-500 text-white block px-3 py-2 rounded-md text-base font-medium mt-1 hover:text-white'
+                  }
+                  spy={true}
+                  smooth={true}
+                  onClick={() => setToggle(false)}
+                >
+                  <li>{el.name}</li>
+                </Link>
+              ))}
+            </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 };
 
