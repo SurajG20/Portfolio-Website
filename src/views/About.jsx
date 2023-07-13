@@ -8,7 +8,7 @@ const About = () => {
   const darkMode = theme.state.darkMode;
   return (
     <div id="about" className={darkMode === true ? 'bg-white' : 'bg-gray-900'}>
-      <div className="max-w-7xl mx-auto x-4 sm:px-6 lg:px-8 px-4 md:mt-0 pt-24 pb-12">
+      <div className="max-w-7xl mx-auto sm:px-6 lg:px-8 px-4 md:mt-0 pt-24 pb-12">
         <h2
           className={
             darkMode
@@ -21,7 +21,7 @@ const About = () => {
         <div>
           <motion.div>
             <h4 className="mt-12 text-3xl font-semibold text-blue-500">
-              A bit about me
+              About Me
             </h4>
             <p
               className={
@@ -30,21 +30,16 @@ const About = () => {
                   : 'mt-4 text-xl text-justify text-white'
               }
             >
-              Hello, I'm Suraj Goswami, a front-end developer based in Bhopal,
-              India. I specialize in React and have a strong passion for
-              creating visually appealing web interfaces. I'm dedicated to
-              continuous learning and contributing to impactful digital
-              experiences.I take into consideration the user experience while
-              writing reusable and efficient code. I passionately combine good
-              design, technology, and innovation in all my projects, which I
-              like to accompany from the first idea to release.Currently, I'm
-              focused on the backend development.
+              Hello, I'm Suraj Goswami, a front-end developer based in India. I
+              specialize in React and have a strong passion for creating
+              visually appealing web interfaces. I'm dedicated to continuous
+              learning and contributing to impactful digital experiences.I
+              passionately combine good design, technology, and innovation in
+              all my projects, which I like to accompany from the first idea to
+              release. Currently, I'm trying my hand on the backend development.
             </p>
           </motion.div>
           <motion.div>
-            <h4 className="mt-12 text-3xl font-semibold text-blue-500">
-              Technologies and Tools
-            </h4>
             <p
               className={
                 darkMode
@@ -52,12 +47,10 @@ const About = () => {
                   : 'mt-4 text-xl text-justify text-white'
               }
             >
-              Using a combination of cutting-edge technologies and reliable
-              open-source software I build user-focused, performant websites for
-              smartphones, tablets, and desktops.
+              Here are a few technologies I`ve been working with recently:
             </p>
           </motion.div>
-          <motion.div className="flex flex-wrap mt-8 flex flex-wrap justify-between ">
+          <motion.div className="flex flex-wrap sm:grid sm:grid-cols-3 sm:gap-2 justify-between mt-4 ">
             {techStack.map((el, index) => (
               <motion.div
                 initial="hidden"
@@ -72,7 +65,7 @@ const About = () => {
                   },
                   hidden: { opacity: 1, y: 80 },
                 }}
-                className="py-2 px-4 bg-gray-50 md:m-4 mx-2 mt-6 rounded-lg flex items-center hover:scale-125 cursor-pointer md:w-48 w-40"
+                className="py-2 px-4 bg-gray-50 md:m-4 mx-2 mt-6 rounded-lg flex items-center text-black hover:scale-125 cursor-pointer md:w-48 w-40"
               >
                 <img alt="" src={el.link} className="w-12" />
                 <h4 className="text-md ml-4">{el.name}</h4>
