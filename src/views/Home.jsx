@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-// import heroBg from '../assets/webdev.svg';
 import Typical from 'react-typical';
 import { socialLinks } from '../data/constants';
 import { ThemeContext } from '../themeProvider';
@@ -40,6 +39,7 @@ const Home = () => {
                     3000,
                   ]}
                   loop={Infinity}
+                  wrapper="span"
                 />
               </span>
             </h1>
@@ -50,18 +50,17 @@ const Home = () => {
                   : 'mt-3 text-base text-white sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0'
               }
             >
-              A front-end developer, passionate about web development and eager
-              to learn, focused on creating engaging and user-friendly
-              interfaces, while striving for scalability.
+              A Wev Developer based in India with a passion for creating Visual
+              Appealing websites and User Friendly Interfaces.
             </p>
-            <h4 className="my-2 text-xl  lg:text-3xl  font-bold text-[#CAAE5F]">
+            <h4 className="mt-2 text-xl lg:text-3xl  font-bold text-[#CAAE5F] md:mt-4">
               Get in touch
             </h4>
-            <div className="flex md:justify-start ">
+            <div className="flex md:justify-start mt-3 md:mt-6">
               {socialLinks.map((item) => (
                 <a
                   href={item.link}
-                  className="mr-5 cursor-pointer mt-8 hover:scale-125"
+                  className="mr-5 cursor-pointer  hover:scale-125"
                   target="blank"
                 >
                   {item.image}
@@ -76,23 +75,6 @@ const Home = () => {
               </div>
             </div>
           </div>
-          {/* <motion.img
-            initial="hidden"
-            whileInView={'visible'}
-            variants={{
-              visible: {
-                y: 0,
-                opacity: 1,
-                transition: {
-                  type: 'spring',
-                },
-              },
-              hidden: { opacity: 1, y: 80 },
-            }}
-            src={heroBg}
-            alt=""
-            className="md:w-3/6 hidden sm:block"
-          /> */}
         </main>
       </div>
     </>
