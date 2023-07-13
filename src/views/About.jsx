@@ -31,11 +31,10 @@ const About = () => {
             >
               Hello, I'm Suraj Goswami, a front-end developer based in India. I
               specialize in React and have a strong passion for creating
-              visually appealing web interfaces. I'm dedicated to continuous
-              learning and contributing to impactful digital experiences.I
-              passionately combine good design, technology, and innovation in
-              all my projects, which I like to accompany from the first idea to
-              release. Currently, I'm trying my hand on the backend development.
+              visually appealing web interfaces. I passionately combine good
+              design, technology, and innovation in all my projects, which I
+              like to accompany from the first idea to release. Currently, I'm
+              trying my hand on the backend development.
             </p>
           </motion.div>
           <motion.div>
@@ -46,7 +45,7 @@ const About = () => {
                   : 'mt-4 text-xl text-justify text-white'
               }
             >
-              Here are a few technologies I`ve been working with recently:
+              Here are a few technologies I've been working with recently:
             </p>
           </motion.div>
           <motion.div className="flex flex-wrap sm:grid sm:grid-cols-3 sm:gap-2 justify-between mt-4 ">
