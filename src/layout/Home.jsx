@@ -60,7 +60,7 @@ const Home = () => {
                   key={index}
                   href={item.link}
                   className="mr-5 cursor-pointer hover:scale-125"
-                  target="blank"
+                  target="_blank"
                 >
                   {item.image}
                 </a>
