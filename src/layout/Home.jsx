@@ -66,11 +66,11 @@ const Home = () => {
                 </a>
               ))}
             </div>
-            <div className="mt-3 sm:mt-6 cursor-pointer w-1/3 ">
+            <div className="mt-5 sm:mt-8 cursor-pointer w-1/3 ">
               <a
                 href="https://drive.google.com/file/d/1XzE5vO5j3jnGc9At8Wy_-_JQ3O-EFsK5/view?usp=sharing"
                 target="blank"
-                className="px-3 py-1 border border-transparent text-base font-medium rounded-md text-white bg-[#5b75c2] hover:bg-blue-200 md:py-2 md:text-xl md:px-8"
+                className="px-3 py-2 border border-transparent text-base font-medium rounded-md text-white bg-[#5b75c2] hover:bg-blue-200 md:py-2 md:text-xl md:px-8"
               >
                 Resume
               </a>
