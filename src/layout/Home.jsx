@@ -1,9 +1,8 @@
 import React, { useContext } from 'react';
 import Typical from 'react-typical';
-import { socialLinks } from '../data/constants';
+import { socialLinks } from '../data/data';
 import { ThemeContext } from '../themeProvider';
 import { motion } from 'framer-motion';
-import { Link } from 'react-scroll';
 import light from '../assets/light.png';
 import dark from '../assets/dark.jpg';
 
@@ -68,12 +67,13 @@ const Home = () => {
               ))}
             </div>
             <div className="mt-3 sm:mt-6 cursor-pointer w-1/3 ">
-              <Link
-                to="/"
+              <a
+                href="https://drive.google.com/file/d/1XzE5vO5j3jnGc9At8Wy_-_JQ3O-EFsK5/view?usp=sharing"
+                target="blank"
                 className="px-3 py-1 border border-transparent text-base font-medium rounded-md text-white bg-[#5b75c2] hover:bg-blue-200 md:py-2 md:text-xl md:px-8"
               >
                 Resume
-              </Link>
+              </a>
             </div>
           </div>
         </main>

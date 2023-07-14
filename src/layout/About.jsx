@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { techStack } from '../data/constants';
+import { techStack } from '../data/data';
 import { ThemeContext } from '../themeProvider';
 import { motion } from 'framer-motion';
 
@@ -15,7 +15,7 @@ const About = () => {
             <p
               className={
                 darkMode
-                  ? 'mt-4 text-xl text-justify text-gray-500'
+                  ? 'mt-4 text-xl text-justify text-black'
                   : 'mt-4 text-xl text-justify text-white'
               }
             >
@@ -31,7 +31,7 @@ const About = () => {
             <p
               className={
                 darkMode
-                  ? 'mt-4 text-xl text-justify text-gray-500'
+                  ? 'mt-4 text-xl text-justify text-black'
                   : 'mt-4 text-xl text-justify text-white'
               }
             >

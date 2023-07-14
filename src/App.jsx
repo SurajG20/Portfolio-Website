@@ -1,9 +1,9 @@
-import Contact from './views/Contact';
+import Contact from './layout/Contact';
 import Navbar from './components/Navbar';
-import About from './views/About';
-import Home from './views/Home';
-import Projects from './views/Projects';
-import Footer from './views/Footer';
+import About from './layout/About';
+import Home from './layout/Home';
+import Projects from './layout/Projects';
+import Footer from './components/Footer';
 import { ThemeProvider } from './themeProvider';
 
 function App() {
