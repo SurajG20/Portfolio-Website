@@ -4,8 +4,8 @@ import { socialLinks } from '../data/constants';
 import { ThemeContext } from '../themeProvider';
 import { motion } from 'framer-motion';
 import { Link } from 'react-scroll';
-import cloud from '../assets/cloudBg.png';
-import cloudDark from '../assets/cloudDark.png';
+import cloud from '../assets/lightbg.png';
+import cloudDark from '../assets/darkbg.jpg';
 
 const Home = () => {
   const theme = useContext(ThemeContext);
@@ -20,10 +20,10 @@ const Home = () => {
         }
       >
         <main
-          className="mx-auto max-w-7xl px-4 sm:px-6 md:mt-0 lg:px-8 flex flex-col md:flex-row items-center justify-center md:justify-between h-screen"
+          className="mx-auto max-w-7xl px-4 sm:px-6 md:mt-0 lg:px-8 flex flex-col items-start justify-center h-screen"
           id="/"
         >
-          <div className="sm:text-center md:text-left">
+          <div>
             <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
               <motion.span
                 className={darkMode ? 'block text-black' : ' text-white'}
@@ -46,19 +46,20 @@ const Home = () => {
             <p
               className={
                 darkMode
-                  ? 'mt-3 text-base text-black sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0'
-                  : 'mt-3 text-base text-white sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0'
+                  ? 'mt-3 text-base text-black sm:mt-5 sm:text-lg sm:max-w-xl  md:mt-5 md:text-xl lg:mx-0'
+                  : 'mt-3 text-base text-white sm:mt-5 sm:text-lg sm:max-w-xl  md:mt-5 md:text-xl lg:mx-0'
               }
             >
               A Wev Developer based in India with a passion for creating Visual
               Appealing websites and User Friendly Interfaces.
             </p>
-            <h4 className="mt-2 text-xl lg:text-3xl  font-bold text-[#CAAE5F] md:mt-4">
+            <h4 className="mt-2 text-xl lg:text-3xl font-bold text-[#CAAE5F] md:mt-4">
               Get in touch
             </h4>
-            <div className="flex md:justify-start mt-3 md:mt-6">
-              {socialLinks.map((item) => (
+            <div className="flex mt-3 md:mt-6 ">
+              {socialLinks.map((item, index) => (
                 <a
+                  key={index}
                   href={item.link}
                   className="mr-5 cursor-pointer  hover:scale-125"
                   target="blank"
@@ -67,8 +68,11 @@ const Home = () => {
                 </a>
               ))}
             </div>
-            <div className="mt-6 sm:mt-8 cursor-pointer w-1/3">
-              <Link className="px-3 py-1 border border-transparent text-base font-medium rounded-md text-white bg-blue-500 hover:bg-blue-200 md:py-2 md:text-xl md:px-8">
+            <div className="mt-6 sm:mt-8 cursor-pointer w-1/3 ">
+              <Link
+                to="/"
+                className="px-3 py-1 border border-transparent text-base font-medium rounded-md text-white bg-blue-500 hover:bg-blue-200 md:py-2 md:text-xl md:px-8"
+              >
                 Resume
               </Link>
             </div>

@@ -57,16 +57,16 @@ const Navbar = () => {
               <p className="text-2xl text-blue-500 font-bold">𝒮𝓊𝓇𝒶𝒿 𝒢𝑜𝓈𝓌𝒶𝓂𝒾</p>
             </a>
           </div>
-          <div class="hidden justify-between items-center w-full md:flex md:w-auto ">
+          <div className="hidden justify-between items-center w-full md:flex md:w-auto ">
             <ul
-              class={
+              className={
                 'flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-md md:font-medium'
               }
             >
-              {links.map((el) => (
-                <li className="cursor-pointer">
+              {links.map((item, index) => (
+                <li className="cursor-pointer" key={index}>
                   <Link
-                    to={el.route}
+                    to={item.route}
                     smooth={true}
                     className={
                       darkMode
@@ -74,7 +74,7 @@ const Navbar = () => {
                         : 'block py-2 px-3 text-white hover:bg-blue-500 hover:text-black rounded-md'
                     }
                   >
-                    {el.name}
+                    {item.name}
                   </Link>
                 </li>
               ))}
@@ -129,18 +129,19 @@ const Navbar = () => {
         {toggle && (
           <motion.div
             initial={{ x: 100 }}
-            animate={{ x: 0, transition: { type: 'spring' } }}
-            exit={{ x: 200, transition: { type: 'spring' } }}
+            animate={{ x: 0, transition: { type: 'Tween' } }}
+            exit={{ x: 200, transition: { type: 'Tween' } }}
             className={
               darkMode
-                ? 'bg-white py-2 px-2 md:p-0 z-50 fixed top-16 mt-2 rounded-lg shadow-lg right-2 block w-40'
-                : 'bg-black py-2 px-2 md:p-0 z-50 fixed top-16 mt-2 rounded-lg shadow-lg right-2 block w-40'
+                ? 'bg-white py-2 px-2 md:p-0 z-50 fixed top-16 mt-4 rounded-md shadow-lg right-2 block w-40'
+                : 'bg-black py-2 px-2 md:p-0 z-50 fixed top-16 mt-4 rounded-md shadow-lg right-2 block w-40'
             }
           >
-            <ul class="md:hidden md:flex-row md:space-y-8 md:mt-0 md:text-md md:font-medium">
-              {links.map((el) => (
+            <ul className="md:hidden md:flex-row md:space-y-8 md:mt-0 md:text-md md:font-medium">
+              {links.map((item, index) => (
                 <Link
-                  to={el.route}
+                  key={index}
+                  to={item.route}
                   activeClass={'text-white bg-blue-500'}
                   className={
                     darkMode
@@ -151,7 +152,7 @@ const Navbar = () => {
                   smooth={true}
                   onClick={() => setToggle(false)}
                 >
-                  <li>{el.name}</li>
+                  <li>{item.name}</li>
                 </Link>
               ))}
             </ul>

@@ -51,6 +51,7 @@ const About = () => {
           <motion.div className="flex flex-wrap sm:grid sm:grid-cols-3 sm:gap-2 justify-between mt-4 ">
             {techStack.map((el, index) => (
               <motion.div
+                key={index}
                 initial="hidden"
                 whileInView={'visible'}
                 variants={{

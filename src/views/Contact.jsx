@@ -24,7 +24,7 @@ const Contact = () => {
             >
               <div class="my-6">
                 <label
-                  for="name"
+                  htmlFor="name"
                   class={
                     darkMode
                       ? 'block mb-2 text-lg font-medium text-gray-900'
@@ -43,7 +43,7 @@ const Contact = () => {
               </div>
               <div className="mb-4">
                 <label
-                  for="email"
+                  htmlFor="email"
                   class={
                     darkMode
                       ? 'block mb-2 text-lg font-medium text-gray-900'
@@ -62,7 +62,7 @@ const Contact = () => {
               </div>
               <div className="mb-4">
                 <label
-                  for="message"
+                  htmlFor="message"
                   class={
                     darkMode
                       ? 'block mb-2 text-lg font-medium text-gray-900'
