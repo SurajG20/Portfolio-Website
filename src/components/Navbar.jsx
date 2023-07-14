@@ -40,8 +40,8 @@ const Navbar = () => {
       <nav
         className={
           darkMode
-            ? 'bg-white bg-opacity-50 backdrop-blur border-gray-200 z-50 shadow-lg md:px-8 px-1 fixed w-full top-0'
-            : 'bg-gray-700 bg-opacity-50 backdrop-blur border-gray-200 z-50 shadow-lg md:px-8 px-1 fixed w-full top-0'
+            ? 'bg-white bg-opacity-60 backdrop-blur border-gray-200 z-50 shadow-lg md:px-8 px-1 fixed w-full top-0'
+            : 'bg-gray-700 bg-opacity-60 backdrop-blur border-gray-200 z-50 shadow-lg md:px-8 px-1 fixed w-full top-0'
         }
       >
         <div className="flex justify-between  items-center py-4 md:py-4 md:px-2 pl-2 mx-auto">
@@ -54,7 +54,7 @@ const Navbar = () => {
                   : 'text-xl font-medium text-decoration-none whitespace-nowrap text-white'
               }
             >
-              <p className="text-2xl text-blue-500 font-bold">𝒮𝓊𝓇𝒶𝒿 𝒢𝑜𝓈𝓌𝒶𝓂𝒾</p>
+              <p className="text-2xl text-[#5b75c2] font-bold">𝒮𝓊𝓇𝒶𝒿 𝒢𝑜𝓈𝓌𝒶𝓂𝒾</p>
             </a>
           </div>
           <div className="hidden justify-between items-center w-full md:flex md:w-auto ">
@@ -70,8 +70,8 @@ const Navbar = () => {
                     smooth={true}
                     className={
                       darkMode
-                        ? 'block py-2 px-3 text-black hover:bg-blue-500 hover:text-white rounded-md'
-                        : 'block py-2 px-3 text-white hover:bg-blue-500 hover:text-black rounded-md'
+                        ? 'block py-2 px-3 text-black hover:bg-[#5b75c2] hover:text-white rounded-md'
+                        : 'block py-2 px-3 text-white hover:bg-[#5b75c2]   hover:text-black rounded-md'
                     }
                   >
                     {item.name}
@@ -145,10 +145,9 @@ const Navbar = () => {
                   activeClass={'text-white bg-blue-500'}
                   className={
                     darkMode
-                      ? 'hover:bg-blue-500 text-black block px-3 py-2 rounded-md text-base font-medium mt-1 hover:text-white'
-                      : 'hover:bg-blue-500 text-white block px-3 py-2 rounded-md text-base font-medium mt-1 hover:text-white'
+                      ? 'hover:bg-[#5b75c2] text-black block px-3 py-2 rounded-md text-base font-medium mt-1 hover:text-white'
+                      : 'hover:bg-[#5b75c2] text-white block px-3 py-2 rounded-md text-base font-medium mt-1 hover:text-white'
                   }
-                  spy={true}
                   smooth={true}
                   onClick={() => setToggle(false)}
                 >

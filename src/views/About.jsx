@@ -7,21 +7,11 @@ const About = () => {
   const theme = useContext(ThemeContext);
   const darkMode = theme.state.darkMode;
   return (
-    <div id="about" className={darkMode === true ? 'bg-white' : 'bg-gray-900'}>
-      <div className="max-w-7xl mx-auto sm:px-6 lg:px-8 px-4 md:mt-0 pt-16 pb-12">
-        <h2
-          className={
-            darkMode
-              ? 'text-5xl font-bold px-4 md:px-0 text-center'
-              : 'text-5xl font-bold px-4 md:px-0 text-center text-white'
-          }
-        >
-          About Me
-        </h2>
+    <div id="about" className={darkMode === true ? 'bg-white' : 'bg-[#191919]'}>
+      <div className="max-w-7xl mx-auto sm:px-12 lg:px-16 px-8 md:mt-0 pt-16 pb-12">
         <div>
           <motion.div>
             <h4 className="title">About Me</h4>
-
             <p
               className={
                 darkMode
@@ -48,7 +38,7 @@ const About = () => {
               Here are a few technologies I've been working with recently:
             </p>
           </motion.div>
-          <motion.div className="flex flex-wrap sm:grid sm:grid-cols-3 sm:gap-2 justify-between mt-4 ">
+          <motion.div className="flex flex-wrap sm:grid sm:grid-cols-3 sm:gap-2 justify-between mt-8 ">
             {techStack.map((el, index) => (
               <motion.div
                 key={index}

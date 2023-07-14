@@ -9,11 +9,11 @@ const Contact = () => {
       id="contact"
       className={
         darkMode
-          ? 'bg-gray-100 py-16 h-fit '
-          : 'bg-black py-16 text-white h-fit'
+          ? 'bg-[#fafafa] py-16 h-fit '
+          : 'bg-[#191919] py-16 text-white h-fit'
       }
     >
-      <div className="max-w-7xl mx-auto sm:px-6 lg:px-8 px-4 ">
+      <div className="max-w-7xl mx-auto sm:px-12 lg:px-16 px-8 ">
         <h2 className="title">Contact</h2>
         <div className="flex justify-center items-center  flex-col md:flex-row">
           <div className="w-full md:pr-8 flex justify-center items-center flex-col px-12 ">
@@ -80,7 +80,7 @@ const Contact = () => {
                 />
               </div>
               <div className="flex justify-center">
-                <button className="bg-indigo-500 text-white px-4 py-2 w-40 rounded-md hover:bg-indigo-400">
+                <button className="bg-[#5b75c2] text-white px-4 py-2 w-40 rounded-md hover:bg-indigo-400">
                   Let's Connect
                 </button>
               </div>

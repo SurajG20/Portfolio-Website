@@ -42,13 +42,11 @@ export const techStack = [
   // },
   {
     name: 'HTML',
-    link:
-      'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg',
+    link: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg',
   },
   {
     name: 'CSS',
-    link:
-      'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-plain.svg',
+    link: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-plain.svg',
   },
   // {
   //   name: 'Bootstrap',
@@ -57,19 +55,16 @@ export const techStack = [
   // },
   {
     name: 'Redux',
-    link:
-      'https://raw.githubusercontent.com/devicons/devicon/master/icons/redux/redux-original.svg',
+    link: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/redux/redux-original.svg',
   },
   {
     name: 'Sass',
-    link:
-      'https://raw.githubusercontent.com/devicons/devicon/master/icons/sass/sass-original.svg',
+    link: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/sass/sass-original.svg',
   },
 
   {
     name: 'Javascript',
-    link:
-      'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
+    link: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
   },
   {
     name: 'Tailwind CSS',
@@ -77,13 +72,11 @@ export const techStack = [
   },
   {
     name: 'React',
-    link:
-      'https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg',
+    link: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg',
   },
   {
     name: 'Git',
-    link:
-      'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-plain.svg',
+    link: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-plain.svg',
   },
 ];
 
@@ -92,7 +85,7 @@ export const socialLinks = [
     name: 'Github',
     image: (
       <svg
-        className="h-8 w-8 text-blue-500 hover:text-yellow-600 transition-colors fill-current"
+        className="h-8 w-8 text-[#5b75c2] hover:text-yellow-600 transition-colors fill-current"
         focusable="false"
         aria-hidden="true"
         viewBox="0 0 24 24"
@@ -107,7 +100,7 @@ export const socialLinks = [
     name: 'LinkedIn',
     image: (
       <svg
-        className="h-8 w-8 text-blue-500 hover:text-yellow-600 transition-colors fill-current"
+        className="h-8 w-8 text-[#5b75c2] hover:text-yellow-600 transition-colors fill-current"
         focusable="false"
         aria-hidden="true"
         viewBox="0 0 24 24"
@@ -122,7 +115,7 @@ export const socialLinks = [
     name: 'Mail',
     image: (
       <svg
-        className="h-8 w-8 text-blue-500 hover:text-yellow-600 transition-colors fill-current"
+        className="h-8 w-8 text-[#5b75c2] hover:text-yellow-600 transition-colors fill-current"
         focusable="false"
         aria-hidden="true"
         viewBox="0 0 24 24"
