@@ -7,7 +7,7 @@ const About = () => {
   const theme = useContext(ThemeContext);
   const darkMode = theme.state.darkMode;
   return (
-    <div id="about" className={darkMode === true ? 'bg-white' : 'bg-[#191919]'}>
+    <div id="about" className={darkMode === true ? 'bg-white' : 'bg-zinc-800 '}>
       <div className="max-w-7xl mx-auto sm:px-12 lg:px-16 px-8 md:mt-0 pt-16 pb-12">
         <div>
           <motion.div>
@@ -54,7 +54,7 @@ const About = () => {
                   },
                   hidden: { opacity: 1, y: 80 },
                 }}
-                className="py-2 px-4 bg-gray-50 md:m-4 mx-2 mt-6 rounded-lg flex items-center justify-around text-black hover:scale-125 cursor-pointer md:w-80 w-60  "
+                className="py-2 px-5 bg-gray-100 md:m-4 mx-2 mt-6 rounded-lg flex items-center justify-between text-black hover:scale-125 cursor-pointer md:w-60 w-60  "
               >
                 <img alt={el.name} src={el.link} className="w-12" />
                 <h4 className="text-xl font-semibold ">{el.name}</h4>

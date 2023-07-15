@@ -41,10 +41,10 @@ const Navbar = () => {
         className={
           darkMode
             ? 'bg-white bg-opacity-60 backdrop-blur border-gray-200 z-50 shadow-lg md:px-16 px-8 fixed w-full top-0'
-            : 'bg-gray-700 bg-opacity-60 backdrop-blur border-gray-200 z-50 shadow-lg md:px-16 px-8 fixed w-full top-0'
+            : 'bg-gray-700 bg-opacity-60 backdrop-blur border-gray-200 z-50 shadow-lg md:px-16 px-4 sm:px-8 fixed w-full top-0'
         }
       >
-        <div className="flex justify-between  items-center py-4 md:py-4 md:px- px-8 mx-auto">
+        <div className="flex justify-between items-center py-4 md:py-4 md:px-16 px-4 sm:px-8  mx-auto">
           <div className="flex items-center cursor-pointer">
             <a
               href="/"
@@ -54,7 +54,7 @@ const Navbar = () => {
                   : 'text-xl font-medium text-decoration-none whitespace-nowrap text-white'
               }
             >
-              <p className="text-2xl text-[#5b75c2] font-extrabold">
+              <p className="sm:text-2xl text-[#5b75c2] sm:font-extrabold text-xl">
                 𝒮𝓊𝓇𝒶𝒿 𝒢𝑜𝓈𝓌𝒶𝓂𝒾
               </p>
             </a>

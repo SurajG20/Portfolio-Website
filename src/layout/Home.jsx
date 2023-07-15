@@ -22,7 +22,7 @@ const Home = () => {
           className="mx-auto max-w-7xl px-8 sm:px-12 md:mt-0 lg:px-16 flex flex-col items-start justify-center h-screen "
           id="/"
         >
-          <div>
+          <div className="flex flex-col ">
             <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
               <motion.span
                 className={
@@ -39,8 +39,8 @@ const Home = () => {
                     'Full Stack Developer',
                     3000,
                   ]}
-                  loop={Infinity}
                   wrapper="span"
+                  loop={Infinity}
                 />
               </span>
             </h1>
@@ -54,7 +54,7 @@ const Home = () => {
               A Wev Developer based in India with a passion for creating visual
               appealing websites and user friendly interfaces.
             </p>
-            <div className="flex mt-3 md:mt-6 ">
+            <div className="flex my-3 md:mt-6 ">
               {socialLinks.map((item, index) => (
                 <a
                   key={index}
@@ -66,7 +66,7 @@ const Home = () => {
                 </a>
               ))}
             </div>
-            <div className="mt-5 sm:mt-8 cursor-pointer w-1/3 ">
+            <div className="mt-3 sm:mt-6 cursor-pointer w-1/3 ">
               <a
                 href="https://drive.google.com/file/d/1XzE5vO5j3jnGc9At8Wy_-_JQ3O-EFsK5/view?usp=sharing"
                 target="blank"

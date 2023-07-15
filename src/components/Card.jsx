@@ -15,22 +15,28 @@ const Card = ({ work }) => {
         hidden: { opacity: 0 },
       }}
     >
-      <div className=" grid grid-cols-1 md:grid-cols-2 gap-8 rounded-lg shadow-md p-4">
+      <div
+        className={
+          darkMode
+            ? ' grid grid-cols-1 md:grid-cols-2 gap-8 rounded-lg shadow-md p-4 '
+            : ' grid grid-cols-1 md:grid-cols-2 gap-8 rounded-lg shadow-md p-4 border-2 dark:border-gray-600'
+        }
+      >
         <img
           src={image}
           className={
             darkMode
-              ? 'w-full h-80 object-cover rounded-lg shadow-md shadow-[shadow-custom] sm:h-auto sm:shadow-none '
-              : 'w-full h-80 object-cover rounded-lg shadow-md shadow-[shadow-custom] sm:h-auto sm:shadow-none '
+              ? 'w-full h-80 object-cover rounded-lg shadow-md custom-box-shadow sm:h-auto sm:shadow-none'
+              : 'w-full h-80 object-cover rounded-lg shadow-md sm:h-auto sm:shadow-none border-2 dark:border-gray-600 '
           }
           alt={name}
         />
         <div className=" flex flex-col gap-3 leading-7 sm:p-4">
-          <h3 className="text-3xl md:text-4xl">{name}</h3>
+          <h3 className="text-3xl md:text-4xl text-[#5b75c2] ">{name}</h3>
           <p
             className={
               darkMode
-                ? 'text-gray-700 sm:leading-6 '
+                ? 'text-gray-700 sm:leading-6  '
                 : 'text-white sm:leading-6'
             }
           >

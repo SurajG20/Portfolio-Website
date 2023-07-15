@@ -1,82 +1,46 @@
+import Html from '../assets/icons/HTML.svg';
+import Css from '../assets/icons/CSS.svg';
+import Javascript from '../assets/icons/JavaScript.svg';
+import React from '../assets/icons/React-Light.svg';
+import Redux from '../assets/icons/Redux.svg';
+import Tailwind from '../assets/icons/TailwindCSS-Light.svg';
+import Github from '../assets/icons/Github-Light.svg';
+import Sass from '../assets/icons/Sass.svg';
+
 export const techStack = [
-  // {
-  //   name: 'C Language',
-  //   link: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-plain.svg',
-  // },
-
-  // {
-  //   name: 'TypeScript',
-  //   link:
-  //     'https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg',
-  // },
-  // {
-  //   name: 'Express',
-  //   link:
-  //     'https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg',
-  // },
-
-  // {
-  //   name: 'NodeJS',
-  //   link:
-  //     'https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg',
-  // },
-  // {
-  //   name: 'Postman',
-  //   link: 'https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg',
-  // },
-
-  // {
-  //   name: 'Dart',
-  //   link:
-  //     'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg',
-  // },
-  // {
-  //   name: 'Flutter',
-  //   link:
-  //     'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-plain.svg',
-  // },
-  // {
-  //   name: 'React Native',
-  //   link:
-  //     'https://pagepro.co/blog/wp-content/uploads/2020/03/react-native-logo-884x1024.png',
-  // },
   {
     name: 'HTML',
-    link: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg',
+    link: Html,
   },
   {
     name: 'CSS',
-    link: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-plain.svg',
+    link: Css,
   },
-  // {
-  //   name: 'Bootstrap',
-  //   link:
-  //     'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-plain.svg',
-  // },
+
   {
     name: 'Redux',
-    link: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/redux/redux-original.svg',
+    link: Redux,
   },
   {
     name: 'Sass',
-    link: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/sass/sass-original.svg',
+    link: Sass,
   },
 
   {
     name: 'Javascript',
-    link: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
+    link: Javascript,
   },
   {
     name: 'Tailwind CSS',
-    link: 'https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg',
+    link: Tailwind,
   },
   {
     name: 'React',
-    link: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg',
+    link: React,
   },
   {
     name: 'Git',
-    link: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-plain.svg',
+    link: Github,
   },
 ];
 

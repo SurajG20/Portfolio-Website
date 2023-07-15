@@ -10,7 +10,7 @@ const Contact = () => {
       className={
         darkMode
           ? 'bg-[#fafafa] py-16 h-fit '
-          : 'bg-[#191919] py-16 text-white h-fit'
+          : 'bg-zinc-800 py-16 text-white h-fit'
       }
     >
       <div className="max-w-7xl mx-auto sm:px-12 lg:px-16 px-8 ">
@@ -22,10 +22,10 @@ const Contact = () => {
               action="https://getform.io/f/93105a61-a122-4241-8e0a-fca9c75fa23e"
               className="flex flex-col max-w-[600px] w-full"
             >
-              <div class="my-6">
+              <div className="my-6">
                 <label
                   htmlFor="name"
-                  class={
+                  className={
                     darkMode
                       ? 'block mb-2 text-lg font-medium text-gray-900'
                       : 'block mb-2 text-lg font-medium text-white'
@@ -36,7 +36,7 @@ const Contact = () => {
                 <input
                   type="text"
                   id="name"
-                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="Enter your name"
                   required
                 />
@@ -44,7 +44,7 @@ const Contact = () => {
               <div className="mb-4">
                 <label
                   htmlFor="email"
-                  class={
+                  className={
                     darkMode
                       ? 'block mb-2 text-lg font-medium text-gray-900'
                       : 'block mb-2 text-lg font-medium text-white'
@@ -55,7 +55,7 @@ const Contact = () => {
                 <input
                   type="email"
                   id="email"
-                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="Enter your email"
                   required
                 />
@@ -63,7 +63,7 @@ const Contact = () => {
               <div className="mb-4">
                 <label
                   htmlFor="message"
-                  class={
+                  className={
                     darkMode
                       ? 'block mb-2 text-lg font-medium text-gray-900'
                       : 'block mb-2 text-lg font-medium text-white'
@@ -74,7 +74,7 @@ const Contact = () => {
                 <textarea
                   id="message"
                   rows="8"
-                  class="bg-gray-50 border border-gray-300 text-gray-900 h-28 w-full text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 h-28 w-full text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="Say something..."
                   required
                 />
