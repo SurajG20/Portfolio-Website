@@ -38,7 +38,7 @@ const About = () => {
               Here are a few technologies I've been working with recently:
             </p>
           </motion.div>
-          <motion.div className="flex flex-wrap sm:grid sm:grid-cols-3 sm:gap-2 justify-between mt-8 ">
+          <motion.div className="flex flex-col justify-center items-center sm:grid sm:grid-cols-3 sm:gap-2  mt-8 ">
             {techStack.map((el, index) => (
               <motion.div
                 key={index}
@@ -54,10 +54,10 @@ const About = () => {
                   },
                   hidden: { opacity: 1, y: 80 },
                 }}
-                className="py-2 px-4 bg-gray-50 md:m-4 mx-2 mt-6 rounded-lg flex items-center text-black hover:scale-125 cursor-pointer md:w-48 w-40"
+                className="py-2 px-4 bg-gray-50 md:m-4 mx-2 mt-6 rounded-lg flex items-center justify-around text-black hover:scale-125 cursor-pointer md:w-80 w-60  "
               >
-                <img alt="" src={el.link} className="w-12" />
-                <h4 className="text-md ml-4">{el.name}</h4>
+                <img alt={el.name} src={el.link} className="w-12" />
+                <h4 className="text-xl font-semibold ">{el.name}</h4>
               </motion.div>
             ))}
           </motion.div>

@@ -19,7 +19,7 @@ const Home = () => {
         }
       >
         <main
-          className="mx-auto max-w-7xl px-8 sm:px-12 md:mt-0 lg:px-16 flex flex-col items-start justify-center h-screen"
+          className="mx-auto max-w-7xl px-8 sm:px-12 md:mt-0 lg:px-16 flex flex-col items-start justify-center h-screen "
           id="/"
         >
           <div>
