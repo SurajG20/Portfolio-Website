@@ -11,7 +11,7 @@ const about = {
   description:
     "I'm a web developer with a focus on the MERN stack, but still exploring other technologies and frameworks that catch my interest! if you're looking for a developer to add to your team, I'd love to hear from you!",
   resume:
-    'https://drive.google.com/file/d/1Qylt4H0Gb6mC8p8TtR0CvYd86mHUcKXu/view?usp=drive_link',
+    'https://drive.google.com/file/d/1rteDqP7BNmOxo1Xt65oVygTGY7JAEYAt/view?usp=drive_link',
   social: {
     linkedin: 'https://www.linkedin.com/in/suraj-goswami01',
     github: 'https://github.com/SurajG20',
