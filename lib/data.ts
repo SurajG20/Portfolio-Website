@@ -162,7 +162,7 @@ export const workExperiences: WorkExperience[] = [
     logo: '/wiselogics.jpg',
     position: 'Full Stack Developer',
     description:
-      'I am a full-stack developer focusing on digital marketing and logistics projects. The Wiselogics LLC logistics platform was built using Python for data scraping, boosting operational efficiency, and I developed web projects with the MERN stack to enhance user experience. Product planning, design and development are some of the things I do.',
+      'I built the Wiselogics LLC logistics platform with Python for data scraping and developed MERN stack web projects to enhance user experience. My work involves product planning, design, and development.',
     years: 'March, 2024 - Present'
   },
   {
@@ -170,7 +170,7 @@ export const workExperiences: WorkExperience[] = [
     logo: '/Livinart.png',
     position: 'Full Stack Developer',
     description:
-      'Served as a Full Stack Developer, contributing to key projects such as Vinayak Finmart, LiumGo, and Jodo Cabs. Leveraged my skills in front-end (HTML, CSS, JavaScript) and back-end (Node.js, Socket.IO) development to create dynamic, user-friendly web applications. Improved system efficiency and security by integrating APIs and enabling real-time features.',
+      'I worked on projects like Vinayak Finmart, LiumGo, and Jodo Cabs, using HTML, CSS, JavaScript, Node.js, and Socket.IO to build dynamic, user-friendly web applications. I enhanced system efficiency and security by integrating APIs and adding real-time features.',
     years: 'Oct, 2023 - Feb, 2024'
   },
   {
@@ -179,7 +179,7 @@ export const workExperiences: WorkExperience[] = [
     position: 'Student',
     description:
       'Graduated with a B.Tech in Electrical Engineering from Samrat Ashok Technological Institute, Vidisha, with an impressive aggregate of 8.26.',
-    years: 'July, 2020 - May, 2024'
+    years: '2020 - 2024'
   }
 ];
 
