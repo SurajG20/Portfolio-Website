@@ -7,17 +7,32 @@ import { useRouter } from "next/navigation";
 
 interface ActionButtonProps {
   actionText: string;
+  href?: string;
+  icon?: React.ReactNode;
+  variant?: "default" | "outline" | "ghost";
+  size?: "default" | "sm" | "lg";
 }
 
-export default function ActionButton({ actionText }: ActionButtonProps) {
+export default function ActionButton({ 
+  actionText,
+  href = "/#contact",
+  icon = <CheckCircle className="mr-2 h-4 w-4" />,
+  variant = "default",
+  size = "default"
+}: ActionButtonProps) {
   const router = useRouter();
 
-  function navigateTo(path: string) {
-    router.push(path);
-  }
+  const handleClick = () => {
+    router.push(href);
+  };
+
   return (
-    <Button onClick={() => navigateTo("/#contact")}>
-      <CheckCircle className="mr-2 h-4 w-4" />
+    <Button 
+      onClick={handleClick}
+      variant={variant}
+      size={size}
+    >
+      {icon}
       {actionText}
     </Button>
   );
