@@ -1,15 +1,15 @@
 {
   "home": {
-    "name": "ByteKai",
-    "title": "Software Engineer & Curious Tinkerer",
-    "introduction": "I’m constantly learning and evolving. I love diving into new ideas and finding creative ways to solve problems.",
+    "name": "Suraj Goswami",
+    "title": "Software Developer",
+    "introduction": "I'm a Full Stack Developer specializing in building scalable web applications with React, Node.js and cloud platforms. I focus on creating efficient, user-centric solutions while continuously expanding my technical skills.",
     "sections": {
       "blog": {
         "title": "Writing",
         "viewAllText": "View all posts"
       },
       "projects": {
-        "title": "Projects",
+        "title": "Projects", 
         "viewAllText": "View all projects"
       },
       "experience": {
@@ -20,11 +20,11 @@
     "socialLinks": [
       {
         "platform": "GitHub",
-        "url": "https://github.com/bytekai"
+        "url": "https://github.com/surajG20"
       },
       {
-        "platform": "Twitter",
-        "url": "https://x.com/byteekai"
+        "platform": "Linkedin",
+        "url": "https://www.linkedin.com/in/suraj-goswami01"
       }
     ]
   }
