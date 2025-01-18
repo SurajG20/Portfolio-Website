@@ -1,62 +1,42 @@
-# Free Minimal Astro Portfolio
+# Suraj Goswami's Portfolio
 
-A modern, minimalist portfolio website built with Astro and deployed on Cloudflare Pages. Features a collection of writings, projects, and professional experiences.
-
-![alt text](image.png)
-
-## Overview
-
-This is a personal portfolio website for ByteKai, a Software Engineer and Curious Tinkerer. The site showcases blog posts, technical notes, project work, and professional experience in a clean, fast-loading format.
-
-
+Personal portfolio built with Astro and deployed on Cloudflare Pages. Showcasing my journey as a software developer, projects, technical writings and professional experience.
 
 ## Features
 
-- 🚀 Built with [Astro](https://astro.build) v5.1
-- ⚡️ Deployed on [Cloudflare Pages](https://pages.cloudflare.com)
-- 📝 Content sections:
-  - Blog posts
-  - Technical notes
-  - Project showcase
-  - Professional experience
-  - Curated bookmarks
-- 🎨 Clean typography with:
-  - Inter
-  - Roboto Mono
-  - Source Sans Pro
-- 🌐 Social presence integration
-- 📱 Fully responsive design
+- 🚀 Astro v5.1 framework for blazing fast performance
+- ⚡️ Cloudflare Pages deployment with global CDN
+- 📝 Blog posts, technical notes, projects showcase
+- 🎨 Clean typography (Inter, Roboto Mono, Source Sans Pro)
+- 📱 Responsive design for all devices
+- 🌙 Dark/Light theme support
+- 🔍 SEO optimized
+- 📊 Analytics integration
+- 🚀 Fast page loads and transitions
 
 ## Tech Stack
 
-- **Framework**: [Astro](https://astro.build) 5.1.2
-- **Deployment**: Cloudflare Pages
-- **Fonts**: 
-  - @fontsource/inter
-  - @fontsource/roboto-mono
-  - @fontsource/source-sans-pro
+- Astro 5.1.2 - Modern static site generator
+- Cloudflare Pages - For global deployment and hosting
+- @fontsource fonts - For optimized web fonts
+- TypeScript - For type safety
+- Markdown/MDX - For content management
 
 ## Development
 
-### Prerequisites
-
-- Node.js (Latest LTS version recommended)
-- npm or pnpm
-
-### Local Development
+Prerequisites: Node.js LTS (v18+), npm/pnpm
 
 1. Clone the repository
-2. Run `pnpm install` to install dependencies
-3. Run `pnpm dev` to start the development server
-4. Open your browser and navigate to `http://localhost:4321` to view the site
+2. Run `npm install` to install dependencies
+3. Run `npm run dev` to start the development server
+4. Open http://localhost:3000 in your browser to view the site
+
+## Deployment
+
+1. Run `npm run build` to build the site
+2. Run `npm run deploy` to deploy the site to Cloudflare Pages
 
 ## License
 
-This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
-
-## Acknowledgments
-
-- [Astro](https://astro.build)
-- [Fontsource](https://fontsource.org)
-- [Tailwind CSS](https://tailwindcss.com)
-
+This project is open-sourced under the MIT License - see the LICENSE file for details.
+  
