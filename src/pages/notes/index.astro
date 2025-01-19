@@ -1,12 +1,11 @@
 ---
-import ArticleCard from "../../components/ui/ArticleCard.astro";
+import BaseLayout from "../../components/layout/BaseLayout.astro";
+import Container from "../../components/ui/Container.astro";
+import BaseHero from "../../components/shared/BaseHero.astro";
+import Categories from "../../components/shared/Categories.astro";
+import ContentCard from "../../components/shared/ContentCard.astro";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
-import BaseLayout from "../../components/layout/BaseLayout.astro";
-import Categories from "../../components/shared/Categories.astro";
-import BaseHero from "../../components/shared/BaseHero.astro";
-import Container from "../../components/ui/Container.astro";
-import ContentList from "../../components/shared/ContentList.astro";
 
 type Note = CollectionEntry<"notes">;
 
@@ -15,7 +14,15 @@ const notes = await getCollection("notes", ({ data }) => {
 });
 
 const categories = [...new Set(notes.map((note: Note) => note.data.category))];
-const sortedNotes = notes.sort((a: Note, b: Note) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
+const sortedNotes = notes.sort((a: Note, b: Note) => 
+  b.data.publishedAt.getTime() - a.data.publishedAt.getTime()
+);
+
+// Helper function to generate the correct note URL
+const getNoteUrl = (note: Note) => {
+  const category = note.data.category.toLowerCase();
+  return `/notes/${note.id}`;
+};
 ---
 
 <BaseLayout title="Notes" description="Short-form thoughts and learnings">
@@ -24,17 +31,32 @@ const sortedNotes = notes.sort((a: Note, b: Note) => b.data.publishedAt.getTime(
 
     <Categories categories={categories} currentPath={Astro.url.pathname} basePath="notes" />
 
-    <ContentList>
-      {
-        sortedNotes.map((note) => (
-          <ArticleCard
-            title={note.data.title}
-            description={note.data.description}
-            url={`/notes/${note.id}`}
-            date={note.data.publishedAt}
-          />
-        ))
-      }
-    </ContentList>
+    <div class="content-grid">
+      {sortedNotes.map((note) => (
+        <ContentCard
+          title={note.data.title}
+          description={note.data.description}
+          url={getNoteUrl(note)}
+          date={note.data.publishedAt}
+          tags={[note.data.category]}
+          isExternal={false}
+        />
+      ))}
+    </div>
   </Container>
 </BaseLayout>
+
+<style>
+  .content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  @media (max-width: 768px) {
+    .content-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

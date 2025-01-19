@@ -16,7 +16,7 @@ export const NAVIGATION: {
 } = {
   main: [
     { name: "Home", path: "/" },
-    { name: "Blog", path: "/blog" },
+    { name: "Projects", path: "/projects" },
     { name: "Notes", path: "/notes" },
     { name: "Bookmarks", path: "/bookmarks" },
   ],

@@ -1,0 +1,65 @@
+---
+import BaseLayout from "../../components/layout/BaseLayout.astro";
+import Container from "../../components/ui/Container.astro";
+import BaseHero from "../../components/shared/BaseHero.astro";
+import Categories from "../../components/shared/Categories.astro";
+import ProjectCard from "../../components/shared/ProjectCard.astro";
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+
+type Project = CollectionEntry<"projects">;
+
+const projects = await getCollection("projects", ({ data }) => {
+  return import.meta.env.PROD ? !data.draft : true;
+});
+
+// Get unique tech categories from all projects
+const categories = [...new Set(projects.map((project) => project.data.techs || []).flat())];
+
+const sortedProjects = projects.sort((a, b) => {
+  if (a.data.featured && !b.data.featured) return -1;
+  if (!a.data.featured && b.data.featured) return 1;
+  return 0;
+});
+---
+
+<BaseLayout title="Projects" description="My featured projects and work">
+  <Container>
+    <BaseHero 
+      title="Projects" 
+      description="A collection of my work, side projects, and experiments" 
+    />
+
+    <Categories 
+      categories={categories} 
+      currentPath={Astro.url.pathname} 
+      basePath="projects" 
+    />
+
+    <div class="projects-grid">
+      {sortedProjects.map((project) => (
+        <ProjectCard
+          title={project.data.title}
+          description={project.data.description}
+          url={project.data.url}
+          techs={project.data.techs}
+        />
+      ))}
+    </div>
+  </Container>
+</BaseLayout>
+
+<style>
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  @media (max-width: 768px) {
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

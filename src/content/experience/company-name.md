@@ -6,4 +6,3 @@ startDate: "2022-01-01"
 current: true
 ---
 
-Additional details about your role and achievements can go here...

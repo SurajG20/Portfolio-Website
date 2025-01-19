@@ -1,0 +1,77 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  url: string;
+  techs?: string[];
+}
+
+const { title, description, url, techs } = Astro.props;
+---
+
+<article class="project-card">
+  <div class="project-content">
+    <h3 class="project-title">
+      <a href={url} target="_blank" rel="noopener noreferrer">
+        {title}
+      </a>
+    </h3>
+    <p class="project-description">{description}</p>
+    {techs && (
+      <div class="tech-stack">
+        {techs.map((tech) => (
+          <span class="tech-tag">{tech}</span>
+        ))}
+      </div>
+    )}
+  </div>
+</article>
+
+<style>
+  .project-card {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+  }
+
+  .project-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--text-muted);
+  }
+
+  .project-title {
+    font-size: var(--text-xl);
+    margin: 0 0 1rem 0;
+  }
+
+  .project-title a {
+    color: var(--text-color);
+    text-decoration: none;
+  }
+
+  .project-title a:hover {
+    color: var(--primary-color);
+  }
+
+  .project-description {
+    color: var(--text-muted);
+    font-size: var(--text-sm);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+
+  .tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .tech-tag {
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+    background: var(--hover-bg);
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+  }
+</style> 

@@ -11,7 +11,19 @@ importers:
       '@astrojs/cloudflare':
         specifier: ^12.1.0
         version: 12.1.0(@types/node@22.10.5)(astro@5.1.2(@types/node@22.10.5)(rollup@4.29.2)(typescript@5.7.2))
+      '@fontsource-variable/geist-mono':
+        specifier: ^5.0.1
+        version: 5.0.1
       '@fontsource/inter':
+        specifier: ^5.1.1
+        version: 5.1.1
+      '@fontsource/manrope':
+        specifier: ^5.1.1
+        version: 5.1.1
+      '@fontsource/outfit':
+        specifier: ^5.1.1
+        version: 5.1.1
+      '@fontsource/plus-jakarta-sans':
         specifier: ^5.1.1
         version: 5.1.1
       '@fontsource/roboto-mono':
@@ -556,8 +568,20 @@ packages:
     resolution: {integrity: sha512-vBZP4NlzfOlerQTnba4aqZoMhE/a9HY7HRqoOPaETQcSQuWEIyZMHGfVu6w9wGtGK5fED5qRs2DteVCjOH60sA==}
     engines: {node: '>=14'}
 
+  '@fontsource-variable/geist-mono@5.0.1':
+    resolution: {integrity: sha512-HwNLiQ3fJnqHitA6QFSfeY3A9s/5MvSX/9uNC4TBqwS8NQiRoqATEXZtn1Sbgt5/Tx7iT4IYOYKQleIs5nz7sw==}
+
   '@fontsource/inter@5.1.1':
     resolution: {integrity: sha512-weN3E+rq0Xb3Z93VHJ+Rc7WOQX9ETJPTAJ+gDcaMHtjft67L58sfS65rAjC5tZUXQ2FdZ/V1/sSzCwZ6v05kJw==}
+
+  '@fontsource/manrope@5.1.1':
+    resolution: {integrity: sha512-5Ry4+6hRxdE59aTUGu5jH4nFsILKyIdqIs7AtCGMfkOwGRxph/fQyOmE9CdU+4vQgaJBopB6XtL6CRg55Ew8Ag==}
+
+  '@fontsource/outfit@5.1.1':
+    resolution: {integrity: sha512-fe4Ok4ycZFFYIfIbofQ4zortJmM3BHE0vAu6yK6ILJ5sW51mXnyQ+mOPSeCIceGj0rscQOXlA45BNDijOMLCLA==}
+
+  '@fontsource/plus-jakarta-sans@5.1.1':
+    resolution: {integrity: sha512-czlD7FGbJqZ+5YVJ1LK3mVh2GIbGQZDQTtsv2leNgJC5lxNQ3dnqPURCNeW+nfPrcMHO94Er4qpklmJM++UHPw==}
 
   '@fontsource/roboto-mono@5.1.1':
     resolution: {integrity: sha512-3Uwg4ZsoYlqzpGgPQn5bpBjCBX7HISbEmbycmrdyzK/dcMChlsmf0VGBjSs2AZV+UK7kLCUFYnCakXYz6VTIUA==}
@@ -2416,7 +2440,15 @@ snapshots:
 
   '@fastify/busboy@2.1.1': {}
 
+  '@fontsource-variable/geist-mono@5.0.1': {}
+
   '@fontsource/inter@5.1.1': {}
+
+  '@fontsource/manrope@5.1.1': {}
+
+  '@fontsource/outfit@5.1.1': {}
+
+  '@fontsource/plus-jakarta-sans@5.1.1': {}
 
   '@fontsource/roboto-mono@5.1.1': {}
 

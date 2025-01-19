@@ -1,0 +1,108 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  url: string;
+  tags?: string[];
+  date?: Date;
+  isExternal?: boolean;
+}
+
+const { title, description, url, tags, date, isExternal = false } = Astro.props;
+---
+
+<article class="content-card">
+  <div class="card-content">
+    <h3 class="card-title">
+      <a 
+        href={url} 
+        target={isExternal ? "_blank" : "_self"} 
+        rel={isExternal ? "noopener noreferrer" : ""}
+      >
+        {title}
+      </a>
+    </h3>
+    <p class="card-description">{description}</p>
+    {(tags || date) && (
+      <div class="card-footer">
+        {tags && (
+          <div class="tags">
+            {tags.map((tag) => (
+              <span class="tag">{tag}</span>
+            ))}
+          </div>
+        )}
+        {date && (
+          <time class="date" datetime={date.toISOString()}>
+            {date.toLocaleDateString('en-US', { 
+              year: 'numeric',
+              month: 'short',
+              day: 'numeric'
+            })}
+          </time>
+        )}
+      </div>
+    )}
+  </div>
+</article>
+
+<style>
+  .content-card {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+  }
+
+  .content-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--text-muted);
+  }
+
+  .card-title {
+    font-size: var(--text-xl);
+    margin: 0 0 1rem 0;
+  }
+
+  .card-title a {
+    color: var(--text-color);
+    text-decoration: none;
+  }
+
+  .card-title a:hover {
+    color: var(--primary-color);
+  }
+
+  .card-description {
+    color: var(--text-muted);
+    font-size: var(--text-sm);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+
+  .card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .tag {
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+    background: var(--hover-bg);
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+  }
+
+  .date {
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+  }
+</style> 

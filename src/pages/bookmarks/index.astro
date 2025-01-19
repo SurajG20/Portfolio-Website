@@ -7,6 +7,7 @@ import type { CollectionEntry } from "astro:content";
 import BaseHero from "../../components/shared/BaseHero.astro";
 import Container from "../../components/ui/Container.astro";
 import ContentList from "../../components/shared/ContentList.astro";
+import ContentCard from "../../components/shared/ContentCard.astro";
 type Bookmark = CollectionEntry<"bookmarks">;
 
 const bookmarks = await getCollection("bookmarks");
@@ -22,18 +23,31 @@ const sortedBookmarks = bookmarks.sort(
 
     <Categories plural categories={types} currentPath={Astro.url.pathname} basePath="bookmarks" />
 
-    <ContentList>
-      {
-        sortedBookmarks.map((bookmark) => (
-          <ArticleCard
-            title={bookmark.data.title}
-            description={bookmark.data.description}
-            url={bookmark.data.url}
-            date={bookmark.data.createdAt}
-            tags={[bookmark.data.type, `by ${bookmark.data.author}`]}
-          />
-        ))
-      }
-    </ContentList>
+    <div class="content-grid">
+      {sortedBookmarks.map((bookmark) => (
+        <ContentCard
+          title={bookmark.data.title}
+          description={bookmark.data.description}
+          url={bookmark.data.url}
+          date={bookmark.data.createdAt}
+          tags={[bookmark.data.type, `by ${bookmark.data.author}`]}
+        />
+      ))}
+    </div>
   </Container>
 </BaseLayout>
+
+<style>
+  .content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  @media (max-width: 768px) {
+    .content-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

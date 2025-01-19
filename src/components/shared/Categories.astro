@@ -7,17 +7,32 @@ interface Props {
 }
 
 const { categories, currentPath, plural, basePath } = Astro.props;
+
+const getCurrentCategory = (path: string) => {
+  const parts = path.split('/');
+  return parts[parts.length - 1];
+};
+
+const currentCategory = getCurrentCategory(currentPath);
 ---
 
 <div class="categories">
-  <a href={`/${basePath}`} class:list={["category-link", { active: currentPath === `/${basePath}` }]}> All </a>
+  <a 
+    href={`/${basePath}`} 
+    class:list={["category-link", { active: currentPath === `/${basePath}` }]}
+  >
+    All
+  </a>
   {
     categories.map((category) => (
       <a
         href={`/${basePath}/${category}`}
-        class:list={["category-link", { active: currentPath === `/${basePath}/${category}` }]}
+        class:list={[
+          "category-link",
+          { active: category === currentCategory }
+        ]}
       >
-        {category + (plural ? "s" : "")}
+        {category}
       </a>
     ))
   }
