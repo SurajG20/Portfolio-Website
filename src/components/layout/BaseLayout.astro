@@ -4,6 +4,7 @@ import "../../styles/animations.css";
 import "../../styles/global.css";
 import { ClientRouter } from "astro:transitions";
 import Navigation from "../shared/Navigation.astro";
+import SpeedInsights from "@vercel/speed-insights/astro";
 
 interface Props {
   title: string;
@@ -60,12 +61,37 @@ const { title, description, image = "/default-og-image.jpg", canonicalURL = Astr
   </head>
   <body>
     <div class="top-glow" transition:persist></div>
-    <main>
-      <div class="nav-container">
-        <Navigation />
-      </div>
-      <main><slot /></main>
-    </main>
+    <div class="layout">
+      <main>
+        <div class="nav-container">
+          <Navigation />
+        </div>
+        <main><slot /></main>
+      </main>
+    </div>
     <div class="bottom-glow" transition:persist></div>
+    <SpeedInsights />
   </body>
 </html>
+
+<style>
+  .layout {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .main {
+    flex: 1;
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .main {
+      padding: 1rem;
+    }
+  }
+</style>
