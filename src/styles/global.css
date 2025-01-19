@@ -27,6 +27,11 @@
   --glow-color: rgb(123, 104, 238);
   --glow-spread: 70%;
   --glow-blur: 80px;
+
+  /* Link colors */
+  --link-color: color-mix(in srgb, var(--glow-color) 85%, white);
+  --link-hover-color: color-mix(in srgb, var(--glow-color) 100%, white);
+  --link-underline-color: color-mix(in srgb, var(--glow-color) 60%, transparent);
 }
 
 @keyframes linkUnderline {
@@ -214,7 +219,7 @@ a {
   color: var(--link-color);
   text-decoration: none;
   position: relative;
-  transition: opacity var(--link-animation-duration), color var(--link-animation-duration);
+  transition: color var(--link-animation-duration);
 }
 
 a:not(.category-link)::after {
@@ -224,12 +229,40 @@ a:not(.category-link)::after {
   left: 0;
   width: 0;
   height: 1px;
-  background: currentColor;
-  transition: width var(--link-animation-duration) ease, opacity var(--link-animation-duration);
+  background: var(--link-underline-color);
+  box-shadow: 0 0 8px var(--link-underline-color);
+  transition: width var(--link-animation-duration) ease, 
+              opacity var(--link-animation-duration),
+              box-shadow var(--link-animation-duration);
+  opacity: 0;
+}
+
+a:not(.category-link):hover {
+  color: var(--link-hover-color);
 }
 
 a:not(.category-link):hover::after {
   width: 100%;
+  opacity: 1;
+}
+
+/* Update active link styles */
+.nav-link.active {
+  color: var(--link-hover-color);
+  font-weight: 500;
+}
+
+/* Category link specific styles */
+.category-link {
+  color: var(--text-muted);
+  transition: color var(--link-animation-duration),
+              background-color var(--link-animation-duration);
+}
+
+.category-link:hover,
+.category-link.active {
+  color: var(--link-hover-color);
+  background: color-mix(in srgb, var(--glow-color) 10%, transparent);
 }
 
 .section-header a,
