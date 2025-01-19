@@ -1,0 +1,79 @@
+---
+import BaseLayout from "../components/layout/BaseLayout.astro";
+import Container from "../components/ui/Container.astro";
+---
+
+<BaseLayout title="404 - Page Not Found" description="The page you're looking for doesn't exist">
+  <Container>
+    <div class="not-found">
+      <h1 class="title">404</h1>
+      <p class="description">Oops! The page you're looking for has vanished into the digital void.</p>
+      <a href="/" class="home-link">Go back home</a>
+    </div>
+  </Container>
+</BaseLayout>
+
+<style>
+  .not-found {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .title {
+    font-size: clamp(4rem, 10vw, 8rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    background: linear-gradient(
+      135deg,
+      var(--glow-color),
+      color-mix(in srgb, var(--glow-color) 70%, white)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    opacity: 0.8;
+  }
+
+  .description {
+    font-size: var(--text-lg);
+    color: var(--text-muted);
+    max-width: 500px;
+    margin-bottom: 2rem;
+  }
+
+  .home-link {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: color-mix(in srgb, var(--glow-color) 15%, transparent);
+    border: 1px solid color-mix(in srgb, var(--glow-color) 50%, var(--border-color));
+    border-radius: 9999px;
+    color: var(--text-color);
+    font-size: var(--text-sm);
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .home-link:hover {
+    background: color-mix(in srgb, var(--glow-color) 25%, transparent);
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 768px) {
+    .not-found {
+      padding: 1rem;
+    }
+
+    .title {
+      font-size: clamp(3rem, 8vw, 6rem);
+    }
+
+    .description {
+      font-size: var(--text-base);
+    }
+  }
+</style> 
