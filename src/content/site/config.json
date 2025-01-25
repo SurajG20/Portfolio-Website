@@ -25,6 +25,10 @@
       {
         "platform": "Linkedin",
         "url": "https://www.linkedin.com/in/suraj-goswami01"
+      },
+      {
+        "platform": "Resume",
+        "url": "/"
       }
     ]
   }
