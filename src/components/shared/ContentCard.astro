@@ -8,7 +8,7 @@ interface Props {
   isExternal?: boolean;
 }
 
-const { title, description, url, tags, date, isExternal = false } = Astro.props;
+const { title, description, url, tags, date, isExternal = false,  } = Astro.props;
 ---
 
 <article class="content-card">
@@ -105,4 +105,4 @@ const { title, description, url, tags, date, isExternal = false } = Astro.props;
     font-size: var(--text-xs);
     color: var(--text-muted);
   }
-</style> 
+</style>

@@ -21,9 +21,12 @@ const formatDate = (date: Date | undefined) => {
   });
 };
 
-const posts = await getCollection("blog", ({ data }: CollectionEntry<"blog">) => {
-  return import.meta.env.PROD ? !data.draft : true;
-});
+const posts = await getCollection(
+  "blog",
+  ({ data }: CollectionEntry<"blog">) => {
+    return import.meta.env.PROD ? !data.draft : true;
+  }
+);
 const latestPosts = posts
   .sort(
     (a: CollectionEntry<"blog">, b: CollectionEntry<"blog">) =>
@@ -38,7 +41,9 @@ const sortedExperiences = experiences.sort(
 );
 
 const projects = await getCollection("projects");
-const featuredProjects = projects.filter((project: CollectionEntry<"projects">) => project.data.featured).slice(0, 3);
+const featuredProjects = projects
+  .filter((project: CollectionEntry<"projects">) => project.data.featured)
+  .slice(0, 3);
 ---
 
 <BaseLayout title={`${site.name} - Portfolio`} description={site.introduction}>
@@ -60,7 +65,7 @@ const featuredProjects = projects.filter((project: CollectionEntry<"projects">) 
       }
     </section>
 
-    <!-- Blogs to be added later -->  
+    <!-- Blogs to be added later -->
     <!-- 
     <Section>
       <div class="section-header">
@@ -84,6 +89,38 @@ const featuredProjects = projects.filter((project: CollectionEntry<"projects">) 
       </ContentList>
     </Section> -->
 
+    <Section class="section">
+      <div class="section-header">
+        <h2>{site.sections.experience.title}</h2>
+        <a href="/experience">{site.sections.experience.viewAllText}</a>
+      </div>
+      <ContentList>
+        {
+          sortedExperiences.slice(0, 2).map((exp) => (
+            <article>
+              <div class="title-row">
+                <div class="company-info">
+                  <img src={exp.data.logo} alt="" class="company-logo" />
+                  <a
+                    href={exp.data.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {exp.data.title}
+                  </a>
+                </div>
+                <time>
+                  {formatDate(exp.data.startDate)} -{" "}
+                  {exp.data.current ? "Present" : formatDate(exp.data.endDate)}
+                </time>
+              </div>
+              <p class="muted-text">{exp.data.description}</p>
+            </article>
+          ))
+        }
+      </ContentList>
+    </Section>
+
     <section class="section">
       <div class="section-header">
         <h2>{site.sections.projects.title}</h2>
@@ -94,7 +131,11 @@ const featuredProjects = projects.filter((project: CollectionEntry<"projects">) 
           featuredProjects.map((project) => (
             <article>
               <div class="title-row">
-                <a href={project.data.url} target="_blank" rel="noopener noreferrer">
+                <a
+                  href={project.data.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   {project.data.title}
                 </a>
               </div>
@@ -110,31 +151,6 @@ const featuredProjects = projects.filter((project: CollectionEntry<"projects">) 
           ))
         }
       </ContentList>
-    </section>
-
-    <section class="section">
-      <div class="section-header">
-        <h2>{site.sections.experience.title}</h2>
-        <a href="/experience">{site.sections.experience.viewAllText}</a>
-      </div>
-      <div class="content-list">
-        {
-          sortedExperiences.slice(0, 2).map((exp) => (
-            <article>
-              <div class="title-row">
-                <div class="company-info">
-                  <img src={exp.data.logo} alt="" class="company-logo" />
-                  <span>{exp.data.title}</span>
-                </div>
-                <time>
-                  {formatDate(exp.data.startDate)} - {exp.data.current ? "Present" : formatDate(exp.data.endDate)}
-                </time>
-              </div>
-              <p class="muted-text">{exp.data.description}</p>
-            </article>
-          ))
-        }
-      </div>
     </section>
   </Container>
 </BaseLayout>
@@ -186,6 +202,13 @@ const featuredProjects = projects.filter((project: CollectionEntry<"projects">) 
     width: 1.5rem;
     height: 1.5rem;
     object-fit: contain;
+  }
+
+  .company-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
   }
 
   time {
