@@ -13,6 +13,10 @@ const getCurrentCategory = (path: string) => {
   return parts[parts.length - 1];
 };
 
+const sanitizeForUrl = (text: string) => {
+  return text.replace(/[\/\\]/g, '-');
+};
+
 const currentCategory = getCurrentCategory(currentPath);
 ---
 
@@ -26,10 +30,10 @@ const currentCategory = getCurrentCategory(currentPath);
   {
     categories.map((category) => (
       <a
-        href={`/${basePath}/${category}`}
+        href={`/${basePath}/${sanitizeForUrl(category)}`}
         class:list={[
           "category-link",
-          { active: category === currentCategory }
+          { active: sanitizeForUrl(category) === currentCategory }
         ]}
       >
         {category}

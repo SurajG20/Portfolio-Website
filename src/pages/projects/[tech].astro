@@ -20,13 +20,16 @@ export const getStaticPaths = (async () => {
 
   // Create a path for each tech
   return allTechs.map((tech) => {
+    // Sanitize tech name for URL (replace problematic characters)
+    const sanitizedTech = tech.replace(/[\/\\]/g, '-');
+    
     // Filter projects for this tech
     const techProjects = projects.filter((project) => 
       project.data.techs?.includes(tech)
     );
 
     return {
-      params: { tech },
+      params: { tech: sanitizedTech },
       props: { 
         projects: techProjects,
         categories: allTechs,
