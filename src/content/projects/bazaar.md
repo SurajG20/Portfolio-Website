@@ -1,6 +1,6 @@
 ---
 title: "Bazaar"
-description: "A full-stack e-commerce platform built with the MERN stack. Features include secure user authentication with JWT, real-time shopping cart management, Stripe payment processing, order tracking and history, product search and filtering, responsive Material UI design, and cloud storage integration with Firebase for product images. Implemented RESTful APIs for inventory management, optimized MongoDB queries for performance, and followed best practices for secure payment handling and user data protection."
+description: "Developed a full-stack e-commerce platform with MERN stack and RESTful APIs for product and order management. Secured platform with JWT authentication and bcrypt hashing to prevent unauthorized access. Optimized image delivery via Firebase Storage, reducing load times by 65%. Integrated Stripe payments with robust error handling and PCI compliance. Built an admin dashboard with real-time analytics, improving inventory management efficiency by 40%."
 url: "https://github.com/SurajG20/Ecommerce-Website"
 featured: true
 techs: ["React", "Node.js", "MongoDB", "Express", "Material UI", "Firebase", "Stripe", "JWT", "REST API"]

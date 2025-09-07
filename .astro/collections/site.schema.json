@@ -63,12 +63,104 @@
                 "viewAllText"
               ],
               "additionalProperties": false
+            },
+            "skills": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "viewAllText": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "title",
+                "viewAllText"
+              ],
+              "additionalProperties": false
+            },
+            "education": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "viewAllText": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "title",
+                "viewAllText"
+              ],
+              "additionalProperties": false
             }
           },
           "required": [
             "blog",
             "projects",
             "experience"
+          ],
+          "additionalProperties": false
+        },
+        "skills": {
+          "type": "object",
+          "properties": {
+            "programming": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "frameworks": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "databases": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "cloud": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "programming",
+            "frameworks",
+            "databases",
+            "cloud"
+          ],
+          "additionalProperties": false
+        },
+        "education": {
+          "type": "object",
+          "properties": {
+            "degree": {
+              "type": "string"
+            },
+            "institution": {
+              "type": "string"
+            },
+            "duration": {
+              "type": "string"
+            },
+            "cgpa": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "degree",
+            "institution",
+            "duration",
+            "cgpa"
           ],
           "additionalProperties": false
         },

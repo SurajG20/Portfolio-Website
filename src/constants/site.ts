@@ -5,8 +5,8 @@ export type NavigationItem = {
 
 export const SITE = {
   name: "Suraj Goswami",
-  title: "Full Stack Developer and Passive Learner",
-  description: "a little intro about me",
+  title: "Full Stack Developer",
+  description: "Full Stack Developer specializing in React, Node.js, and blockchain technologies",
   url: "https://surajgoswami.dev",
   defaultImage: "/default-og-image.jpg",
 } as const;

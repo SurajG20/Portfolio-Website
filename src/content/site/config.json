@@ -1,35 +1,57 @@
 {
-  "home": {
-    "name": "Suraj Goswami",
-    "title": "Software Developer",
-    "introduction": "I'm a Full Stack Developer specializing in building scalable web applications with React, Node.js and cloud platforms. I focus on creating efficient, user-centric solutions while continuously expanding my technical skills.",
-    "sections": {
-      "blog": {
-        "title": "Writing",
-        "viewAllText": "View all posts"
-      },
-      "projects": {
-        "title": "Projects", 
-        "viewAllText": "View all projects"
-      },
-      "experience": {
-        "title": "Experience",
-        "viewAllText": "View full résumé"
-      }
+  "name": "Suraj Goswami",
+  "title": "Full Stack Developer",
+  "introduction": "I'm a Full Stack Developer specializing in building scalable web applications with React, Node.js, and blockchain technologies. I focus on creating efficient, user-centric solutions while continuously expanding my technical skills in modern web development and decentralized applications.",
+  "sections": {
+    "blog": {
+      "title": "Writing",
+      "viewAllText": "View all posts"
     },
-    "socialLinks": [
-      {
-        "platform": "GitHub",
-        "url": "https://github.com/surajG20"
-      },
-      {
-        "platform": "Linkedin",
-        "url": "https://www.linkedin.com/in/suraj-goswami01"
-      },
-      {
-        "platform": "Resume",
-        "url": "https://drive.google.com/file/d/1gkuBRRlDmO8CMb-Ha1YzMsK_xgz-NS9C/view?usp=drive_link"
-      }
-    ]
-  }
+    "projects": {
+      "title": "Projects", 
+      "viewAllText": "View all projects"
+    },
+    "experience": {
+      "title": "Experience",
+      "viewAllText": "View full résumé"
+    },
+    "skills": {
+      "title": "Skills",
+      "viewAllText": "View all skills"
+    },
+    "education": {
+      "title": "Education",
+      "viewAllText": "View full education"
+    }
+  },
+  "skills": {
+    "programming": ["JavaScript", "TypeScript", "Python", "HTML", "CSS"],
+    "frameworks": ["React.js", "Next.js", "Node.js", "NestJS", "Express.js", "Tailwind CSS", "Shadcn/UI"],
+    "databases": ["MySQL", "MongoDB", "PostgreSQL", "Sequelize"],
+    "cloud": ["AWS (EC2, Amplify, Lambda, S3)", "Docker", "Git", "CI/CD (GitHub Actions)", "WebSockets"]
+  },
+  "education": {
+    "degree": "B.Tech in Electrical Engineering",
+    "institution": "Samrat Ashok Technological Institute, Vidisha",
+    "duration": "2020 – 2024",
+    "cgpa": "8.26/10"
+  },
+  "socialLinks": [
+    {
+      "platform": "GitHub",
+      "url": "https://github.com/SurajG20"
+    },
+    {
+      "platform": "LinkedIn",
+      "url": "https://www.linkedin.com/in/suraj-goswami01"
+    },
+    {
+      "platform": "Email",
+      "url": "mailto:surajgoswami3000@gmail.com"
+    },
+    {
+      "platform": "Resume",
+      "url": "https://surajgoswami.dev/Resume.pdf"
+    }
+  ]
 }

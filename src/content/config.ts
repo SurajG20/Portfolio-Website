@@ -45,7 +45,10 @@ const projects = defineCollection({
 });
 
 const site = defineCollection({
-  loader: file("./src/content/site/config.json"),
+  loader: glob({
+    pattern: "**/*.json",
+    base: "./src/content/site",
+  }),
   schema: z.object({
     name: z.string(),
     title: z.string(),
@@ -63,7 +66,27 @@ const site = defineCollection({
         title: z.string(),
         viewAllText: z.string(),
       }),
+      skills: z.object({
+        title: z.string(),
+        viewAllText: z.string(),
+      }).optional(),
+      education: z.object({
+        title: z.string(),
+        viewAllText: z.string(),
+      }).optional(),
     }),
+    skills: z.object({
+      programming: z.array(z.string()),
+      frameworks: z.array(z.string()),
+      databases: z.array(z.string()),
+      cloud: z.array(z.string()),
+    }).optional(),
+    education: z.object({
+      degree: z.string(),
+      institution: z.string(),
+      duration: z.string(),
+      cgpa: z.string(),
+    }).optional(),
     socialLinks: z
       .array(
         z.object({
