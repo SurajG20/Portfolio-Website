@@ -10,15 +10,16 @@ interface ActionButtonProps {
 
 export default function ResumeButton({ actionText }: ActionButtonProps) {
   return (
-    <Button>
+    <Button asChild>
       <a
-        target='_blank'
-        href='https://drive.google.com/file/d/1gkuBRRlDmO8CMb-Ha1YzMsK_xgz-NS9C/view?usp=sharing'
-        className='no-underline flex items-center'
+        href="/resume.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="no-underline flex items-center"
       >
-        <CheckCircle className='mr-2 h-4 w-4' />
+        <CheckCircle className="mr-2 h-4 w-4" />
         {actionText}
-      </a>{' '}
+      </a>
     </Button>
   );
 }
