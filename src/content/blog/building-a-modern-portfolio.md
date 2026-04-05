@@ -1,7 +1,7 @@
 ---
 title: "Building a Modern Portfolio Website with Astro"
 description: "A deep dive into creating a fast, modern portfolio website using Astro, focusing on performance and developer experience."
-publishedAt: 2023-12-15
+publishedAt: 2026-04-02
 ---
 
 Building a modern portfolio website requires careful consideration of performance, user experience, and maintainability. In this post, I'll share my experience building this website using Astro, a modern static site generator that offers excellent performance out of the box.

@@ -1,7 +1,7 @@
 ---
 title: "Node.js Logging: The Art of Digital Breadcrumbs"
 description: "A comprehensive guide to implementing effective logging in Node.js applications"
-publishedAt: 2024-09-10
+publishedAt: 2026-01-14
 tags: ["nodejs", "logging", "debugging", "monitoring", "best-practices"]
 ---
 

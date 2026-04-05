@@ -1,6 +1,6 @@
 ---
 import Section from "../components/ui/Section.astro";
-import { getCollection, getEntry } from "astro:content";
+import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import BaseLayout from "../components/layout/BaseLayout.astro";
 import ContentList from "../components/shared/ContentList.astro";
@@ -13,11 +13,12 @@ if (!siteCollection || siteCollection.length === 0) {
 
 const site = siteCollection[0].data;
 
-const formatDate = (date: Date | undefined) => {
+const formatBlogDate = (date: Date | undefined) => {
   if (!date) return "";
   return date.toLocaleDateString("en-US", {
     month: "short",
     day: "numeric",
+    year: "numeric",
   });
 };
 
@@ -85,29 +86,36 @@ const featuredProjects = projects
       }
     </section>
 
-    <!-- Blogs to be added later -->
-    <!-- 
-    <Section>
-      <div class="section-header">
-        <h2>{site.sections.blog.title}</h2>
-        <a href="/blog">{site.sections.blog.viewAllText}</a>
-      </div>
-      <ContentList>
-        {
-          latestPosts.map((post) => (
-            <article>
-              <div class="title-row">
-                <a href={`/blog/${post.id}`}>{post.data.title}</a>
-                {post.data.publishedAt && (
-                  <time datetime={post.data.publishedAt.toISOString()}>{formatDate(post.data.publishedAt)}</time>
-                )}
-              </div>
-              <p class="muted-text">{post.data.description}</p>
-            </article>
-          ))
-        }
-      </ContentList>
-    </Section> -->
+    {
+      latestPosts.length > 0 && (
+        <Section class="section">
+          <div class="section-header">
+            <h2>{site.sections.blog.title}</h2>
+            <a href="/blog">{site.sections.blog.viewAllText}</a>
+          </div>
+          <ContentList>
+            {latestPosts.map((post) => (
+              <article class="blog-preview">
+                <div class="title-row">
+                  <a href={`/blog/${post.id}`} class="blog-title-link">
+                    {post.data.title}
+                  </a>
+                  {post.data.publishedAt && (
+                    <time
+                      class="blog-date"
+                      datetime={post.data.publishedAt.toISOString()}
+                    >
+                      {formatBlogDate(post.data.publishedAt)}
+                    </time>
+                  )}
+                </div>
+                <p class="muted-text">{post.data.description}</p>
+              </article>
+            ))}
+          </ContentList>
+        </Section>
+      )
+    }
 
     <Section class="section">
       <div class="section-header">
@@ -290,6 +298,22 @@ const featuredProjects = projects
 
   .section-header a:hover {
     color: var(--link-hover-color);
+  }
+
+  .blog-preview .blog-title-link {
+    font-weight: 500;
+    color: var(--text-color);
+    text-decoration: none;
+  }
+
+  .blog-preview .blog-title-link:hover {
+    color: var(--accent-primary);
+  }
+
+  .blog-date {
+    color: var(--text-dates);
+    font-size: var(--text-xs);
+    flex-shrink: 0;
   }
 
   .title-row {
