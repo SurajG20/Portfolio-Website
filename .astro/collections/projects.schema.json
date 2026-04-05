@@ -18,6 +18,10 @@
           "type": "boolean",
           "default": false
         },
+        "draft": {
+          "type": "boolean",
+          "default": false
+        },
         "techs": {
           "type": "array",
           "items": {

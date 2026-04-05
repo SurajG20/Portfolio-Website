@@ -11,9 +11,15 @@ const experiences = await getCollection("experience");
 const sortedExperiences = experiences.sort((a, b) => b.data.startDate.getTime() - a.data.startDate.getTime());
 ---
 
-<BaseLayout title="Experience" description="My professional experience and work history">
+<BaseLayout
+  title="Experience"
+  description="Full-stack and blockchain roles — event-driven backends, real-time apps, and multi-chain deployments."
+>
   <Container>
-    <BaseHero title="Experience" description="My professional experience and work history" />
+    <BaseHero
+      title="Experience"
+      description="Roles focused on scalable APIs, Redis and queues, WebSockets, Telegram Mini Apps, and Solidity services across TON, EVM, and Solana."
+    />
     <ContentList>
       {
         sortedExperiences.map((experience) => (
@@ -22,6 +28,7 @@ const sortedExperiences = experiences.sort((a, b) => b.data.startDate.getTime() 
             description={experience.data.description}
             url={experience.data.url}
             logo={experience.data.logo}
+            highlights={experience.data.highlights}
             startDate={experience.data.startDate}
             endDate={experience.data.endDate}
             current={experience.data.current}

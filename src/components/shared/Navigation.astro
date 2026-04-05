@@ -50,11 +50,11 @@ const isActive = (path: string) => {
   }
 
   a:hover {
-    color: var(--color-text);
+    color: var(--text-color);
   }
 
   a.active {
-    color: var(--color-text) !important;
+    color: var(--accent-primary) !important;
   }
 
   a.active::after {
@@ -64,6 +64,6 @@ const isActive = (path: string) => {
     left: 0;
     width: 100%;
     height: 1px;
-    background: var(--text-muted);
+    background: var(--accent-primary);
   }
 </style>

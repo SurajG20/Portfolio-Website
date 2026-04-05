@@ -24,6 +24,7 @@ const experience = defineCollection({
     logo: z.string(),
     url: z.string().url(),
     description: z.string(),
+    highlights: z.array(z.string()).optional(),
     startDate: z.coerce.date(),
     endDate: z.coerce.date().optional(),
     current: z.boolean().optional().default(false),
@@ -40,6 +41,7 @@ const projects = defineCollection({
     description: z.string(),
     url: z.string().url(),
     featured: z.boolean().optional().default(false),
+    draft: z.boolean().optional().default(false),
     techs: z.array(z.string()).optional(),
   }),
 });
@@ -75,12 +77,7 @@ const site = defineCollection({
         viewAllText: z.string(),
       }).optional(),
     }),
-    skills: z.object({
-      programming: z.array(z.string()),
-      frameworks: z.array(z.string()),
-      databases: z.array(z.string()),
-      cloud: z.array(z.string()),
-    }).optional(),
+    skills: z.record(z.string(), z.array(z.string())).optional(),
     education: z.object({
       degree: z.string(),
       institution: z.string(),

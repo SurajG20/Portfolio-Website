@@ -24,16 +24,8 @@
   --link-animation-duration: 0.3s;
   --hover-transition: 0.2s ease;
 
-  /* Enhanced Glow effects */
-  --glow-color: rgba(59, 130, 246, 0.4);
-  --glow-color-secondary: rgba(139, 92, 246, 0.3);
   --glow-spread: 70%;
   --glow-blur: 80px;
-
-  /* Enhanced Link colors */
-  --link-color: #3b82f6;
-  --link-hover-color: #60a5fa;
-  --link-underline-color: rgba(59, 130, 246, 0.6);
 }
 
 @keyframes linkUnderline {
@@ -192,21 +184,21 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
 }
 
-h1 { 
-  font-size: var(--text-4xl); 
-  letter-spacing: -0.06em; 
+h1 {
+  font-size: var(--text-4xl);
+  letter-spacing: -0.06em;
   font-weight: 700;
-  background: linear-gradient(135deg, #f8fafc 0%, #cbd5e1 50%, #94a3b8 100%);
+  background: linear-gradient(135deg, #f8fafc 0%, #cbd5e1 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
-h2 { 
-  font-size: var(--text-3xl); 
-  letter-spacing: -0.05em; 
+h2 {
+  font-size: var(--text-3xl);
+  letter-spacing: -0.05em;
   font-weight: 600;
-  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  background: linear-gradient(135deg, #f1f5f9 0%, #cbd5e1 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -294,7 +286,7 @@ a:not(.category-link):hover::after {
 .category-link:hover,
 .category-link.active {
   color: var(--link-hover-color);
-  background: color-mix(in srgb, var(--glow-color) 10%, transparent);
+  background: var(--accent-primary-dim);
 }
 
 .section-header a,
@@ -470,12 +462,12 @@ hr {
 
 /* Enhanced Selection and focus */
 ::selection {
-  background: rgba(59, 130, 246, 0.2);
+  background: rgba(56, 189, 248, 0.22);
   color: var(--text-color);
 }
 
 ::-moz-selection {
-  background: rgba(59, 130, 246, 0.2);
+  background: rgba(56, 189, 248, 0.22);
   color: var(--text-color);
 }
 

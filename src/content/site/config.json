@@ -1,14 +1,14 @@
 {
   "name": "Suraj Goswami",
-  "title": "Full Stack Developer",
-  "introduction": "I'm a Full Stack Developer specializing in building scalable web applications with React, Node.js, and blockchain technologies. I focus on creating efficient, user-centric solutions while continuously expanding my technical skills in modern web development and decentralized applications.",
+  "title": "Full Stack & Blockchain Developer",
+  "introduction": "I architect event-driven backends, real-time systems, and Web3 products—BullMQ pipelines, Socket.IO, Redis, multi-chain smart contracts, and Telegram Mini Apps. I care about measurable outcomes: latency, throughput, and secure, maintainable APIs at scale.",
   "sections": {
     "blog": {
       "title": "Writing",
       "viewAllText": "View all posts"
     },
     "projects": {
-      "title": "Projects", 
+      "title": "Projects",
       "viewAllText": "View all projects"
     },
     "experience": {
@@ -25,18 +25,72 @@
     }
   },
   "skills": {
-    "programming": ["JavaScript", "TypeScript", "Python", "HTML", "CSS"],
-    "frameworks": ["React.js", "Next.js", "Node.js", "NestJS", "Express.js", "Tailwind CSS", "Shadcn/UI"],
-    "databases": ["MySQL", "MongoDB", "PostgreSQL", "Sequelize"],
-    "cloud": ["AWS (EC2, Amplify, Lambda, S3)", "Docker", "Git", "CI/CD (GitHub Actions)", "WebSockets"]
+    "Languages": [
+      "JavaScript",
+      "TypeScript",
+      "Python",
+      "Solidity"
+    ],
+    "Frontend": [
+      "React.js",
+      "Next.js",
+      "Tailwind CSS",
+      "Shadcn/UI"
+    ],
+    "Backend": [
+      "Node.js",
+      "NestJS",
+      "Express.js",
+      "REST APIs",
+      "WebSockets",
+      "BullMQ (queues & workers)",
+      "Redis",
+      "Socket.IO (room-based)",
+      "Event-driven architecture",
+      "Authentication",
+      "API security"
+    ],
+    "Databases": [
+      "MySQL",
+      "PostgreSQL",
+      "MongoDB",
+      "Sequelize"
+    ],
+    "Blockchain / Web3": [
+      "Solidity",
+      "Smart contracts",
+      "EVM",
+      "TON",
+      "Solana",
+      "Binance Smart Chain (BEP20)",
+      "Polygon",
+      "Wallet integration",
+      "MetaMask",
+      "TON Connect"
+    ],
+    "DevOps / Infrastructure": [
+      "AWS (EC2, S3, Lambda)",
+      "Docker",
+      "GitHub Actions",
+      "CI/CD",
+      "VPS deployment"
+    ]
   },
   "education": {
-    "degree": "B.Tech in Electrical Engineering",
+    "degree": "Bachelor of Technology — Electrical Engineering",
     "institution": "Samrat Ashok Technological Institute, Vidisha",
     "duration": "2020 – 2024",
     "cgpa": "8.26/10"
   },
   "socialLinks": [
+    {
+      "platform": "Email",
+      "url": "mailto:surajgoswami3000@gmail.com"
+    },
+    {
+      "platform": "Phone",
+      "url": "tel:+919691414058"
+    },
     {
       "platform": "GitHub",
       "url": "https://github.com/SurajG20"
@@ -46,11 +100,7 @@
       "url": "https://www.linkedin.com/in/suraj-goswami01"
     },
     {
-      "platform": "Email",
-      "url": "mailto:surajgoswami3000@gmail.com"
-    },
-    {
-      "platform": "Resume",
+      "platform": "Résumé",
       "url": "https://surajgoswami.vercel.app/Resume.pdf"
     }
   ]

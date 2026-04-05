@@ -106,39 +106,12 @@
         },
         "skills": {
           "type": "object",
-          "properties": {
-            "programming": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            },
-            "frameworks": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            },
-            "databases": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            },
-            "cloud": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
+          "additionalProperties": {
+            "type": "array",
+            "items": {
+              "type": "string"
             }
-          },
-          "required": [
-            "programming",
-            "frameworks",
-            "databases",
-            "cloud"
-          ],
-          "additionalProperties": false
+          }
         },
         "education": {
           "type": "object",

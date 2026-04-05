@@ -1,61 +1,66 @@
 :root {
-  /* Enhanced Base colors - Deep space theme */
-  --bg-color: #0a0a0f;
-  --bg-color-muted: #111118;
-  --bg-color-elevated: #1a1a22;
-  --bg-color-secondary: rgba(255, 255, 255, 0.03);
+  /* Slate foundation — corporate / product-style dark UI */
+  --bg-color: #0b1220;
+  --bg-color-muted: #111a2e;
+  --bg-color-elevated: #141d33;
+  --surface-elevated: rgba(20, 29, 51, 0.65);
+  --bg-color-secondary: rgba(148, 163, 184, 0.06);
 
-  /* Enhanced Text colors with better contrast */
-  --text-color: #f8fafc;
-  --text-muted: #cbd5e1;
-  --text-subtle: #94a3b8;
+  --text-color: #f1f5f9;
+  --text-muted: #94a3b8;
+  --text-subtle: #64748b;
   --text-accent: #e2e8f0;
+  --text-dates: #a8b9d1;
 
-  /* Enhanced Link colors with gradient support */
-  --link-color: #3b82f6;
-  --link-hover-color: #60a5fa;
-  --link-gradient-start: #3b82f6;
-  --link-gradient-end: #8b5cf6;
+  /* Single accent: sky — professional, readable on dark */
+  --accent-primary: #38bdf8;
+  --accent-primary-dim: rgba(56, 189, 248, 0.14);
+  --primary-color: #38bdf8;
 
-  /* Interactive elements with better visibility */
-  --border-color: rgba(255, 255, 255, 0.08);
-  --border-color-hover: rgba(255, 255, 255, 0.15);
-  --hover-bg: rgba(255, 255, 255, 0.05);
-  --active-bg: rgba(255, 255, 255, 0.08);
-  --focus-ring: rgba(59, 130, 246, 0.5);
+  --link-color: #7dd3fc;
+  --link-hover-color: #bae6fd;
+  --link-gradient-start: #38bdf8;
+  --link-gradient-end: #0ea5e9;
+  --link-underline-color: rgba(56, 189, 248, 0.45);
 
-  /* Enhanced Visual effects with modern gradients */
-  --mesh-color-1: rgba(59, 130, 246, 0.15);
-  --mesh-color-2: rgba(139, 92, 246, 0.12);
-  --mesh-color-3: rgba(236, 72, 153, 0.08);
-  --glow-color: rgba(59, 130, 246, 0.4);
-  --glow-color-secondary: rgba(139, 92, 246, 0.3);
-  --top-glow-color: rgba(255, 255, 255, 0.05);
-  --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.2);
-  --card-shadow-hover: 0 12px 40px rgba(0, 0, 0, 0.4), 0 4px 16px rgba(0, 0, 0, 0.3);
+  --border-color: rgba(148, 163, 184, 0.12);
+  --border-accent: rgba(56, 189, 248, 0.28);
+  --border-color-hover: rgba(148, 163, 184, 0.22);
+  --hover-bg: rgba(148, 163, 184, 0.06);
+  --active-bg: rgba(148, 163, 184, 0.1);
+  --focus-ring: rgba(56, 189, 248, 0.45);
 
-  /* Enhanced Typography with better font stack */
+  --mesh-color-1: rgba(56, 189, 248, 0.14);
+  --mesh-color-2: rgba(14, 165, 233, 0.1);
+  --mesh-color-3: rgba(100, 116, 139, 0.08);
+  --glow-color: rgba(56, 189, 248, 0.35);
+  --glow-color-secondary: rgba(14, 165, 233, 0.2);
+  --top-glow-color: rgba(241, 245, 249, 0.04);
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.35);
+
+  --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.35), 0 2px 8px rgba(0, 0, 0, 0.2);
+  --card-shadow-hover: 0 12px 40px rgba(0, 0, 0, 0.45), 0 4px 16px rgba(0, 0, 0, 0.25);
+
   --font-sans: "Inter", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
     Cantarell, sans-serif;
   --font-mono: "JetBrains Mono", "Fira Code", Consolas, "Courier New", monospace;
   --font-display: "Cal Sans", "Inter", system-ui, sans-serif;
 
-  /* Enhanced Animations with smoother curves */
   --transition-base: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-bounce: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   --transition-spring: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
-  /* Gradient definitions */
-  --gradient-primary: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
-  --gradient-secondary: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
-  --gradient-accent: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
+  --gradient-primary: linear-gradient(135deg, #38bdf8 0%, #0ea5e9 100%);
+  --gradient-secondary: linear-gradient(135deg, #06b6d4 0%, #0284c7 100%);
+  --gradient-accent: linear-gradient(135deg, #64748b 0%, #475569 100%);
   --gradient-text: linear-gradient(135deg, #f8fafc 0%, #cbd5e1 100%);
-  --gradient-bg: radial-gradient(ellipse at top, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
-                 radial-gradient(ellipse at bottom, rgba(139, 92, 246, 0.08) 0%, transparent 50%);
+  --gradient-bg: radial-gradient(ellipse at 50% 0%, rgba(56, 189, 248, 0.08) 0%, transparent 55%),
+    radial-gradient(ellipse at 80% 100%, rgba(14, 165, 233, 0.06) 0%, transparent 50%);
 }
 
-/* Theme Transitions */
 .theme-transition {
   --theme-transition: var(--transition-base);
 }
@@ -68,13 +73,10 @@
 .theme-transition code,
 .theme-transition blockquote,
 .theme-transition .card {
-  transition: background-color var(--theme-transition), 
-             border-color var(--theme-transition),
-             box-shadow var(--theme-transition),
-             transform var(--theme-transition);
+  transition: background-color var(--theme-transition), border-color var(--theme-transition),
+    box-shadow var(--theme-transition), transform var(--theme-transition);
 }
 
-/* Remove transition from text color changes */
 .theme-transition * {
   transition-property: background-color, border-color, box-shadow, transform;
   transition-duration: var(--theme-transition);

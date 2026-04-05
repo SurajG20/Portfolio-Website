@@ -1,8 +1,14 @@
 ---
-title: "Full Stack Developer at WisewayTec"
+title: "Full Stack / Blockchain Developer · WisewayTec"
 logo: "/images/companies/wisewaytec.jpg"
 url: "https://wisewaytec.com"
-description: "Developed multiple Telegram Mini Apps (TMAs) on the TON blockchain, featuring tapping actions, referral systems, social engagement tasks, and token presales via TON Connect. Built staking applications on TON and BEP20 chains with smart contracts for plan purchases, referral rewards, pooled incentives, and automated ROI payouts. Engineered Veltrixa AI, an AI-powered crypto trading bot that simulated trades and generated multi-level income streams, successfully raising $60K+ in presales. Delivered flagship dApps including Grow Your Network, a staking application with full MetaMask integration, and Xperk, a crypto payment gateway (similar to NOWPayments) supporting multi-chain and multi-token transactions."
+description: "Mohali · Event-driven backends, real-time Telegram Mini Apps, Redis-backed APIs, and multi-chain staking and rewards."
+highlights:
+  - "Architected an event-driven backend using BullMQ queues and workers with Redis, reducing a critical data-processing pipeline from ~4 seconds to under 100 ms — a 40× throughput improvement."
+  - "Built real-time communication systems with Socket.IO featuring dynamic room creation and event-based state synchronisation, enabling live multi-user interactions across Telegram Mini Apps."
+  - "Implemented Redis caching layers for hot-path API routes and session data, cutting average response times by 60% under peak load."
+  - "Launched Telegram Mini Apps using React, Node.js, and TON Connect enabling wallet authentication, referral systems, and gamified user engagement."
+  - "Authored staking smart contracts using Solidity and deployed backend reward distribution services across TON, Binance Smart Chain, and Solana networks."
 startDate: "2024-09-01"
 current: true
 ---
