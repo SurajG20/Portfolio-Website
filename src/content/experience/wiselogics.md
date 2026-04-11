@@ -2,12 +2,12 @@
 title: "Full Stack Developer · Wiselogics Digital Solutions"
 logo: "/images/companies/wiselogics.jpg"
 url: "https://wiselogicsdigitalsolutions.com"
-description: "Mohali · Scalable REST APIs, Next.js SSR, and WebSocket services across multiple production products."
+description: "Mohali · REST APIs, Next.js SSR, scraping pipelines, and VPS deployments for production apps."
 highlights:
-  - "Designed scalable REST APIs in Node.js and Express with role-based authentication, secure authorization flows, and structured error handling across 3 production products."
-  - "Established real-time communication systems using WebSockets and Socket.IO, enabling live data synchronisation and event-driven updates across client applications."
-  - "Built server-side rendered applications using Next.js, improving SEO indexing and reducing client-side rendering load."
-  - "Delivered REST APIs and Socket.IO services for the Jodo-Cabs Flutter application, reducing response latency by 40%."
-startDate: "2023-10-01"
+  - "Built scalable REST APIs and secure authentication workflows using Node.js and Express for multiple production applications."
+  - "Developed server-side rendered web applications with Next.js, improving SEO visibility and reducing initial page load time."
+  - "Built Python-based web scraping pipelines to extract and process USDOT motor carrier data for business workflows and reporting."
+  - "Managed production deployments and release workflows on VPS infrastructure, ensuring reliable application delivery and maintenance."
+startDate: "2024-03-01"
 endDate: "2024-08-31"
 ---

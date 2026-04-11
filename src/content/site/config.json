@@ -1,7 +1,7 @@
 {
   "name": "Suraj Goswami",
   "title": "Full Stack & Blockchain Developer",
-  "introduction": "I architect event-driven backends, real-time systems, and Web3 products—BullMQ pipelines, Socket.IO, Redis, multi-chain smart contracts, and Telegram Mini Apps. I care about measurable outcomes: latency, throughput, and secure, maintainable APIs at scale.",
+  "introduction": "I build queue-backed services, Redis and Socket.IO for live sessions, and observable production systems—BullMQ workers, payment workflows, and monitoring with Prometheus and Grafana. I focus on scalable, fault-tolerant backends and clean APIs across Node.js, NestJS, and the stack.",
   "sections": {
     "blog": {
       "title": "Writing",
@@ -25,59 +25,44 @@
     }
   },
   "skills": {
-    "Languages": [
-      "JavaScript",
-      "TypeScript",
-      "Python",
-      "Solidity"
+    "Backend": [
+      "Node.js",
+      "Express.js",
+      "NestJS",
+      "REST APIs",
+      "WebSockets",
+      "Socket.IO",
+      "BullMQ",
+      "Redis"
     ],
     "Frontend": [
       "React.js",
       "Next.js",
-      "Tailwind CSS",
-      "Shadcn/UI"
-    ],
-    "Backend": [
-      "Node.js",
-      "NestJS",
-      "Express.js",
-      "REST APIs",
-      "WebSockets",
-      "BullMQ (queues & workers)",
-      "Redis",
-      "Socket.IO (room-based)",
-      "Event-driven architecture",
-      "Authentication",
-      "API security"
+      "Vue.js",
+      "Tailwind CSS"
     ],
     "Databases": [
-      "MySQL",
       "PostgreSQL",
-      "MongoDB",
-      "Sequelize"
+      "MySQL",
+      "MongoDB"
     ],
-    "Blockchain / Web3": [
+    "Infrastructure": [
+      "AWS (EC2, S3, Lambda)",
+      "Docker",
+      "CI/CD",
+      "GitHub Actions"
+    ],
+    "Blockchain": [
       "Solidity",
-      "Smart contracts",
       "EVM",
       "TON",
       "Solana",
-      "Binance Smart Chain (BEP20)",
-      "Polygon",
-      "Wallet integration",
-      "MetaMask",
-      "TON Connect"
-    ],
-    "DevOps / Infrastructure": [
-      "AWS (EC2, S3, Lambda)",
-      "Docker",
-      "GitHub Actions",
-      "CI/CD",
-      "VPS deployment"
+      "Smart contracts",
+      "Wallet integration"
     ]
   },
   "education": {
-    "degree": "Bachelor of Technology — Electrical Engineering",
+    "degree": "Bachelor of Technology in Electrical Engineering",
     "institution": "Samrat Ashok Technological Institute, Vidisha",
     "duration": "2020 – 2024",
     "cgpa": "8.26/10"

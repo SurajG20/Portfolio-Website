@@ -7,7 +7,7 @@ export const SITE = {
   name: "Suraj Goswami",
   title: "Full Stack & Blockchain Developer",
   description:
-    "Full Stack & Blockchain Developer — event-driven systems, real-time apps, and Web3 (TON, EVM, Solana).",
+    "Full Stack & Blockchain Developer — BullMQ, Redis, Socket.IO, observability, and Web3 (Solidity, EVM, TON, Solana).",
   url: "https://surajgoswami.dev",
   defaultImage: "/default-og-image.jpg",
 } as const;
