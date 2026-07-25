@@ -3,13 +3,13 @@
 :root {
   --background: #ffffff;
   --foreground: #0d1117;
-  --primary: #1f6feb;
+  --primary: #1464dc;
   --muted-foreground: #57606a;
   --border: #e2e8f0;
-  --ring: #1f6feb;
-  --ember: #1f6feb;
-  --coral: #1f6feb;
-  --acid: #1a7f37;
+  --ring: #1464dc;
+  --ember: #1464dc;
+  --coral: #1464dc;
+  --acid: #147828;
   --sun: #d0d7de;
   --ink: #0d1117;
   --mist: #f6f8fa;
@@ -18,20 +18,20 @@
 }
 
 .dark {
-  --background: #ffffff;
-  --foreground: #0d1117;
-  --primary: #1f6feb;
-  --muted-foreground: #57606a;
-  --border: #e2e8f0;
-  --ring: #1f6feb;
-  --ember: #1f6feb;
-  --coral: #1f6feb;
-  --acid: #1a7f37;
-  --sun: #d0d7de;
+  --background: #0d1117;
+  --foreground: #f0f6fc;
+  --primary: #58a6ff;
+  --muted-foreground: #8b949e;
+  --border: #30363d;
+  --ring: #58a6ff;
+  --ember: #58a6ff;
+  --coral: #58a6ff;
+  --acid: #3fb950;
+  --sun: #21262d;
   --ink: #0d1117;
-  --mist: #f6f8fa;
-  --hero-background: #ffffff;
-  --hero-foreground: #0d1117;
+  --mist: #161b22;
+  --hero-background: #0d1117;
+  --hero-foreground: #f0f6fc;
 }
 
 @theme inline {
@@ -104,6 +104,25 @@
 .bg-foreground ::selection {
   color: var(--ink);
   background-color: var(--sun);
+}
+
+.dark ::selection {
+  color: var(--foreground);
+  background-color: var(--sun);
+}
+
+.dark .bg-coral::selection,
+.dark .bg-coral ::selection,
+.dark .bg-ember::selection,
+.dark .bg-ember ::selection {
+  color: var(--coral);
+  background-color: var(--ink);
+}
+
+.dark .bg-acid::selection,
+.dark .bg-acid ::selection {
+  color: var(--acid);
+  background-color: var(--ink);
 }
 
 .hero-scrim {

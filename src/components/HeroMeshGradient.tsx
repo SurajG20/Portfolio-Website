@@ -36,21 +36,21 @@ export default function HeroMeshGradient() {
         data-blob
         className="absolute -left-[10%] -top-[10%] h-[60%] w-[50%] rounded-full opacity-[0.08]"
         style={{
-          background: "radial-gradient(ellipse, #1f6feb, transparent 70%)",
+          background: "radial-gradient(ellipse, #1464dc, transparent 70%)",
         }}
       />
       <div
         data-blob
         className="absolute -bottom-[15%] -right-[5%] h-[55%] w-[45%] rounded-full opacity-[0.06]"
         style={{
-          background: "radial-gradient(ellipse, #1f6feb, transparent 70%)",
+          background: "radial-gradient(ellipse, #1464dc, transparent 70%)",
         }}
       />
       <div
         data-blob
         className="absolute left-[40%] top-[20%] h-[40%] w-[35%] rounded-full opacity-[0.05]"
         style={{
-          background: "radial-gradient(ellipse, #58a6ff, transparent 70%)",
+          background: "radial-gradient(ellipse, #1464dc, transparent 70%)",
         }}
       />
     </div>

@@ -5,7 +5,7 @@ import SectionHeading from "./SectionHeading";
 function ProjectArtwork({ index }: { index: number }) {
   if (index === 1) {
     return (
-      <div className="relative aspect-4/3 overflow-hidden bg-acid text-ink" aria-hidden="true">
+      <div className="relative aspect-4/3 overflow-hidden bg-mist text-ink" aria-hidden="true">
         <div className="absolute left-[9%] top-[11%] h-[72%] w-[53%] bg-coral" />
         <div className="absolute left-[6%] top-[8%] h-[72%] w-[53%] border-2 border-ink bg-[#fffdf5] p-[7%]">
           <div className="font-display text-[clamp(1.05rem,4vw,2rem)] leading-none">EMPLOYEE</div>
@@ -15,7 +15,7 @@ function ProjectArtwork({ index }: { index: number }) {
             <span className="h-1 w-[62%] bg-ink/65" />
           </div>
           <div className="mt-[6%] flex items-center gap-[5%]">
-            <span className="h-[clamp(0.55rem,2vw,0.9rem)] w-[clamp(0.55rem,2vw,0.9rem)] border-2 border-ink bg-acid" />
+            <span className="h-[clamp(0.55rem,2vw,0.9rem)] w-[clamp(0.55rem,2vw,0.9rem)] border-2 border-ink bg-mist" />
             <span className="h-1 w-[76%] bg-ink/65" />
           </div>
           <div className="mt-[6%] flex items-center gap-[5%]">
@@ -53,12 +53,12 @@ function ProjectArtwork({ index }: { index: number }) {
         <div className="absolute left-[7%] top-[9%] h-[68%] w-[76%] border-2 border-ink bg-[#fffdf5]">
           <div className="flex h-[14%] items-center gap-[2%] border-b-2 border-ink px-[4%]">
             <span className="h-[clamp(0.35rem,1.4vw,0.6rem)] w-[clamp(0.35rem,1.4vw,0.6rem)] rounded-full bg-coral" />
-            <span className="h-[clamp(0.35rem,1.4vw,0.6rem)] w-[clamp(0.35rem,1.4vw,0.6rem)] rounded-full bg-acid" />
+            <span className="h-[clamp(0.35rem,1.4vw,0.6rem)] w-[clamp(0.35rem,1.4vw,0.6rem)] rounded-full bg-mist" />
             <span className="h-[clamp(0.35rem,1.4vw,0.6rem)] w-[clamp(0.35rem,1.4vw,0.6rem)] rounded-full bg-ink" />
             <span className="ml-auto font-display text-[clamp(0.6rem,2.2vw,0.9rem)]">MY STORE</span>
           </div>
           <div className="grid h-[86%] grid-cols-2 gap-[6%] p-[7%]">
-            <div className="border-2 border-ink bg-acid p-[8%]">
+            <div className="border-2 border-ink bg-coral/60 p-[8%]">
               <div className="aspect-square bg-ink/15" />
               <div className="mt-[12%] h-1 w-[72%] bg-ink" />
               <div className="mt-[8%] h-1 w-[45%] bg-ink/40" />
@@ -89,10 +89,10 @@ function ProjectArtwork({ index }: { index: number }) {
       className="relative aspect-4/3 overflow-hidden bg-hero-background text-hero-foreground"
       aria-hidden="true"
     >
-      <div className="absolute left-[7%] top-[12%] h-[62%] w-[58%] border-2 border-acid bg-coral" />
+      <div className="absolute left-[7%] top-[12%] h-[62%] w-[58%] bg-coral" />
       <div className="absolute left-[11%] top-[8%] h-[62%] w-[58%] border-2 border-hero-foreground bg-ink">
-        <div className="absolute left-1/2 top-[44%] flex h-[clamp(3rem,12vw,5.4rem)] w-[clamp(3rem,12vw,5.4rem)] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-2 border-acid">
-          <span className="ml-[8%] h-0 w-0 border-y-[12px] border-l-[20px] border-y-transparent border-l-acid" />
+        <div className="absolute left-1/2 top-[44%] flex h-[clamp(3rem,12vw,5.4rem)] w-[clamp(3rem,12vw,5.4rem)] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-2 border-coral">
+          <span className="ml-[8%] h-0 w-0 border-y-[12px] border-l-[20px] border-y-transparent border-l-coral" />
         </div>
         <div className="absolute bottom-[10%] left-[8%] right-[8%] flex h-[18%] items-end gap-[3%]">
           {[35, 70, 48, 88, 58, 76, 42, 65].map((height, barIndex) => (
@@ -104,16 +104,16 @@ function ProjectArtwork({ index }: { index: number }) {
           ))}
         </div>
       </div>
-      <div className="absolute right-[5%] top-[9%] grid w-[23%] gap-2 font-display text-[clamp(0.58rem,2.1vw,0.85rem)] text-ink">
-        <div className="bg-acid px-[8%] py-[12%] text-center">INPUT</div>
-        <div className="text-center text-acid">↓</div>
-        <div className="bg-coral px-[8%] py-[12%] text-center">RENDER</div>
-        <div className="text-center text-acid">↓</div>
-        <div className="bg-[#fffdf5] px-[8%] py-[12%] text-center">PUBLISH</div>
-      </div>
-      <div className="absolute bottom-[7%] right-[5%] font-display text-[clamp(0.7rem,2.5vw,1rem)] text-acid">
-        VIDEO WORKFLOW
-      </div>
+        <div className="absolute right-[5%] top-[9%] grid w-[23%] gap-2 font-display text-[clamp(0.58rem,2.1vw,0.85rem)] text-ink">
+          <div className="bg-coral/70 px-[8%] py-[12%] text-center">INPUT</div>
+          <div className="text-center text-coral">↓</div>
+          <div className="bg-coral px-[8%] py-[12%] text-center">RENDER</div>
+          <div className="text-center text-coral">↓</div>
+          <div className="bg-[#fffdf5] px-[8%] py-[12%] text-center">PUBLISH</div>
+        </div>
+        <div className="absolute bottom-[7%] right-[5%] font-display text-[clamp(0.7rem,2.5vw,1rem)] text-coral">
+          VIDEO WORKFLOW
+        </div>
     </div>
   );
 }

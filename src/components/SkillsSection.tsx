@@ -4,7 +4,7 @@ import SectionHeading from "./SectionHeading";
 
 export default function SkillsSection() {
   return (
-    <section id="skills" className="scroll-mt-16 bg-coral py-20 text-ink md:py-28">
+    <section id="skills" className="scroll-mt-16 bg-acid py-20 text-ink md:py-28">
       <div className="mx-auto max-w-6xl px-6 md:px-8">
         <MotionWrapper>
           <SectionHeading>Skills</SectionHeading>
