@@ -44,26 +44,26 @@ void main() {
     * pointerStrength;
   float cursorGlow = exp(-cursorDistance * 5.5) * pointerStrength;
 
-  vec3 mist = vec3(0.95, 0.95, 0.92);
-  vec3 ember = vec3(0.95, 0.055, 0.015);
-  vec3 orange = vec3(1.0, 0.30, 0.015);
-  vec3 acid = vec3(0.62, 0.98, 0.02);
-  vec3 sun = vec3(1.0, 0.72, 0.04);
-  vec3 ink = vec3(0.035, 0.018, 0.008);
+  vec3 lightBg = vec3(0.97, 0.975, 0.98);
+  vec3 deepBlue = vec3(0.08, 0.32, 0.72);
+  vec3 accent = vec3(0.12, 0.44, 0.92);
+  vec3 teal = vec3(0.10, 0.70, 0.82);
+  vec3 sky = vec3(0.30, 0.62, 0.96);
+  vec3 dark = vec3(0.02, 0.03, 0.06);
 
-  float emberField = smoothstep(-0.75, 0.9, bands + glowA * 1.8);
-  float orangeField = smoothstep(-0.45, 1.25, fold + glowB * 1.4);
-  vec3 lightColor = mix(mist, ember, emberField * 0.62);
-  lightColor = mix(lightColor, orange, orangeField * 0.5);
-  lightColor = mix(lightColor, sun, glowA * 0.42);
-  lightColor = mix(lightColor, orange, glowB * 0.28);
-  lightColor += mix(sun, ember, uv.x) * (ripple * 0.16 + cursorGlow * 0.1);
+  float fieldA = smoothstep(-0.75, 0.9, bands + glowA * 1.8);
+  float fieldB = smoothstep(-0.45, 1.25, fold + glowB * 1.4);
+  vec3 lightColor = mix(lightBg, deepBlue, fieldA * 0.55);
+  lightColor = mix(lightColor, accent, fieldB * 0.45);
+  lightColor = mix(lightColor, sky, glowA * 0.38);
+  lightColor = mix(lightColor, teal, glowB * 0.25);
+  lightColor += mix(sky, deepBlue, uv.x) * (ripple * 0.14 + cursorGlow * 0.08);
 
-  vec3 darkColor = mix(ink, ember, emberField * 0.72);
-  darkColor = mix(darkColor, orange, orangeField * 0.52);
-  darkColor += acid * glowA * 0.44;
-  darkColor += sun * glowB * 0.36;
-  darkColor += mix(sun, acid, uv.x) * (ripple * 0.32 + cursorGlow * 0.28);
+  vec3 darkColor = mix(dark, deepBlue, fieldA * 0.65);
+  darkColor = mix(darkColor, accent, fieldB * 0.48);
+  darkColor += teal * glowA * 0.50;
+  darkColor += sky * glowB * 0.40;
+  darkColor += mix(sky, teal, uv.x) * (ripple * 0.28 + cursorGlow * 0.24);
 
   float vignette = smoothstep(0.95, 0.18, length(p * vec2(0.8, 1.0)));
   lightColor = mix(mist, lightColor, 0.94 + vignette * 0.05);
