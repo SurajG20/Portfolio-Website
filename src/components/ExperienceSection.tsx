@@ -41,7 +41,7 @@ export default function ExperienceSection() {
                 {job.stack.map((technology) => (
                   <li
                     key={technology}
-                    className="border border-border px-3 py-1.5 text-xs font-bold text-muted-foreground"
+                    className="border border-border bg-mist px-3 py-1.5 text-xs font-bold text-muted-foreground"
                   >
                     {technology}
                   </li>

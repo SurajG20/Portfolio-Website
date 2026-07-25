@@ -4,20 +4,20 @@ import { HugeiconsIcon } from "@hugeicons/react";
 
 export default function Footer() {
   return (
-    <footer className="bg-coral py-12 text-ink md:py-16">
+    <footer className="bg-mist py-12 text-foreground md:py-16">
       <div className="mx-auto max-w-6xl px-6 md:px-8">
-        <div className="flex flex-col gap-8 border-t-2 border-ink pt-7 md:flex-row md:items-end md:justify-between">
+        <div className="flex flex-col gap-8 border-t-2 border-border pt-7 md:flex-row md:items-end md:justify-between">
           <div>
             <p className="font-display text-4xl md:text-6xl">{personalInfo.name}</p>
-            <p className="mt-2 text-sm font-semibold text-ink/70">
+            <p className="mt-2 text-sm font-semibold text-muted-foreground">
               Building scalable backend systems from idea to production.
             </p>
-            <p className="mt-5 text-xs text-ink/60">&copy; {new Date().getFullYear()}</p>
+            <p className="mt-5 text-xs text-muted-foreground">&copy; {new Date().getFullYear()}</p>
           </div>
           <div className="flex items-center gap-2">
             <a
               href={`mailto:${personalInfo.email}`}
-              className="inline-flex h-11 w-11 items-center justify-center border border-ink/50 text-ink transition-colors hover:bg-ink hover:text-white"
+              className="inline-flex h-11 w-11 items-center justify-center border border-border text-muted-foreground transition-colors hover:border-foreground hover:text-foreground"
               aria-label="Email"
             >
               <HugeiconsIcon
@@ -31,7 +31,7 @@ export default function Footer() {
               href={personalInfo.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex h-11 w-11 items-center justify-center border border-ink/50 text-ink transition-colors hover:bg-ink hover:text-white"
+              className="inline-flex h-11 w-11 items-center justify-center border border-border text-muted-foreground transition-colors hover:border-foreground hover:text-foreground"
               aria-label="GitHub"
             >
               <HugeiconsIcon
@@ -45,7 +45,7 @@ export default function Footer() {
               href={personalInfo.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex h-11 w-11 items-center justify-center border border-ink/50 text-ink transition-colors hover:bg-ink hover:text-white"
+              className="inline-flex h-11 w-11 items-center justify-center border border-border text-muted-foreground transition-colors hover:border-foreground hover:text-foreground"
               aria-label="LinkedIn"
             >
               <HugeiconsIcon
