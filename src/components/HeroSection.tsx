@@ -8,8 +8,7 @@ import {
 import { HugeiconsIcon } from "@hugeicons/react";
 import { domAnimation, LazyMotion, m, useReducedMotion } from "framer-motion";
 import type { PointerEvent as ReactPointerEvent } from "react";
-import HeroCanvas from "./HeroCanvas";
-import HeroBackground from "./HeroBackground";
+import HeroMeshGradient from "./HeroMeshGradient";
 
 const EASE_OUT_QUINT = [0.22, 1, 0.36, 1] as const;
 
@@ -59,9 +58,7 @@ export default function HeroSection() {
   return (
     <LazyMotion features={domAnimation}>
       <section className="relative isolate min-h-[calc(100svh-3.5rem)] overflow-hidden bg-hero-background text-hero-foreground">
-        <HeroCanvas />
-        <HeroBackground />
-        <div className="hero-scrim absolute inset-0" aria-hidden="true" />
+        <HeroMeshGradient />
 
         <m.div
           className="relative mx-auto grid min-h-[calc(100svh-3.5rem)] max-w-6xl items-center gap-9 px-6 py-10 md:grid-cols-[1.3fr_0.7fr] md:gap-14 md:px-8 md:py-16"
