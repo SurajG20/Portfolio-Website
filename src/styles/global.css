@@ -1,20 +1,32 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0a0e14;
-  --foreground: #e6edf3;
-  --primary: #388bfd;
-  --muted-foreground: #7d8590;
-  --border: #21262d;
-  --ring: #388bfd;
-  --ember: #388bfd;
-  --coral: #388bfd;
-  --acid: #2ea043;
-  --sun: #30363d;
-  --ink: #0a0e14;
-  --mist: #151b23;
-  --hero-background: #0a0e14;
-  --hero-foreground: #e6edf3;
+  --background: oklch(0.97 0 0);
+  --foreground: oklch(0.18 0 0);
+  --primary: oklch(0.55 0.22 260);
+  --muted-foreground: oklch(0.43 0 0);
+  --border: oklch(0.78 0 0);
+  --ring: oklch(0.55 0.22 260);
+  --ember: oklch(0.5 0.2 265);
+  --coral: oklch(0.6 0.2 255);
+  --acid: oklch(0.88 0.15 145);
+  --sun: oklch(0.85 0.12 80);
+  --ink: oklch(0.15 0 0);
+  --mist: oklch(0.92 0 0);
+  --hero-background: oklch(0.95 0.01 95);
+  --hero-foreground: var(--ink);
+}
+
+.dark {
+  --background: oklch(0.17 0 0);
+  --foreground: oklch(0.95 0 0);
+  --primary: oklch(0.65 0.18 260);
+  --muted-foreground: oklch(0.75 0 0);
+  --border: oklch(0.34 0 0);
+  --ring: oklch(0.65 0.18 260);
+  --mist: oklch(0.24 0 0);
+  --hero-background: oklch(0.11 0.03 260);
+  --hero-foreground: oklch(0.98 0 0);
 }
 
 @theme inline {
@@ -49,7 +61,7 @@
   }
   ::selection {
     color: var(--ink);
-    background-color: var(--primary);
+    background-color: var(--sun);
   }
   @media (prefers-reduced-motion: reduce) {
     *,
@@ -86,7 +98,34 @@
 .bg-foreground::selection,
 .bg-foreground ::selection {
   color: var(--ink);
-  background-color: var(--primary);
+  background-color: var(--sun);
+}
+
+.hero-scrim {
+  background:
+    linear-gradient(
+      90deg,
+      rgb(248 248 243 / 0.65) 0%,
+      rgb(248 248 243 / 0.18) 52%,
+      transparent 100%
+    ),
+    linear-gradient(0deg, rgb(248 248 243 / 0.14) 0%, transparent 45%);
+}
+
+.dark .hero-scrim {
+  background:
+    linear-gradient(90deg, rgb(14 8 4 / 0.88) 0%, rgb(14 8 4 / 0.46) 52%, rgb(14 8 4 / 0.12) 100%),
+    linear-gradient(0deg, rgb(14 8 4 / 0.72) 0%, transparent 45%);
+}
+
+@media (max-width: 767px) {
+  .hero-scrim {
+    background: linear-gradient(0deg, rgb(248 248 243 / 0.62) 0%, rgb(248 248 243 / 0.1) 100%);
+  }
+
+  .dark .hero-scrim {
+    background: linear-gradient(0deg, rgb(14 8 4 / 0.84) 0%, rgb(14 8 4 / 0.28) 100%);
+  }
 }
 
 .portrait-reveal {
@@ -114,6 +153,7 @@
   }
 }
 
+/* Display voice: Anton, condensed poster caps. */
 @utility font-display {
   font-family: "Anton", "Archivo", system-ui, sans-serif;
   font-weight: 400;
@@ -198,7 +238,7 @@
   padding: 1.25rem;
   font-size: 0.9rem;
   line-height: 1.7;
-  background-color: var(--shiki-dark-bg);
+  background-color: var(--shiki-light-bg);
 }
 
 .prose pre code {
@@ -207,6 +247,14 @@
 }
 
 .prose pre code span {
+  color: var(--shiki-light);
+}
+
+.dark .prose pre {
+  background-color: var(--shiki-dark-bg);
+}
+
+.dark .prose pre code span {
   color: var(--shiki-dark);
 }
 

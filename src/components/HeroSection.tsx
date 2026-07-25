@@ -8,6 +8,7 @@ import {
 import { HugeiconsIcon } from "@hugeicons/react";
 import { domAnimation, LazyMotion, m, useReducedMotion } from "framer-motion";
 import type { PointerEvent as ReactPointerEvent } from "react";
+import HeroCanvas from "./HeroCanvas";
 
 const EASE_OUT_QUINT = [0.22, 1, 0.36, 1] as const;
 
@@ -56,7 +57,10 @@ export default function HeroSection() {
 
   return (
     <LazyMotion features={domAnimation}>
-      <section className="relative isolate min-h-[calc(100svh-3.5rem)] bg-hero-background text-hero-foreground">
+      <section className="relative isolate min-h-[calc(100svh-3.5rem)] overflow-hidden bg-hero-background text-hero-foreground">
+        <HeroCanvas />
+        <div className="hero-scrim absolute inset-0" aria-hidden="true" />
+
         <m.div
           className="relative mx-auto grid min-h-[calc(100svh-3.5rem)] max-w-6xl items-center gap-9 px-6 py-10 md:grid-cols-[1.3fr_0.7fr] md:gap-14 md:px-8 md:py-16"
           initial="hidden"
@@ -95,10 +99,10 @@ export default function HeroSection() {
                   key={label}
                   href={href}
                   {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                  className={`group inline-flex min-h-11 items-center gap-2 px-4 py-2.5 text-sm font-bold transition-all duration-200 ease-out hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
+                  className={`group inline-flex min-h-11 items-center gap-2 px-4 py-2.5 text-sm font-bold transition-transform duration-300 ease-out hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-hero-foreground ${
                     primary
-                      ? "bg-coral text-ink hover:bg-primary focus-visible:ring-coral"
-                      : "border border-sun bg-transparent text-hero-foreground hover:border-hero-foreground hover:bg-mist"
+                      ? "bg-coral text-ink"
+                      : "border border-hero-foreground/45 bg-hero-background/30 text-hero-foreground hover:border-hero-foreground hover:bg-hero-foreground hover:text-hero-background"
                   }`}
                 >
                   <HugeiconsIcon
@@ -115,8 +119,8 @@ export default function HeroSection() {
             <m.div className="mt-8 flex flex-wrap gap-6 md:gap-10" variants={reveal}>
               {quickStats.slice(0, 4).map((stat) => (
                 <div key={stat.label} className="text-center md:text-left">
-                  <p className="font-display text-xl text-acid md:text-2xl">{stat.value}</p>
-                  <p className="mt-0.5 text-xs font-semibold text-muted-foreground">{stat.label}</p>
+                  <p className="font-display text-xl text-coral md:text-2xl">{stat.value}</p>
+                  <p className="mt-0.5 text-xs font-semibold text-hero-foreground/60">{stat.label}</p>
                 </div>
               ))}
             </m.div>
@@ -128,7 +132,7 @@ export default function HeroSection() {
               aria-hidden="true"
             />
             <div
-              className="absolute -inset-3 -translate-x-5 -translate-y-5 border border-sun"
+              className="absolute -inset-3 -translate-x-5 -translate-y-5 border border-hero-foreground/45"
               aria-hidden="true"
             />
             <div

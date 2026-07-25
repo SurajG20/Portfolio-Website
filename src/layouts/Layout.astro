@@ -22,7 +22,7 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin)
 ---
 
 <!doctype html>
-<html lang="en" class="dark">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta
@@ -59,7 +59,16 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin)
       href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-    <meta name="theme-color" content="#0a0e14" />
+    <meta
+      name="theme-color"
+      content="#ffffff"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#262626"
+      media="(prefers-color-scheme: dark)"
+    />
   </head>
   <body class="min-h-screen bg-background font-sans antialiased">
     <slot />
@@ -67,6 +76,30 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin)
     <SpeedInsights />
   </body>
 </html>
+
+<script is:inline>
+  const getThemePreference = () => {
+    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+      return localStorage.getItem("theme");
+    }
+    return window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
+  };
+  const isDark = getThemePreference() === "dark";
+  document.documentElement.classList[isDark ? "add" : "remove"]("dark");
+
+  if (typeof localStorage !== "undefined") {
+    const observer = new MutationObserver(() => {
+      const currentIsDark = document.documentElement.classList.contains("dark");
+      localStorage.setItem("theme", currentIsDark ? "dark" : "light");
+    });
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+  }
+</script>
 
 <style>
   html,

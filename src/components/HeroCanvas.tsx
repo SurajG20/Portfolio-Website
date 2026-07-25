@@ -44,26 +44,26 @@ void main() {
     * pointerStrength;
   float cursorGlow = exp(-cursorDistance * 5.5) * pointerStrength;
 
-  vec3 mist = vec3(0.94, 0.96, 0.98);
-  vec3 ember = vec3(0.06, 0.32, 0.78);
-  vec3 orange = vec3(0.18, 0.52, 0.96);
-  vec3 acid = vec3(0.12, 0.82, 0.88);
-  vec3 sun = vec3(0.35, 0.68, 0.98);
-  vec3 ink = vec3(0.02, 0.025, 0.035);
+  vec3 mist = vec3(0.95, 0.95, 0.92);
+  vec3 ember = vec3(0.95, 0.055, 0.015);
+  vec3 orange = vec3(1.0, 0.30, 0.015);
+  vec3 acid = vec3(0.62, 0.98, 0.02);
+  vec3 sun = vec3(1.0, 0.72, 0.04);
+  vec3 ink = vec3(0.035, 0.018, 0.008);
 
   float emberField = smoothstep(-0.75, 0.9, bands + glowA * 1.8);
   float orangeField = smoothstep(-0.45, 1.25, fold + glowB * 1.4);
-  vec3 lightColor = mix(mist, ember, emberField * 0.55);
-  lightColor = mix(lightColor, orange, orangeField * 0.45);
-  lightColor = mix(lightColor, sun, glowA * 0.38);
-  lightColor = mix(lightColor, acid, glowB * 0.25);
-  lightColor += mix(sun, ember, uv.x) * (ripple * 0.14 + cursorGlow * 0.08);
+  vec3 lightColor = mix(mist, ember, emberField * 0.62);
+  lightColor = mix(lightColor, orange, orangeField * 0.5);
+  lightColor = mix(lightColor, sun, glowA * 0.42);
+  lightColor = mix(lightColor, orange, glowB * 0.28);
+  lightColor += mix(sun, ember, uv.x) * (ripple * 0.16 + cursorGlow * 0.1);
 
-  vec3 darkColor = mix(ink, ember, emberField * 0.65);
-  darkColor = mix(darkColor, orange, orangeField * 0.48);
-  darkColor += acid * glowA * 0.50;
-  darkColor += sun * glowB * 0.40;
-  darkColor += mix(sun, acid, uv.x) * (ripple * 0.28 + cursorGlow * 0.24);
+  vec3 darkColor = mix(ink, ember, emberField * 0.72);
+  darkColor = mix(darkColor, orange, orangeField * 0.52);
+  darkColor += acid * glowA * 0.44;
+  darkColor += sun * glowB * 0.36;
+  darkColor += mix(sun, acid, uv.x) * (ripple * 0.32 + cursorGlow * 0.28);
 
   float vignette = smoothstep(0.95, 0.18, length(p * vec2(0.8, 1.0)));
   lightColor = mix(mist, lightColor, 0.94 + vignette * 0.05);

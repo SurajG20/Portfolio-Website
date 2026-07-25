@@ -1,3 +1,4 @@
+import ThemeToggle from "./ui/theme-toggle";
 import { personalInfo } from "@/lib/data";
 import {
   ArrowUpRight01Icon,
@@ -22,7 +23,7 @@ export default function GlassHeader() {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
-    <header className="w-full border-b border-border bg-mist text-foreground">
+    <header className="w-full border-b border-border bg-background text-foreground">
       <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-6 md:px-8">
         <a
           className="group flex min-h-11 items-center gap-2.5 font-display text-sm tracking-wide"
@@ -41,7 +42,7 @@ export default function GlassHeader() {
             <a
               key={item.href}
               href={item.href}
-              className="flex min-h-11 items-center px-1.5 text-muted-foreground transition-colors hover:text-primary"
+              className="flex min-h-11 items-center px-1.5 text-muted-foreground transition-colors hover:text-foreground"
             >
               {item.label}
             </a>
@@ -53,7 +54,7 @@ export default function GlassHeader() {
             href={personalInfo.resume}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden min-h-10 items-center gap-2 border border-coral px-3 text-sm font-bold text-coral transition-colors hover:bg-coral hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring md:inline-flex"
+            className="hidden min-h-10 items-center gap-2 border border-foreground/35 px-3 text-sm font-bold text-muted-foreground transition-colors hover:border-foreground hover:bg-foreground hover:text-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground md:inline-flex"
           >
             <HugeiconsIcon
               icon={DocumentAttachmentIcon}
@@ -63,6 +64,7 @@ export default function GlassHeader() {
             />
             Resume
           </a>
+          <ThemeToggle />
 
           {/* Mobile Menu Button */}
           <button
