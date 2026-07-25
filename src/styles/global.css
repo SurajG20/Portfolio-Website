@@ -3,14 +3,14 @@
 :root {
   --background: oklch(0.97 0 0);
   --foreground: oklch(0.18 0 0);
-  --primary: oklch(0.62 0.24 28);
+  --primary: oklch(0.55 0.22 260);
   --muted-foreground: oklch(0.43 0 0);
   --border: oklch(0.78 0 0);
-  --ring: oklch(0.62 0.24 28);
-  --ember: oklch(0.62 0.24 28);
-  --coral: oklch(0.68 0.23 28);
-  --acid: oklch(0.88 0.22 125);
-  --sun: oklch(0.83 0.18 75);
+  --ring: oklch(0.55 0.22 260);
+  --ember: oklch(0.5 0.2 265);
+  --coral: oklch(0.6 0.2 255);
+  --acid: oklch(0.88 0.15 145);
+  --sun: oklch(0.85 0.12 80);
   --ink: oklch(0.15 0 0);
   --mist: oklch(0.92 0 0);
   --hero-background: oklch(0.95 0.01 95);
@@ -20,12 +20,12 @@
 .dark {
   --background: oklch(0.17 0 0);
   --foreground: oklch(0.95 0 0);
-  --primary: oklch(0.72 0.2 30);
+  --primary: oklch(0.65 0.18 260);
   --muted-foreground: oklch(0.75 0 0);
   --border: oklch(0.34 0 0);
-  --ring: oklch(0.72 0.2 30);
+  --ring: oklch(0.65 0.18 260);
   --mist: oklch(0.24 0 0);
-  --hero-background: oklch(0.11 0.03 35);
+  --hero-background: oklch(0.11 0.03 260);
   --hero-foreground: oklch(0.98 0 0);
 }
 
