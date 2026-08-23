@@ -1,4 +1,4 @@
-import { personalInfo, quickStats } from "@/lib/data";
+import { availabilityBadge, personalInfo, quickStats } from "@/lib/data";
 import {
   DocumentAttachmentIcon,
   GithubIcon,
@@ -29,6 +29,8 @@ const contactLinks = [
     external: true,
   },
 ];
+
+const focusChips = ["LLM Apps", "RAG", "Payments"];
 
 const movePortraitReveal = (event: ReactPointerEvent<HTMLDivElement>) => {
   const rect = event.currentTarget.getBoundingClientRect();
@@ -61,7 +63,7 @@ export default function HeroSection() {
         <HeroMeshGradient />
 
         <m.div
-          className="relative mx-auto grid min-h-[calc(100svh-3.5rem)] max-w-6xl items-center gap-9 px-6 py-10 md:grid-cols-[1.3fr_0.7fr] md:gap-14 md:px-8 md:py-16"
+          className="relative mx-auto grid min-h-[calc(100svh-3.5rem)] max-w-6xl items-center gap-10 px-6 py-12 md:grid-cols-[1.25fr_0.75fr] md:gap-14 md:px-8 md:py-16"
           initial="hidden"
           animate="visible"
           transition={{
@@ -71,37 +73,52 @@ export default function HeroSection() {
         >
           <div className="min-w-0">
             <m.div
-              className="mb-5 flex items-center gap-3 text-sm font-semibold text-hero-foreground/80"
+              className="mb-6 inline-flex items-center gap-2.5 rounded-full border border-border bg-panel/70 px-3.5 py-1.5 font-mono text-xs font-medium text-muted-foreground"
               variants={reveal}
             >
-              <span className="h-3 w-3 bg-coral" aria-hidden="true" />
-              {personalInfo.role}
+              <span className="relative flex h-2 w-2" aria-hidden="true">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent-2 opacity-70 motion-reduce:animate-none" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-accent-2" />
+              </span>
+              {availabilityBadge}
             </m.div>
 
-            <m.h1
-              className="font-display text-[clamp(2.5rem,11vw,5.5rem)] leading-[0.88] tracking-[0.01em] md:text-[clamp(3.8rem,6.5vw,5.5rem)]"
+            <m.p
+              className="mb-3 font-mono text-sm font-medium tracking-wide text-accent"
               variants={reveal}
             >
-              {personalInfo.name.split(" ")[0]} <span className="text-coral">{personalInfo.name.split(" ")[1]}</span>
+              {"// "}
+              {personalInfo.role}
+            </m.p>
+
+            <m.h1
+              className="font-display text-[clamp(2.4rem,8.5vw,4.9rem)] leading-[1.02] font-bold"
+              variants={reveal}
+            >
+              {personalInfo.heroHeadline.split(" on ")[0]}
+              <span className="text-gradient">
+                {" "}
+                on {personalInfo.heroHeadline.split(" on ")[1]}
+              </span>
             </m.h1>
 
             <m.p
-              className="mt-6 max-w-[55ch] text-base leading-relaxed text-hero-foreground/82 md:text-lg"
+              className="mt-6 max-w-[58ch] text-base leading-relaxed text-muted-foreground md:text-lg"
               variants={reveal}
             >
               {personalInfo.heroDescription}
             </m.p>
 
-            <m.div className="mt-7 flex flex-wrap gap-2.5" variants={reveal}>
+            <m.div className="mt-8 flex flex-wrap gap-2.5" variants={reveal}>
               {contactLinks.map(({ label, href, icon: Icon, external, primary }) => (
                 <a
                   key={label}
                   href={href}
                   {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                  className={`group inline-flex min-h-11 items-center gap-2 px-4 py-2.5 text-sm font-bold transition-transform duration-300 ease-out hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-hero-foreground ${
+                  className={`group inline-flex min-h-11 items-center gap-2 rounded-lg px-4 py-2.5 text-sm font-semibold transition-all duration-300 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
                     primary
-                      ? "bg-coral text-ink"
-                      : "border border-hero-foreground/45 bg-hero-background/30 text-hero-foreground hover:border-hero-foreground hover:bg-hero-foreground hover:text-hero-background"
+                      ? "bg-accent text-white glow-accent hover:brightness-110"
+                      : "border border-border bg-panel/60 text-muted-foreground hover:border-accent/50 hover:text-foreground"
                   }`}
                 >
                   <HugeiconsIcon
@@ -115,27 +132,30 @@ export default function HeroSection() {
               ))}
             </m.div>
 
-            <m.div className="mt-8 flex flex-wrap gap-6 md:gap-10" variants={reveal}>
+            <m.div
+              className="mt-10 grid max-w-xl grid-cols-2 gap-x-6 gap-y-5 border-t border-border pt-7 sm:grid-cols-4 sm:gap-x-4"
+              variants={reveal}
+            >
               {quickStats.slice(0, 4).map((stat) => (
-                <div key={stat.label} className="text-center md:text-left">
-                  <p className="font-display text-xl text-coral md:text-2xl">{stat.value}</p>
-                  <p className="mt-0.5 text-xs font-semibold text-hero-foreground/60">{stat.label}</p>
+                <div key={stat.label}>
+                  <p className="font-mono text-lg font-semibold text-accent md:text-xl">
+                    {stat.value}
+                  </p>
+                  <p className="mt-1 text-xs leading-snug font-medium text-muted-foreground">
+                    {stat.label}
+                  </p>
                 </div>
               ))}
             </m.div>
           </div>
 
-          <m.div className="relative mx-auto w-44 md:w-full md:max-w-[330px]" variants={reveal}>
+          <m.div className="relative mx-auto w-52 md:w-full md:max-w-[330px]" variants={reveal}>
             <div
-              className="absolute -inset-3 translate-x-5 translate-y-5 bg-coral/85"
+              className="glow-accent absolute -inset-4 rounded-3xl opacity-40 blur-2xl"
               aria-hidden="true"
             />
             <div
-              className="absolute -inset-3 -translate-x-5 -translate-y-5 border border-hero-foreground/45"
-              aria-hidden="true"
-            />
-            <div
-              className="portrait-reveal relative aspect-square overflow-hidden"
+              className="portrait-reveal relative aspect-square overflow-hidden rounded-2xl border border-panel-border shadow-2xl shadow-black/20 dark:shadow-black/50"
               onPointerMove={movePortraitReveal}
               onPointerLeave={hidePortraitReveal}
             >
@@ -147,7 +167,7 @@ export default function HeroSection() {
                 decoding="async"
                 fetchPriority="high"
                 draggable={false}
-                className="pointer-events-none h-full w-full select-none object-cover grayscale contrast-110"
+                className="pointer-events-none h-full w-full select-none object-cover grayscale contrast-105"
               />
               <img
                 src={personalInfo.profilePicture}
@@ -160,6 +180,19 @@ export default function HeroSection() {
                 className="portrait-reveal-color pointer-events-none absolute inset-0 h-full w-full select-none object-cover"
               />
             </div>
+            <ul
+              className="absolute -bottom-4 left-1/2 flex -translate-x-1/2 gap-1.5"
+              aria-label="Current focus areas"
+            >
+              {focusChips.map((chip) => (
+                <li
+                  key={chip}
+                  className="rounded-full border border-panel-border bg-panel px-3 py-1 font-mono text-[11px] font-semibold whitespace-nowrap text-muted-foreground shadow-sm"
+                >
+                  {chip}
+                </li>
+              ))}
+            </ul>
           </m.div>
         </m.div>
       </section>

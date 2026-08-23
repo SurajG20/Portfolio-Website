@@ -32,25 +32,26 @@ export default function HeroMeshGradient() {
       className="pointer-events-none absolute inset-0 overflow-hidden"
       aria-hidden="true"
     >
+      <div className="bg-grid-faint absolute inset-0 [mask-image:radial-gradient(ellipse_75%_65%_at_50%_35%,black,transparent)]" />
       <div
         data-blob
-        className="absolute -left-[10%] -top-[10%] h-[60%] w-[50%] rounded-full opacity-[0.08]"
+        className="absolute -top-[12%] -left-[8%] h-[55%] w-[48%] rounded-full opacity-25 blur-3xl dark:opacity-20"
         style={{
-          background: "radial-gradient(ellipse, #1464dc, transparent 70%)",
+          background: "radial-gradient(ellipse, var(--accent), transparent 70%)",
         }}
       />
       <div
         data-blob
-        className="absolute -bottom-[15%] -right-[5%] h-[55%] w-[45%] rounded-full opacity-[0.06]"
+        className="absolute -right-[6%] -bottom-[14%] h-[50%] w-[42%] rounded-full opacity-15 blur-3xl dark:opacity-15"
         style={{
-          background: "radial-gradient(ellipse, #1464dc, transparent 70%)",
+          background: "radial-gradient(ellipse, var(--accent-2), transparent 70%)",
         }}
       />
       <div
         data-blob
-        className="absolute left-[40%] top-[20%] h-[40%] w-[35%] rounded-full opacity-[0.05]"
+        className="absolute top-[22%] left-[42%] h-[38%] w-[32%] rounded-full opacity-10 blur-3xl dark:opacity-10"
         style={{
-          background: "radial-gradient(ellipse, #1464dc, transparent 70%)",
+          background: "radial-gradient(ellipse, var(--accent-2), transparent 70%)",
         }}
       />
     </div>

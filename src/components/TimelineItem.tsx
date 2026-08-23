@@ -25,8 +25,8 @@ export default function TimelineItem({
   return (
     <LazyMotion features={domAnimation}>
       <m.div
-        className={`grid gap-5 border-t-2 border-foreground/20 py-8 md:grid-cols-[180px_1fr] md:gap-10 md:py-10 ${
-          isLast ? "border-b-2" : ""
+        className={`grid gap-5 border-t border-border py-8 md:grid-cols-[190px_1fr] md:gap-10 md:py-10 ${
+          isLast ? "border-b" : ""
         }`}
         initial={{ opacity: 0, y: reduceMotion ? 0 : 16 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -38,12 +38,12 @@ export default function TimelineItem({
         viewport={{ once: true, margin: "-50px" }}
       >
         <div>
-          <p className="font-display text-xl text-ember md:text-2xl">{date}</p>
-          <span className="mt-3 block h-3 w-3 bg-coral" aria-hidden="true" />
+          <p className="font-mono text-sm leading-relaxed font-medium text-accent-2">{date}</p>
+          <span className="mt-3 block h-2 w-2 rotate-45 bg-accent" aria-hidden="true" />
         </div>
         <div className="min-w-0">
-          <h3 className="text-2xl font-black tracking-tight md:text-3xl">{title}</h3>
-          <p className="mt-1 font-semibold text-ember">{subtitle}</p>
+          <h3 className="font-display text-2xl font-bold tracking-tight md:text-3xl">{title}</h3>
+          <p className="mt-1 font-medium text-muted-foreground">{subtitle}</p>
           {children}
         </div>
       </m.div>

@@ -8,12 +8,12 @@ export default function ExperienceSection() {
     <section id="experience" className="scroll-mt-16 bg-background pb-12 pt-20 md:pb-16 md:pt-28">
       <div className="mx-auto max-w-6xl px-6 md:px-8">
         <MotionWrapper>
-          <SectionHeading>Work Experience</SectionHeading>
+          <SectionHeading index="01 — experience">Work Experience</SectionHeading>
         </MotionWrapper>
         <MotionWrapper>
           <p className="mb-12 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
-            I build production-grade backend systems, distributed architectures, and real-time
-            platforms. From system design through deployment, monitoring, and support.
+            Production fintech, real-time, and AI systems — from schema design through deployment,
+            monitoring, and on-call.
           </p>
         </MotionWrapper>
         <div>
@@ -29,7 +29,10 @@ export default function ExperienceSection() {
               <ul className="mt-6 grid gap-3 text-sm text-muted-foreground lg:grid-cols-2">
                 {job.achievements.map((achievement) => (
                   <li key={achievement} className="flex gap-3 leading-relaxed">
-                    <span className="mt-[7px] h-2 w-2 shrink-0 bg-coral" aria-hidden="true" />
+                    <span
+                      className="mt-[7px] h-1.5 w-1.5 shrink-0 rotate-45 bg-accent"
+                      aria-hidden="true"
+                    />
                     <span>{achievement}</span>
                   </li>
                 ))}

@@ -1,55 +1,51 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #0d1117;
-  --primary: #1464dc;
-  --muted-foreground: #57606a;
-  --border: #e2e8f0;
-  --ring: #1464dc;
-  --ember: #1464dc;
-  --coral: #1464dc;
-  --acid: #147828;
-  --sun: #d0d7de;
-  --ink: #0d1117;
-  --mist: #f6f8fa;
-  --hero-background: #ffffff;
-  --hero-foreground: #0d1117;
+  --background: #f6f7fb;
+  --foreground: #0b0e18;
+  --muted-foreground: #565e76;
+  --border: #e2e5f0;
+  --ring: #6d4aff;
+  --accent: #5b34f2;
+  --accent-2: #0e7ea6;
+  --accent-soft: rgb(91 52 242 / 0.09);
+  --panel: #ffffff;
+  --panel-border: #dfe3ef;
+  --hero-background: #f6f7fb;
+  --hero-foreground: #0b0e18;
 }
 
 .dark {
-  --background: #0d1117;
-  --foreground: #f0f6fc;
-  --primary: #58a6ff;
-  --muted-foreground: #8b949e;
-  --border: #30363d;
-  --ring: #58a6ff;
-  --ember: #58a6ff;
-  --coral: #58a6ff;
-  --acid: #3fb950;
-  --sun: #21262d;
-  --ink: #0d1117;
-  --mist: #161b22;
-  --hero-background: #0d1117;
-  --hero-foreground: #f0f6fc;
+  --background: #05070d;
+  --foreground: #e8ecf8;
+  --muted-foreground: #969fbc;
+  --border: #1b2134;
+  --ring: #8b7bff;
+  --accent: #8b7bff;
+  --accent-2: #45dcf0;
+  --accent-soft: rgb(139 123 255 / 0.11);
+  --panel: #090d18;
+  --panel-border: #171d30;
+  --hero-background: #05070d;
+  --hero-foreground: #e8ecf8;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-primary: var(--primary);
   --color-muted-foreground: var(--muted-foreground);
   --color-border: var(--border);
   --color-ring: var(--ring);
-  --color-ember: var(--ember);
-  --color-coral: var(--coral);
-  --color-acid: var(--acid);
-  --color-sun: var(--sun);
-  --color-ink: var(--ink);
-  --color-mist: var(--mist);
+  --color-accent: var(--accent);
+  --color-accent-2: var(--accent-2);
+  --color-accent-soft: var(--accent-soft);
+  --color-panel: var(--panel);
+  --color-panel-border: var(--panel-border);
   --color-hero-background: var(--hero-background);
   --color-hero-foreground: var(--hero-foreground);
-  --font-sans: "Archivo", system-ui, sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 }
 
 @layer base {
@@ -65,8 +61,8 @@
     text-wrap: balance;
   }
   ::selection {
-    color: var(--ink);
-    background-color: var(--sun);
+    color: var(--hero-background);
+    background-color: var(--accent);
   }
   @media (prefers-reduced-motion: reduce) {
     *,
@@ -80,109 +76,38 @@
   }
 }
 
-.bg-coral::selection,
-.bg-coral ::selection {
-  color: var(--coral);
-  background-color: var(--ink);
-}
-
-.bg-ember::selection,
-.bg-ember ::selection {
-  color: var(--ember);
-  background-color: var(--ink);
-}
-
-.bg-acid::selection,
-.bg-acid ::selection {
-  color: var(--acid);
-  background-color: var(--ink);
-}
-
-.bg-ink::selection,
-.bg-ink ::selection,
-.bg-foreground::selection,
-.bg-foreground ::selection {
-  color: var(--ink);
-  background-color: var(--sun);
-}
-
-.dark ::selection {
-  color: var(--foreground);
-  background-color: var(--sun);
-}
-
-.dark .bg-coral::selection,
-.dark .bg-coral ::selection,
-.dark .bg-ember::selection,
-.dark .bg-ember ::selection {
-  color: var(--coral);
-  background-color: var(--ink);
-}
-
-.dark .bg-acid::selection,
-.dark .bg-acid ::selection {
-  color: var(--acid);
-  background-color: var(--ink);
-}
-
-.hero-scrim {
-  background:
-    linear-gradient(
-      90deg,
-      rgb(248 248 243 / 0.65) 0%,
-      rgb(248 248 243 / 0.18) 52%,
-      transparent 100%
-    ),
-    linear-gradient(0deg, rgb(248 248 243 / 0.14) 0%, transparent 45%);
-}
-
-.dark .hero-scrim {
-  background:
-    linear-gradient(90deg, rgb(14 8 4 / 0.88) 0%, rgb(14 8 4 / 0.46) 52%, rgb(14 8 4 / 0.12) 100%),
-    linear-gradient(0deg, rgb(14 8 4 / 0.72) 0%, transparent 45%);
-}
-
-@media (max-width: 767px) {
-  .hero-scrim {
-    background: linear-gradient(0deg, rgb(248 248 243 / 0.62) 0%, rgb(248 248 243 / 0.1) 100%);
-  }
-
-  .dark .hero-scrim {
-    background: linear-gradient(0deg, rgb(14 8 4 / 0.84) 0%, rgb(14 8 4 / 0.28) 100%);
-  }
-}
-
-.portrait-reveal {
-  --reveal-x: 50%;
-  --reveal-y: 50%;
-  --reveal-opacity: 0;
-}
-
-.portrait-reveal-color {
-  opacity: var(--reveal-opacity);
-  filter: saturate(1.08) contrast(1.02);
-  mask-image: radial-gradient(
-    circle clamp(4.5rem, 9vw, 7rem) at var(--reveal-x) var(--reveal-y),
-    black 25%,
-    rgb(0 0 0 / 0.9) 55%,
-    transparent 100%
-  );
-  transition: opacity 300ms cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-@media (hover: none), (pointer: coarse) {
-  .portrait-reveal-color {
-    opacity: 1;
-    mask-image: none;
-  }
-}
-
-/* Display voice: Anton, condensed poster caps. */
+/* Display voice: Space Grotesk, tight modern grotesque. */
 @utility font-display {
-  font-family: "Anton", "Archivo", system-ui, sans-serif;
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 0.015em;
+  font-family: "Space Grotesk", "Inter", system-ui, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+@utility text-gradient {
+  background-image: linear-gradient(96deg, var(--accent) 20%, var(--accent-2) 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility bg-grid-faint {
+  background-image:
+    linear-gradient(
+      to right,
+      color-mix(in srgb, var(--foreground) 5%, transparent) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--foreground) 5%, transparent) 1px,
+      transparent 1px
+    );
+  background-size: 42px 42px;
+}
+
+@utility glow-accent {
+  box-shadow:
+    0 0 24px -6px color-mix(in srgb, var(--accent) 45%, transparent),
+    0 0 64px -12px color-mix(in srgb, var(--accent-2) 35%, transparent);
 }
 
 .prose {
@@ -198,11 +123,9 @@
 .prose h2,
 .prose h3 {
   margin-top: 2.75rem;
-  font-family: "Anton", "Archivo", system-ui, sans-serif;
-  font-weight: 400;
-  line-height: 1.1;
-  text-transform: uppercase;
-  letter-spacing: 0.015em;
+  font-family: "Space Grotesk", "Inter", sans-serif;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
 }
 
 .prose h2 {
@@ -214,15 +137,15 @@
 }
 
 .prose a {
-  color: var(--primary);
-  font-weight: 700;
+  color: var(--accent);
+  font-weight: 600;
   text-decoration: underline;
   text-decoration-thickness: 0.1em;
   text-underline-offset: 0.18em;
 }
 
 .prose a:hover {
-  color: var(--foreground);
+  color: var(--accent-2);
 }
 
 .prose ul,
@@ -243,7 +166,7 @@
 }
 
 .prose blockquote {
-  border-left: 0.3rem solid var(--coral);
+  border-left: 0.3rem solid var(--accent);
   padding-left: 1.25rem;
   color: var(--muted-foreground);
   font-style: italic;
@@ -251,7 +174,7 @@
 
 .prose :not(pre) > code {
   border: 1px solid var(--border);
-  background: var(--mist);
+  background: var(--accent-soft);
   padding: 0.15em 0.35em;
   font-size: 0.9em;
 }
@@ -291,4 +214,29 @@
   max-width: 100%;
   height: auto;
   border: 1px solid var(--border);
+}
+
+.portrait-reveal {
+  --reveal-x: 50%;
+  --reveal-y: 50%;
+  --reveal-opacity: 0;
+}
+
+.portrait-reveal-color {
+  opacity: var(--reveal-opacity);
+  filter: saturate(1.06) contrast(1.02);
+  mask-image: radial-gradient(
+    circle clamp(4.5rem, 9vw, 7rem) at var(--reveal-x) var(--reveal-y),
+    black 25%,
+    rgb(0 0 0 / 0.9) 55%,
+    transparent 100%
+  );
+  transition: opacity 300ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (hover: none), (pointer: coarse) {
+  .portrait-reveal-color {
+    opacity: 1;
+    mask-image: none;
+  }
 }

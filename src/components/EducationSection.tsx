@@ -7,19 +7,19 @@ export default function EducationSection() {
     <section id="education" className="scroll-mt-16 bg-background py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-6 md:px-8">
         <MotionWrapper>
-          <SectionHeading>Education</SectionHeading>
+          <SectionHeading index="04 — education">Education</SectionHeading>
         </MotionWrapper>
 
         <div>
           {education.map((edu) => (
             <MotionWrapper key={edu.institution}>
-              <div className="grid gap-8 border-b-2 border-foreground py-8 md:grid-cols-[1.15fr_0.85fr] md:py-12">
+              <div className="grid gap-8 border-b border-border py-8 md:grid-cols-[1.15fr_0.85fr] md:py-12">
                 <div>
-                  <p className="font-display text-xl text-ember">{edu.period}</p>
-                  <h3 className="mt-3 max-w-xl text-3xl font-black tracking-tight md:text-5xl">
+                  <p className="font-mono text-sm font-medium text-accent-2">{edu.period}</p>
+                  <h3 className="mt-3 max-w-xl font-display text-3xl font-bold tracking-tight md:text-5xl">
                     {edu.degree}
                   </h3>
-                  <p className="mt-4 max-w-xl font-semibold text-muted-foreground">
+                  <p className="mt-4 max-w-xl font-medium text-muted-foreground">
                     {edu.institution} · {edu.location}
                   </p>
                 </div>
@@ -31,7 +31,10 @@ export default function EducationSection() {
                         key={achievement}
                         className="flex gap-3 leading-relaxed text-muted-foreground"
                       >
-                        <span className="mt-2 h-2 w-2 shrink-0 bg-ember" aria-hidden="true" />
+                        <span
+                          className="mt-2 h-1.5 w-1.5 shrink-0 rotate-45 bg-accent"
+                          aria-hidden="true"
+                        />
                         <span>{achievement}</span>
                       </li>
                     ))}

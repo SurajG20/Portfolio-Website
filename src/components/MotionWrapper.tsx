@@ -5,6 +5,7 @@ import type { MotionProps } from "framer-motion";
 interface MotionWrapperProps extends MotionProps {
   children: React.ReactNode;
   delay?: number;
+  className?: string;
 }
 
 const EASE_OUT_QUINT = [0.22, 1, 0.36, 1] as const;
