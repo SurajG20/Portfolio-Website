@@ -250,12 +250,12 @@ export const selectedWork: Project[] = [
     ],
   },
   {
-    title: "SiliconTrace (Wexa AI)",
+    title: "SiliconTrace",
     context: "Supply-Chain Risk Explorer · Graph DB",
     summary:
       "Pick any fab worldwide, take it offline, and see which finished products die, revenue at risk, and where to dual-source.",
-    repoUrl: "https://github.com/SurajG20/wexa-ai-assessment",
-    liveUrl: "https://wexa-ai-drab.vercel.app",
+    repoUrl: "https://github.com/SurajG20/silicon-trace",
+    liveUrl: "https://silicon-trace.vercel.app",
     stack: ["Next.js", "Neo4j", "CognoDB", "Cypher", "Recharts", "Tailwind CSS"],
     description: [
       "Recursive BOM graph with 515 nodes and 999 relationships across 60 suppliers, 141 facilities, and 30 products.",
