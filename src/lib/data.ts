@@ -169,7 +169,17 @@ export const skills = [
   },
 ];
 
-export const selectedWork = [
+export type Project = {
+  title: string;
+  context: string;
+  summary: string;
+  repoUrl: string;
+  liveUrl?: string;
+  stack: string[];
+  description: string[];
+};
+
+export const selectedWork: Project[] = [
   {
     title: "GraphMind",
     context: "GraphRAG · Repository Intelligence",
@@ -184,11 +194,26 @@ export const selectedWork = [
     ],
   },
   {
+    title: "Custodia",
+    context: "Decentralized Escrow Protocol",
+    summary:
+      "Milestone-based escrow on Binance Smart Chain — Solidity smart contracts release funds automatically when conditions are met.",
+    repoUrl: "https://github.com/SurajG20/escrow-freelancer",
+    liveUrl: "https://escrow-freelancer.vercel.app",
+    stack: ["Solidity", "Next.js", "Supabase", "Reown", "WalletConnect"],
+    description: [
+      "Solidity escrow contracts with automated milestone-release conditions on BSC.",
+      "Reown/WalletConnect integration for wallet auth and transaction signing flows.",
+      "Supabase-backed off-chain state mirroring the on-chain escrow lifecycle.",
+    ],
+  },
+  {
     title: "Calorie Tracker",
     context: "LLM-Powered Nutrition App",
     summary:
       "Converts natural-language meal descriptions into structured nutrition data using OpenAI APIs, protected by Redis rate limiting.",
-    repoUrl: "https://github.com/SurajG20/Calorie-Tracker",
+    repoUrl: "https://github.com/SurajG20/calorie-tracker",
+    liveUrl: "https://calorie-tracker-suraj-goswamis-projects.vercel.app",
     stack: ["Next.js", "Node.js", "OpenAI API", "PostgreSQL", "Redis"],
     description: [
       "Natural language in, structured macros out — LLM responses validated into typed nutrition records in PostgreSQL.",
@@ -197,16 +222,115 @@ export const selectedWork = [
     ],
   },
   {
-    title: "Custodia",
-    context: "Decentralized Escrow Protocol",
+    title: "BudgetWise",
+    context: "AI Financial Planning · Full Stack",
     summary:
-      "Milestone-based escrow on Binance Smart Chain — Solidity smart contracts release funds automatically when conditions are met.",
-    repoUrl: "https://github.com/SurajG20/Custodia",
-    stack: ["Solidity", "Next.js", "Supabase", "Reown", "WalletConnect"],
+      "Personal finance planner tracking income and 7 expense categories with a 50/30/20 dashboard and an AI health check that cites your actual numbers.",
+    repoUrl: "https://github.com/SurajG20/BudgetWise",
+    liveUrl: "https://budget-wise-swart.vercel.app",
+    stack: ["Next.js", "Prisma", "SQLite", "Tailwind CSS", "Recharts", "JWT"],
     description: [
-      "Solidity escrow contracts with automated milestone-release conditions on BSC.",
-      "Reown/WalletConnect integration for wallet auth and transaction signing flows.",
-      "Supabase-backed off-chain state mirroring the on-chain escrow lifecycle.",
+      "JWT auth with httpOnly cookies guarding income, expenses, dashboard, and AI routes with month/year filtering.",
+      "Dashboard with net savings, 50/30/20 gauge, Recharts income-vs-expenses and category donut, plus per-category budget bars.",
+      "AI health check returns exactly 3 grounded recommendations with metrics citations, persisted for review without re-query.",
+    ],
+  },
+  {
+    title: "CareerPath AI",
+    context: "AI Career Counseling Chat",
+    summary:
+      "Streaming career-counseling chat app with session persistence, secure auth, and dark/light themed responsive UI.",
+    repoUrl: "https://github.com/SurajG20/ai-chat-application",
+    liveUrl: "https://chat-application-suraj-goswamis-projects.vercel.app",
+    stack: ["Next.js 15", "tRPC", "NextAuth.js", "Drizzle ORM", "PostgreSQL", "OpenAI"],
+    description: [
+      "Streaming AI counseling responses with chat session management and history persistence.",
+      "tRPC backend with Drizzle ORM on PostgreSQL and NextAuth email/password authentication.",
+      "Responsive chat interface with dark/light theme support and logout confirmation flow.",
+    ],
+  },
+  {
+    title: "SiliconTrace (Wexa AI)",
+    context: "Supply-Chain Risk Explorer · Graph DB",
+    summary:
+      "Pick any fab worldwide, take it offline, and see which finished products die, revenue at risk, and where to dual-source.",
+    repoUrl: "https://github.com/SurajG20/wexa-ai-assessment",
+    liveUrl: "https://wexa-ai-drab.vercel.app",
+    stack: ["Next.js", "Neo4j", "CognoDB", "Cypher", "Recharts", "Tailwind CSS"],
+    description: [
+      "Recursive BOM graph with 515 nodes and 999 relationships across 60 suppliers, 141 facilities, and 30 products.",
+      "Blast-radius Cypher traversals rank impacted products by revenue at risk with deduplicated multi-route fan-out.",
+      "Alternate-supplier queries find sources entirely outside the impacted region; deterministic idempotent seeding.",
+    ],
+  },
+  {
+    title: "Pyrock AI",
+    context: "Multilingual Construction Assistant",
+    summary:
+      "Turns informal English/Hindi/Hinglish site messages into structured events while deterministic code owns material inventory math.",
+    repoUrl: "https://github.com/SurajG20/pyrock.ai",
+    liveUrl: "https://pyrock-ai.vercel.app",
+    stack: ["Next.js", "Drizzle ORM", "libSQL", "Zod", "OpenAI", "Anthropic"],
+    description: [
+      "Pluggable extraction backends — OpenAI, Anthropic, free OpenCode endpoint, and offline mock — selected by env.",
+      "Deterministic stock register where balance always equals received minus used, with durable idempotency.",
+      "WhatsApp-style field thread beside the ledger; Zod validation keeps LLM output out of business-state calculations.",
+    ],
+  },
+  {
+    title: "ShipStream TMS",
+    context: "Transport Management System",
+    summary:
+      "Operations-style TMS demo serving 6,000 seeded shipments across 46 US lanes through a GraphQL API and React ops console.",
+    repoUrl: "https://github.com/SurajG20/shipstream-tms",
+    liveUrl: "https://shipstream-tms.vercel.app",
+    stack: ["NestJS", "GraphQL", "Prisma", "PostgreSQL", "React 19", "Tailwind CSS"],
+    description: [
+      "NestJS code-first GraphQL API with JWT auth and ADMIN/EMPLOYEE role guards.",
+      "Prisma data layer with raw-SQL KPI queries and seeded shipments plus tracking events.",
+      "Vite + React 19 console with typed graphql-codegen hooks, charts, and Leaflet lane maps.",
+    ],
+  },
+  {
+    title: "Inventory Order System",
+    context: "Inventory & Order Management",
+    summary:
+      "FastAPI + PostgreSQL backend with a Vite React dashboard for stock levels, orders, and sales analytics.",
+    repoUrl: "https://github.com/SurajG20/inventory-order-management",
+    liveUrl: "https://inventory-order-system-mu.vercel.app",
+    stack: ["FastAPI", "SQLAlchemy", "PostgreSQL", "React", "Vite", "TanStack Query"],
+    description: [
+      "Async FastAPI service with SQLAlchemy models, Alembic migrations, and dashboard aggregation queries.",
+      "Inventory and order workflows with Pydantic validation and Postgres-backed persistence.",
+      "React dashboard with React Query caching, form validation, and charted sales insights.",
+    ],
+  },
+  {
+    title: "Portfolio Dashboard",
+    context: "Stock Analytics · OctaByte Assignment",
+    summary:
+      "Holdings dashboard with live prices, P/E and earnings context, sector breakdown, and 15-second auto-refresh.",
+    repoUrl: "https://github.com/SurajG20/octa-byte-ai-assignment",
+    liveUrl: "https://octa-byte-ai-assignment-ochre.vercel.app",
+    stack: ["Next.js", "TypeScript", "Tailwind CSS", "yahoo-finance2", "Cheerio", "TanStack Table"],
+    description: [
+      "Live CMP per holding via Yahoo Finance with P/E and earnings context scraped from Google Finance.",
+      "Summary cards for invested value, current value, P/L, plus sector-wise allocation breakdown.",
+      "Five-minute in-memory cache with graceful fallback to last values and loading skeletons.",
+    ],
+  },
+  {
+    title: "System Design Notes",
+    context: "Engineering Knowledge Base",
+    summary:
+      "Static Astro knowledge base covering distributed systems, databases, caching, messaging, and real-world case studies.",
+    repoUrl: "https://github.com/SurajG20/system-design-notes",
+    liveUrl: "https://system-design-notes-seven.vercel.app",
+    stack: ["Astro", "MDX", "TypeScript", "Markdown"],
+    description: [
+      "Structured notes on CAP, consensus, scalability, sharding, caching strategies, queues, and event-driven design.",
+      "Case studies including Netflix architecture plus monolith-vs-microservices tradeoff guides.",
+      "Content-collections powered static site deployed on Vercel for fast reading.",
     ],
   },
 ];

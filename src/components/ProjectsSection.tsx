@@ -202,12 +202,57 @@ function CustodiaArt() {
   );
 }
 
-function ProjectArtwork({ index }: { index: number }) {
+function GenericArt({ index, title }: { index: number; title: string }) {
+  const bars = [0, 1, 2, 3, 4].map((i) => 34 + ((index * 37 + i * 23) % 90));
+  const nodes = [
+    [70 + ((index * 53) % 60), 60 + ((index * 29) % 40)],
+    [190 + ((index * 31) % 40), 110 + ((index * 17) % 40)],
+    [300 - ((index * 41) % 50), 70 + ((index * 23) % 60)],
+  ];
+  return (
+    <svg viewBox="0 0 400 240" className="h-full w-full" role="presentation" focusable="false">
+      {bars.map((h, i) => (
+        <rect
+          key={`bar${i}`}
+          x={36 + i * 30}
+          y={170 - h}
+          width="18"
+          height={h}
+          rx="5"
+          className={i % 2 ? "fill-accent-2/60" : "fill-accent/50"}
+        />
+      ))}
+      {nodes.map(([cx, cy], i) => (
+        <circle
+          key={`g${i}`}
+          cx={cx}
+          cy={cy}
+          r={7 - (i % 3)}
+          className={i === 0 ? "fill-accent glow-accent" : "fill-accent-2"}
+          opacity={0.85}
+        />
+      ))}
+      <text x="36" y="212" className="fill-muted-foreground font-mono" fontSize="11">
+        {title.toLowerCase()} · live on vercel
+      </text>
+    </svg>
+  );
+}
+
+function ProjectArtwork({ index, title }: { index: number; title: string }) {
   return (
     <div className="group relative overflow-hidden rounded-2xl border border-panel-border bg-panel transition-shadow duration-500 hover:glow-accent">
       <div className="bg-grid-faint absolute inset-0 opacity-60" aria-hidden="true" />
       <div className="relative aspect-video p-4 md:p-6">
-        {index === 0 ? <GraphMindArt /> : index === 1 ? <CalorieTrackerArt /> : <CustodiaArt />}
+        {title === "GraphMind" ? (
+          <GraphMindArt />
+        ) : title === "Calorie Tracker" ? (
+          <CalorieTrackerArt />
+        ) : title === "Custodia" ? (
+          <CustodiaArt />
+        ) : (
+          <GenericArt index={index} title={title} />
+        )}
       </div>
     </div>
   );
@@ -231,18 +276,21 @@ export default function ProjectsSection() {
         </MotionWrapper>
 
         <div className="space-y-16 md:space-y-24">
-          {selectedWork.map((project, index) => (
-            <MotionWrapper key={project.title} delay={index * 0.08}>
-              <article className="grid items-center gap-8 md:grid-cols-2 md:items-start md:gap-14">
-                <a
-                  href={project.repoUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`View ${project.title} on GitHub`}
-                  className={`block ${index % 2 ? "md:order-2" : ""}`}
-                >
-                  <ProjectArtwork index={index} />
-                </a>
+          {selectedWork.map((project, index) => {
+            const primaryUrl = project.liveUrl ?? project.repoUrl;
+            const primaryLabel = project.liveUrl ? `View ${project.title} live` : `View ${project.title} on GitHub`;
+            return (
+              <MotionWrapper key={project.title} delay={index * 0.08}>
+                <article className="grid items-center gap-8 md:grid-cols-2 md:items-start md:gap-14">
+                  <a
+                    href={primaryUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={primaryLabel}
+                    className={`block ${index % 2 ? "md:order-2" : ""}`}
+                  >
+                    <ProjectArtwork index={index} title={project.title} />
+                  </a>
 
                 <div className={index % 2 ? "md:order-1" : ""}>
                   <p className="mb-3 font-mono text-sm font-medium tracking-wide text-accent-2">
@@ -278,24 +326,43 @@ export default function ProjectsSection() {
                     ))}
                   </ul>
 
-                  <a
-                    href={project.repoUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-7 inline-flex min-h-11 items-center gap-1.5 rounded-lg border border-accent/40 px-4 py-2.5 text-sm font-semibold text-accent transition-all duration-300 hover:-translate-y-0.5 hover:bg-accent hover:text-white"
-                  >
-                    View repository
-                    <HugeiconsIcon
-                      icon={ArrowUpRight01Icon}
-                      className="h-4 w-4"
-                      strokeWidth={2}
-                      aria-hidden="true"
-                    />
-                  </a>
+                  <div className="mt-7 flex flex-wrap gap-3">
+                    <a
+                      href={project.repoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex min-h-11 items-center gap-1.5 rounded-lg border border-accent/40 px-4 py-2.5 text-sm font-semibold text-accent transition-all duration-300 hover:-translate-y-0.5 hover:bg-accent hover:text-white"
+                    >
+                      View repository
+                      <HugeiconsIcon
+                        icon={ArrowUpRight01Icon}
+                        className="h-4 w-4"
+                        strokeWidth={2}
+                        aria-hidden="true"
+                      />
+                    </a>
+                    {project.liveUrl && (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex min-h-11 items-center gap-1.5 rounded-lg bg-accent px-4 py-2.5 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:opacity-90"
+                      >
+                        Live demo
+                        <HugeiconsIcon
+                          icon={ArrowUpRight01Icon}
+                          className="h-4 w-4"
+                          strokeWidth={2}
+                          aria-hidden="true"
+                        />
+                      </a>
+                    )}
+                  </div>
                 </div>
               </article>
             </MotionWrapper>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
