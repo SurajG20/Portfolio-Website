@@ -1,4 +1,4 @@
-import { selectedWork } from "@/lib/data";
+import { featuredWork, moreWork, type Project } from "@/lib/data";
 import { ArrowUpRight01Icon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import MotionWrapper from "./MotionWrapper";
@@ -246,6 +246,8 @@ function ProjectArtwork({ index, title }: { index: number; title: string }) {
       <div className="relative aspect-video p-4 md:p-6">
         {title === "GraphMind" ? (
           <GraphMindArt />
+        ) : title === "SiliconTrace" ? (
+          <GenericArt index={1} title={title} />
         ) : title === "Calorie Tracker" ? (
           <CalorieTrackerArt />
         ) : title === "Custodia" ? (
@@ -255,6 +257,93 @@ function ProjectArtwork({ index, title }: { index: number; title: string }) {
         )}
       </div>
     </div>
+  );
+}
+
+function ProjectBlock({ project, index }: { project: Project; index: number }) {
+  const primaryUrl = project.liveUrl ?? project.repoUrl;
+  const primaryLabel = project.liveUrl
+    ? `View ${project.title} live`
+    : `View ${project.title} on GitHub`;
+
+  return (
+    <article className="grid items-center gap-8 md:grid-cols-2 md:items-start md:gap-14">
+      <a
+        href={primaryUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={primaryLabel}
+        className={`block ${index % 2 ? "md:order-2" : ""}`}
+      >
+        <ProjectArtwork index={index} title={project.title} />
+      </a>
+
+      <div className={index % 2 ? "md:order-1" : ""}>
+        <p className="mb-3 font-mono text-sm font-medium tracking-wide text-accent-2">
+          {project.context}
+        </p>
+        <h3 className="font-display text-[clamp(2rem,4.5vw,3.25rem)] leading-[1.02] font-bold">
+          {project.title}
+        </h3>
+        <p className="mt-4 text-lg leading-relaxed text-muted-foreground">{project.summary}</p>
+
+        <ul className="mt-6 space-y-3 text-sm text-muted-foreground">
+          {project.description.map((description) => (
+            <li key={description} className="flex gap-3 leading-relaxed">
+              <span
+                className="mt-[7px] h-1.5 w-1.5 shrink-0 rotate-45 bg-accent"
+                aria-hidden="true"
+              />
+              {description}
+            </li>
+          ))}
+        </ul>
+
+        <ul className="mt-6 flex flex-wrap gap-2" aria-label="Technology stack">
+          {project.stack.map((technology) => (
+            <li
+              key={technology}
+              className="rounded-full border border-border px-3 py-1 font-mono text-xs font-medium text-muted-foreground transition-colors hover:border-accent/50 hover:text-foreground"
+            >
+              {technology}
+            </li>
+          ))}
+        </ul>
+
+        <div className="mt-7 flex flex-wrap gap-3">
+          <a
+            href={project.repoUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex min-h-11 items-center gap-1.5 rounded-lg border border-accent/40 px-4 py-2.5 text-sm font-semibold text-accent transition-all duration-300 hover:-translate-y-0.5 hover:bg-accent hover:text-white"
+          >
+            View repository
+            <HugeiconsIcon
+              icon={ArrowUpRight01Icon}
+              className="h-4 w-4"
+              strokeWidth={2}
+              aria-hidden="true"
+            />
+          </a>
+          {project.liveUrl && (
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex min-h-11 items-center gap-1.5 rounded-lg bg-accent px-4 py-2.5 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:opacity-90"
+            >
+              Live demo
+              <HugeiconsIcon
+                icon={ArrowUpRight01Icon}
+                className="h-4 w-4"
+                strokeWidth={2}
+                aria-hidden="true"
+              />
+            </a>
+          )}
+        </div>
+      </div>
+    </article>
   );
 }
 
@@ -271,98 +360,40 @@ export default function ProjectsSection() {
 
         <MotionWrapper>
           <p className="mb-12 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
-            AI systems and infrastructure I have designed and shipped — open-source on GitHub.
+            Flagship open-source work aligned with my{" "}
+            <a
+              href="https://github.com/SurajG20"
+              className="font-medium text-accent underline-offset-4 hover:underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub profile
+            </a>{" "}
+            — GraphRAG, graph data, distributed sync, and production-style backends.
           </p>
         </MotionWrapper>
 
         <div className="space-y-16 md:space-y-24">
-          {selectedWork.map((project, index) => {
-            const primaryUrl = project.liveUrl ?? project.repoUrl;
-            const primaryLabel = project.liveUrl ? `View ${project.title} live` : `View ${project.title} on GitHub`;
-            return (
-              <MotionWrapper key={project.title} delay={index * 0.08}>
-                <article className="grid items-center gap-8 md:grid-cols-2 md:items-start md:gap-14">
-                  <a
-                    href={primaryUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={primaryLabel}
-                    className={`block ${index % 2 ? "md:order-2" : ""}`}
-                  >
-                    <ProjectArtwork index={index} title={project.title} />
-                  </a>
-
-                <div className={index % 2 ? "md:order-1" : ""}>
-                  <p className="mb-3 font-mono text-sm font-medium tracking-wide text-accent-2">
-                    {project.context}
-                  </p>
-                  <h3 className="font-display text-[clamp(2rem,4.5vw,3.25rem)] leading-[1.02] font-bold">
-                    {project.title}
-                  </h3>
-                  <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
-                    {project.summary}
-                  </p>
-
-                  <ul className="mt-6 space-y-3 text-sm text-muted-foreground">
-                    {project.description.map((description) => (
-                      <li key={description} className="flex gap-3 leading-relaxed">
-                        <span
-                          className="mt-[7px] h-1.5 w-1.5 shrink-0 rotate-45 bg-accent"
-                          aria-hidden="true"
-                        />
-                        {description}
-                      </li>
-                    ))}
-                  </ul>
-
-                  <ul className="mt-6 flex flex-wrap gap-2" aria-label="Technology stack">
-                    {project.stack.map((technology) => (
-                      <li
-                        key={technology}
-                        className="rounded-full border border-border px-3 py-1 font-mono text-xs font-medium text-muted-foreground transition-colors hover:border-accent/50 hover:text-foreground"
-                      >
-                        {technology}
-                      </li>
-                    ))}
-                  </ul>
-
-                  <div className="mt-7 flex flex-wrap gap-3">
-                    <a
-                      href={project.repoUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex min-h-11 items-center gap-1.5 rounded-lg border border-accent/40 px-4 py-2.5 text-sm font-semibold text-accent transition-all duration-300 hover:-translate-y-0.5 hover:bg-accent hover:text-white"
-                    >
-                      View repository
-                      <HugeiconsIcon
-                        icon={ArrowUpRight01Icon}
-                        className="h-4 w-4"
-                        strokeWidth={2}
-                        aria-hidden="true"
-                      />
-                    </a>
-                    {project.liveUrl && (
-                      <a
-                        href={project.liveUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex min-h-11 items-center gap-1.5 rounded-lg bg-accent px-4 py-2.5 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:opacity-90"
-                      >
-                        Live demo
-                        <HugeiconsIcon
-                          icon={ArrowUpRight01Icon}
-                          className="h-4 w-4"
-                          strokeWidth={2}
-                          aria-hidden="true"
-                        />
-                      </a>
-                    )}
-                  </div>
-                </div>
-              </article>
+          {featuredWork.map((project, index) => (
+            <MotionWrapper key={project.title} delay={index * 0.08}>
+              <ProjectBlock project={project} index={index} />
             </MotionWrapper>
-            );
-          })}
+          ))}
+        </div>
+
+        <MotionWrapper>
+          <h3 className="mt-20 font-display text-2xl font-bold md:mt-28 md:text-3xl">More on GitHub</h3>
+          <p className="mt-3 max-w-xl text-muted-foreground">
+            Additional apps and learning repos — full list on GitHub.
+          </p>
+        </MotionWrapper>
+
+        <div className="mt-12 space-y-16 md:space-y-24">
+          {moreWork.map((project, index) => (
+            <MotionWrapper key={project.title} delay={index * 0.06}>
+              <ProjectBlock project={project} index={index} />
+            </MotionWrapper>
+          ))}
         </div>
       </div>
     </section>

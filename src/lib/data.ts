@@ -13,7 +13,7 @@ export const personalInfo = {
     "2.5+ years shipping fintech, real-time, and AI-powered systems — LLM integrations, RAG pipelines, payment infrastructure, and event-driven backends with Node.js, TypeScript, Python, Redis, PostgreSQL, and AWS.",
 };
 
-export const availabilityBadge = "Open to AI Engineer roles";
+export const availabilityBadge = "Open to AI, Backend & Full Stack roles";
 
 export const quickStats = [
   { value: "97%", label: "Latency reduced" },
@@ -179,20 +179,92 @@ export type Project = {
   description: string[];
 };
 
-export const selectedWork: Project[] = [
+/** Matches GitHub pinned repos — lead with these on the site. */
+export const featuredWork: Project[] = [
   {
     title: "GraphMind",
     context: "GraphRAG · Repository Intelligence",
     summary:
-      "A GraphRAG platform that answers repository-architecture questions using hybrid vector and graph retrieval over codebases.",
+      "Self-hosted GraphRAG for codebases — hybrid retrieval and grounded Q&A with file:line citations.",
     repoUrl: "https://github.com/SurajG20/ai-repo-workspace",
-    stack: ["FastAPI", "Tree-sitter", "Neo4j", "Qdrant", "LangChain", "Next.js"],
+    stack: ["FastAPI", "Tree-sitter", "Neo4j", "Qdrant", "Celery", "Next.js"],
     description: [
-      "Parses repositories deterministically with Tree-sitter ahead of any LLM call, keeping output grounded and reproducible.",
-      "Constructs Neo4j knowledge graphs indexed into Qdrant for hybrid vector + graph retrieval.",
-      "Pluggable BYOK provider layer supports OpenAI, Anthropic, and Ollama — swap models without changing application logic.",
+      "Tree-sitter symbol graphs land in Neo4j before any LLM call — same repo, same structure.",
+      "Four-way retrieval fused with RRF: vectors, symbols, keywords, and graph neighbors.",
+      "Postgres-backed indexing DAG, dead-code and PR blast-radius views; runs without an API key via deterministic retrieval.",
     ],
   },
+  {
+    title: "SiliconTrace",
+    context: "Supply-Chain Risk Explorer · Graph DB",
+    summary:
+      "Pick any fab worldwide, take it offline, and see which finished products die, revenue at risk, and where to dual-source.",
+    repoUrl: "https://github.com/SurajG20/silicon-trace",
+    liveUrl: "https://silicon-trace.vercel.app",
+    stack: ["Next.js", "Neo4j", "CognoDB", "Cypher", "Recharts", "Tailwind CSS"],
+    description: [
+      "Recursive BOM graph with 515 nodes and 999 relationships across suppliers, facilities, and products.",
+      "Blast-radius Cypher traversals rank impacted products by revenue at risk with deduplicated multi-route fan-out.",
+      "Shareable impact URLs and CSV exports for blast radius and single points of failure.",
+    ],
+  },
+  {
+    title: "Cross-Tool Sync",
+    context: "GitHub Issues · Outbox / Inbox",
+    summary:
+      "Bidirectional task sync between a local app and GitHub Issues — durable queues, webhooks, and manual conflict resolution.",
+    repoUrl: "https://github.com/SurajG20/cross-tool-sync",
+    stack: ["Fastify", "BullMQ", "PostgreSQL", "Redis", "React", "TypeScript"],
+    description: [
+      "Outbox on local writes and inbox for webhooks with checkpointed GitHub backfill.",
+      "Last-write-wins with explicit conflict state when both sides change during an offline window.",
+      "Docker Compose stack plus a dashboard for sync observability and resolution.",
+    ],
+  },
+  {
+    title: "ShipStream TMS",
+    context: "Transport Management System",
+    summary:
+      "Operations-style TMS demo serving 6,000 seeded shipments across 46 US lanes through a GraphQL API and React ops console.",
+    repoUrl: "https://github.com/SurajG20/shipstream-tms",
+    liveUrl: "https://shipstream-tms.vercel.app",
+    stack: ["NestJS", "GraphQL", "Prisma", "SQLite", "React 19", "Tailwind CSS"],
+    description: [
+      "GraphQL API with depth/complexity limits, cursor pagination, and JWT admin/employee RBAC.",
+      "Dashboard KPIs via parallel raw SQL; DataLoader-batched timelines and Leaflet track-and-trace maps.",
+      "Vitest unit/e2e coverage and typed graphql-codegen client hooks.",
+    ],
+  },
+  {
+    title: "PDF Page Extractor",
+    context: "pdf-analyzer · Self-hosted",
+    summary:
+      "Mark pages in a PDF, reorder them, and download a new document — validation on client and server, files stay on your machine.",
+    repoUrl: "https://github.com/SurajG20/pdf-analyzer",
+    stack: ["Express", "pdf-lib", "pdf.js", "Vite", "React", "Vitest"],
+    description: [
+      "Thumbnail grid with drag ordering; server assembles output with pdf-lib after magic-byte checks.",
+      "Monorepo with supertest API tests and jsdom client tests (30+ cases).",
+      "Paper/ink UI themes; selection state survives failed extractions.",
+    ],
+  },
+  {
+    title: "Pyrock AI",
+    context: "Multilingual Construction Assistant",
+    summary:
+      "Turns informal English/Hindi/Hinglish site messages into structured events while deterministic code owns material inventory math.",
+    repoUrl: "https://github.com/SurajG20/pyrock.ai",
+    liveUrl: "https://pyrock-ai.vercel.app",
+    stack: ["Next.js", "Drizzle ORM", "libSQL", "Zod", "OpenAI", "Anthropic"],
+    description: [
+      "Pluggable extraction backends — OpenAI, Anthropic, free OpenCode endpoint, and offline mock — selected by env.",
+      "Deterministic stock register where balance always equals received minus used, with durable idempotency.",
+      "WhatsApp-style field thread beside the ledger; Zod validation keeps LLM output out of business-state calculations.",
+    ],
+  },
+];
+
+export const moreWork: Project[] = [
   {
     title: "Custodia",
     context: "Decentralized Escrow Protocol",
@@ -250,48 +322,6 @@ export const selectedWork: Project[] = [
     ],
   },
   {
-    title: "SiliconTrace",
-    context: "Supply-Chain Risk Explorer · Graph DB",
-    summary:
-      "Pick any fab worldwide, take it offline, and see which finished products die, revenue at risk, and where to dual-source.",
-    repoUrl: "https://github.com/SurajG20/silicon-trace",
-    liveUrl: "https://silicon-trace.vercel.app",
-    stack: ["Next.js", "Neo4j", "CognoDB", "Cypher", "Recharts", "Tailwind CSS"],
-    description: [
-      "Recursive BOM graph with 515 nodes and 999 relationships across 60 suppliers, 141 facilities, and 30 products.",
-      "Blast-radius Cypher traversals rank impacted products by revenue at risk with deduplicated multi-route fan-out.",
-      "Alternate-supplier queries find sources entirely outside the impacted region; deterministic idempotent seeding.",
-    ],
-  },
-  {
-    title: "Pyrock AI",
-    context: "Multilingual Construction Assistant",
-    summary:
-      "Turns informal English/Hindi/Hinglish site messages into structured events while deterministic code owns material inventory math.",
-    repoUrl: "https://github.com/SurajG20/pyrock.ai",
-    liveUrl: "https://pyrock-ai.vercel.app",
-    stack: ["Next.js", "Drizzle ORM", "libSQL", "Zod", "OpenAI", "Anthropic"],
-    description: [
-      "Pluggable extraction backends — OpenAI, Anthropic, free OpenCode endpoint, and offline mock — selected by env.",
-      "Deterministic stock register where balance always equals received minus used, with durable idempotency.",
-      "WhatsApp-style field thread beside the ledger; Zod validation keeps LLM output out of business-state calculations.",
-    ],
-  },
-  {
-    title: "ShipStream TMS",
-    context: "Transport Management System",
-    summary:
-      "Operations-style TMS demo serving 6,000 seeded shipments across 46 US lanes through a GraphQL API and React ops console.",
-    repoUrl: "https://github.com/SurajG20/shipstream-tms",
-    liveUrl: "https://shipstream-tms.vercel.app",
-    stack: ["NestJS", "GraphQL", "Prisma", "PostgreSQL", "React 19", "Tailwind CSS"],
-    description: [
-      "NestJS code-first GraphQL API with JWT auth and ADMIN/EMPLOYEE role guards.",
-      "Prisma data layer with raw-SQL KPI queries and seeded shipments plus tracking events.",
-      "Vite + React 19 console with typed graphql-codegen hooks, charts, and Leaflet lane maps.",
-    ],
-  },
-  {
     title: "Inventory Order System",
     context: "Inventory & Order Management",
     summary:
@@ -300,23 +330,9 @@ export const selectedWork: Project[] = [
     liveUrl: "https://inventory-order-system-mu.vercel.app",
     stack: ["FastAPI", "SQLAlchemy", "PostgreSQL", "React", "Vite", "TanStack Query"],
     description: [
-      "Async FastAPI service with SQLAlchemy models, Alembic migrations, and dashboard aggregation queries.",
+      "Async FastAPI service with SQLAlchemy models and dashboard aggregation routes.",
       "Inventory and order workflows with Pydantic validation and Postgres-backed persistence.",
-      "React dashboard with React Query caching, form validation, and charted sales insights.",
-    ],
-  },
-  {
-    title: "Portfolio Dashboard",
-    context: "Stock Analytics · OctaByte Assignment",
-    summary:
-      "Holdings dashboard with live prices, P/E and earnings context, sector breakdown, and 15-second auto-refresh.",
-    repoUrl: "https://github.com/SurajG20/octa-byte-ai-assignment",
-    liveUrl: "https://octa-byte-ai-assignment-ochre.vercel.app",
-    stack: ["Next.js", "TypeScript", "Tailwind CSS", "yahoo-finance2", "Cheerio", "TanStack Table"],
-    description: [
-      "Live CMP per holding via Yahoo Finance with P/E and earnings context scraped from Google Finance.",
-      "Summary cards for invested value, current value, P/L, plus sector-wise allocation breakdown.",
-      "Five-minute in-memory cache with graceful fallback to last values and loading skeletons.",
+      "React dashboard with TanStack Query, tables, and charted sales insights.",
     ],
   },
   {

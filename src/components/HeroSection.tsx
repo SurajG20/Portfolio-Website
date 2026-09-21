@@ -30,7 +30,7 @@ const contactLinks = [
   },
 ];
 
-const focusChips = ["LLM Apps", "RAG", "Payments"];
+const focusChips = ["GraphRAG", "RAG", "Payments"];
 
 const movePortraitReveal = (event: ReactPointerEvent<HTMLDivElement>) => {
   const rect = event.currentTarget.getBoundingClientRect();
